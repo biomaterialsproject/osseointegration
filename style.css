@@ -1,45 +1,51 @@
-/* Stili per la barra del titolo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
 .header-titolo {
-    background-color: #1E90FF;
+    background-color: #007bff;
     color: white;
+    padding: 20px;
     text-align: center;
-    padding: 10px 0;
 }
 
 .header-menu {
-    background-color: #ADD8E6;
+    background-color: #87CEFA;
+    text-align: center;
     padding: 10px;
 }
 
-.sottotitoli {
-    display: flex;
-    justify-content: center;
-}
-
-.sottotitolo {
-    color: black;
+.sottotitoli a {
     margin: 0 15px;
     text-decoration: none;
-    font-weight: bold;
+    color: black;
+    font-size: 18px;
 }
 
-/* Hover effetto sui link del menu */
-.sottotitolo:hover {
+.sottotitoli a:hover {
     text-decoration: underline;
 }
 
-/* Stili per il contenuto */
 #contenuto {
     padding: 20px;
+    background-color: white;
 }
 
-/* Immagine e testo */
-.immagine img {
-    width: 100%;
-    height: auto;
+.immagine {
+    text-align: center;
     margin-bottom: 20px;
+}
+
+.img-contenuto {
+    max-width: 100%;
+    height: auto;
 }
 
 .testo {
     font-size: 16px;
+    line-height: 1.6;
+    color: #333;
 }
