@@ -1,19 +1,7 @@
 function loadHome() {
     document.getElementById('contenuto').innerHTML = `
         <h2 class="titolo-riquadrato">Benvenuto nella pagina iniziale!</h2>
-        <p>Breve introduzione: Qual è il contesto? Qual è il problema?</p>
-        <p>Parte principale: Quali metodi vengono utilizzati per studiare o prevedere la capacità di favorire 
-        osteointegrazione? Collegate i metodi ai diversi aspetti dell’osteointegrazione e alle caratteristiche del 
-        dispositivo. Quali sono gli aspetti critici nel valutare l’osteointegrazione?</p>
-
-        <p>1. Un documento organizzato a vostro piacere, che risponda alle domande del paragrafo “contenuti”. 
-        Il documento deve essere curato, con riferimenti bibliografici, figure e schemi.</p>
-
-        <p>2. Una figura/schema che riassuma il messaggio del vostro documento, che metterete subito sotto il 
-        titolo, come “graphical abstract”, riassunto grafico.</p>
-
-        <p>3. Un “tweet” che usereste per lanciare sul social il vostro documento. In tutto due brevi frasi, che 
-        metterete subito sotto la figura riassuntiva (graphical abstract).</p>
+        <p>Seleziona una sezione dal menu per visualizzarne il contenuto.</p>
     `;
 }
 
