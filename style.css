@@ -23,9 +23,6 @@ body {
     text-decoration: none;
     color: black;
     font-size: 18px;
-    padding: 10px; /* Aggiunto per migliorare la leggibilità */
-    background-color: #eed5c0; /* Sfondo per i rettangoli dei sottotitoli */
-    border-radius: 5px; /* Angoli arrotondati per estetica */
 }
 
 .sottotitoli a:hover {
@@ -34,7 +31,16 @@ body {
 
 #contenuto {
     padding: 20px;
-    background-color: white;
+    background-color: #fbf2ea; /* Stesso colore dello sfondo della pagina */
+}
+
+/* Stile per i titoli delle sezioni */
+h2 {
+    background-color: #d9af8c;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
 }
 
 .immagine {
