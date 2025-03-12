@@ -1,8 +1,6 @@
 function loadHome() {
-    document.getElementById('contenuto').innerHTML = `
-        <h2 class="titolo-riquadrato">Benvenuto nella pagina iniziale!</h2>
-        <p>Seleziona una sezione dal menu per visualizzarne il contenuto.</p>
-    `;
+    // Non cambia nulla nella home, lascia com'è
+    // Non fare nulla, la home è già impostata nell'HTML
 }
 
 function loadContent(page) {
