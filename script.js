@@ -1,7 +1,8 @@
 // Funzione per caricare solo il titolo e il menu
 function loadHome() {
+    // Otteniamo la sezione contenuto e la svuotiamo
     let contentDiv = document.getElementById('contenuto');
-    contentDiv.innerHTML = ''; // Rimuove qualsiasi contenuto attuale
+    contentDiv.innerHTML = ''; // Pulisce il contenuto esistente
 }
 
 // Funzione per caricare dinamicamente il contenuto
