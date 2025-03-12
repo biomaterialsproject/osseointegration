@@ -68,3 +68,13 @@ h2 {
     line-height: 1.6;
     color: #333;
 }
+
+.titolo-riquadrato {
+    background-color: #d9af8c;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: bold;
+}
