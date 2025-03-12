@@ -34,23 +34,29 @@ body {
 
 #contenuto {
     padding: 20px;
-    background-color: #fbf2ea; /* Sfondo uguale al body */
+    background-color: #fbf2ea;
 }
 
-/* Assicura che tutto il testo abbia lo sfondo corretto */
-#contenuto h2, #contenuto p {
-    background-color: #fbf2ea; /* Stesso colore dello sfondo generale */
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* Stile per i titoli delle sezioni */
-h2 {
-    background-color: #d9af8c;
-    color: white;
+/* Stile specifico per i titoli con sfondo */
+.titolo-riquadrato {
+    background-color: #d9af8c !important;
+    color: white !important;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+}
+
+/* Stile per i titoli h2 generici */
+h2 {
+    background-color: transparent; /* Assicura che h2 normali non abbiano sfondo */
+    color: black;
+    padding: 5px;
+    text-align: center;
 }
 
 .immagine {
@@ -67,14 +73,4 @@ h2 {
     font-size: 16px;
     line-height: 1.6;
     color: #333;
-}
-
-.titolo-riquadrato {
-    background-color: #d9af8c;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    font-size: 22px;
-    font-weight: bold;
 }
