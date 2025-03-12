@@ -1,19 +1,19 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #fbf2ea;
     margin: 0;
     padding: 0;
 }
 
 .header-titolo {
-    background-color: #007bff;
+    background-color: #d9af8c;
     color: white;
     padding: 20px;
     text-align: center;
 }
 
 .header-menu {
-    background-color: #87CEFA;
+    background-color: #eed5c0;
     text-align: center;
     padding: 10px;
 }
