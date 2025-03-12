@@ -37,10 +37,10 @@ body {
     background-color: #fbf2ea;
 }
 
-/* Stile specifico per i titoli con sfondo */
+/* Stile per il titolo iniziale con sfondo chiaro */
 .titolo-riquadrato {
-    background-color: #d9af8c;
-    color: white;
+    background-color: #fbf2ea; /* Stesso colore dello sfondo */
+    color: white; /* Testo bianco */
     padding: 15px;
     text-align: center;
     border-radius: 10px;
@@ -49,14 +49,17 @@ body {
     width: fit-content;
     margin: 20px auto;
     display: block;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border: 2px solid white; /* Bordo bianco per maggiore visibilità */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Stile generale per i titoli h2 */
+/* Stile per gli altri titoli delle sezioni */
 h2 {
+    background-color: #d9af8c;
+    color: white;
+    padding: 10px;
     text-align: center;
-    font-size: 22px;
-    font-weight: bold;
+    border-radius: 5px;
 }
 
 .immagine {
