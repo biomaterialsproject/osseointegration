@@ -14,7 +14,16 @@ function loadContent(page) {
                 <img src="https://github.com/biomaterialsproject/osteointegration/blob/main/Fratture-Collo-Femore-Osteosintesi.jpg?raw=true" alt="Frattura collo del femore" class="img-contenuto">
             </div>
             <div class="testo">
-                <p>Benvenuti nella prima sezione del sito.</p>
+                <p>Prodotti del mini-progetto  
+1. un documento organizzato a vostro piacere, che risponda alle domande del paragrafo “contenuti”. 
+Il documento deve essere curato, con riferimenti bibliografici, figure e schemi. 
+2. Una figura/schema che riassuma il messaggio del vostro documento, che metterete subito sotto il 
+titolo, come “graphical abstract”, riassunto grafico. 
+3. Un “tweet” che usereste per lanciare sul social il vostro document</p>
+        <p>Breve introduzione: Qual è il contesto? Qual è il problema? 
+Parte principale: Quali metodi vengono utilizzati per studiare o prevedere la capacità di favorire 
+osteointegrazione? Collegate i metodi ai diversi aspetti dell’osteointegrazione e alle caratteristiche del 
+dispositivo. Quali sono gli aspetti critici nel valutare l’osteointegrazione? </p>
                 <p>Testo</p>
             </div>
         `;
