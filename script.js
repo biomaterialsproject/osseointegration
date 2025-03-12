@@ -1,39 +1,26 @@
-// Funzione per caricare solo il titolo e il menu
 function loadHome() {
-    // Otteniamo la sezione contenuto e la svuotiamo
-    let contentDiv = document.getElementById('contenuto');
-    contentDiv.innerHTML = ''; // Pulisce il contenuto esistente
+    document.getElementById('contenuto').innerHTML = `
+        <h2>Benvenuto nella pagina iniziale!</h2>
+        <p>Seleziona una sezione dal menu per visualizzarne il contenuto.</p>
+    `;
 }
 
-// Funzione per caricare dinamicamente il contenuto
-function loadContent(content) {
-    let contentDiv = document.getElementById('contenuto');
-    
-    // Contenuto per la Pagina 1
-    if (content === 'pagina1') {
-        contentDiv.innerHTML = `
-            <div id="pagina1-contenuto">
-                <h2>Pagina 1: Introduzione</h2>
-                
-                <!-- Immagine -->
-                <div class="immagine">
-                    <img src="https://github.com/biomaterialsproject/osteointegration/blob/main/Fratture-Collo-Femore-Osteosintesi.jpg?raw=true" alt="Descrizione dell'immagine" class="img-contenuto">
-                </div>
-                
-                <!-- Testo -->
-                <div class="testo">
-                    <p>Benvenuti nella prima sezione del sito. Qui potete trovare una panoramica generale dei temi trattati. Questa è la sezione in cui parleremo dell'importanza della struttura e dell'organizzazione dei contenuti in un sito web.</p>
-                    
-                    <p>Un sito ben strutturato aiuta gli utenti a navigare facilmente tra le diverse informazioni. La progettazione di un sito web deve considerare vari aspetti, tra cui l'aspetto estetico, la facilità di navigazione e la velocità di caricamento delle pagine.</p>
-                </div>
+function loadContent(page) {
+    if (page === 'pagina1') {
+        document.getElementById('contenuto').innerHTML = `
+            <h2>Pagina 1: Introduzione</h2>
+            <div class="immagine">
+                <img src="https://github.com/biomaterialsproject/osteointegration/blob/main/Fratture-Collo-Femore-Osteosintesi.jpg?raw=true" alt="Frattura collo del femore" class="img-contenuto">
+            </div>
+            <div class="testo">
+                <p>Benvenuti nella prima sezione del sito. Qui potete trovare una panoramica generale dei temi trattati. Questa è la sezione in cui parleremo dell'importanza della struttura e dell'organizzazione dei contenuti in un sito web.</p>
+                <p>Un sito ben strutturato aiuta gli utenti a navigare facilmente tra le diverse informazioni. La progettazione di un sito web deve considerare vari aspetti, tra cui l'aspetto estetico, la facilità di navigazione e la velocità di caricamento delle pagine.</p>
             </div>
         `;
-    } 
-    // Contenuto per la Sezione 2
-    else if (content === 'sezione2') {
-        contentDiv.innerHTML = `
-            <h2>Sezione 2: Dettagli</h2>
-            <p>Contenuti di esempio per la sezione 2...</p>
+    } else if (page === 'sezione2') {
+        document.getElementById('contenuto').innerHTML = `
+            <h2>Sezione 2: Approfondimenti</h2>
+            <p>Questa sezione conterrà ulteriori dettagli sul progetto e approfondimenti tecnici.</p>
         `;
     }
 }
