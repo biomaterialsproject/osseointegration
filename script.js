@@ -17,7 +17,7 @@ function loadContent(content) {
                 
                 <!-- Immagine -->
                 <div class="immagine">
-                    <img src="https://via.placeholder.com/600x400" alt="Descrizione dell'immagine" class="img-contenuto">
+                    <img src="https://github.com/biomaterialsproject/osteointegration/blob/main/Fratture-Collo-Femore-Osteosintesi.jpg?raw=true" alt="Descrizione dell'immagine" class="img-contenuto">
                 </div>
                 
                 <!-- Testo -->
