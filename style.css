@@ -34,7 +34,14 @@ body {
 
 #contenuto {
     padding: 20px;
-    background-color: #fbf2ea;
+    background-color: #fbf2ea; /* Sfondo uguale al body */
+}
+
+/* Assicura che tutto il testo abbia lo sfondo corretto */
+#contenuto h2, #contenuto p {
+    background-color: #fbf2ea; /* Stesso colore dello sfondo generale */
+    padding: 10px;
+    border-radius: 5px;
 }
 
 /* Stile per i titoli delle sezioni */
