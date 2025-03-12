@@ -1,6 +1,6 @@
 function loadHome() {
     document.getElementById('contenuto').innerHTML = `
-        <h2>Benvenuto nella pagina iniziale!</h2>
+        <h2 class="titolo-riquadrato">Benvenuto nella pagina iniziale!</h2>
         <p>Seleziona una sezione dal menu per visualizzarne il contenuto.</p>
     `;
 }
@@ -8,7 +8,7 @@ function loadHome() {
 function loadContent(page) {
     if (page === 'pagina1') {
         document.getElementById('contenuto').innerHTML = `
-            <h2>Pagina 1: Introduzione</h2>
+            <h2 class="titolo-riquadrato">Pagina 1: Introduzione</h2>
             <div class="immagine">
                 <img src="https://github.com/biomaterialsproject/osteointegration/blob/main/Fratture-Collo-Femore-Osteosintesi.jpg?raw=true" alt="Frattura collo del femore" class="img-contenuto">
             </div>
@@ -19,7 +19,7 @@ function loadContent(page) {
         `;
     } else if (page === 'sezione2') {
         document.getElementById('contenuto').innerHTML = `
-            <h2>Sezione 2: Approfondimenti</h2>
+            <h2 class="titolo-riquadrato">Sezione 2: Approfondimenti</h2>
             <p>Testo</p>
             
             <h3>Ascolta il file audio:</h3>
