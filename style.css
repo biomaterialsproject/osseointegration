@@ -23,6 +23,9 @@ body {
     text-decoration: none;
     color: black;
     font-size: 18px;
+    padding: 10px; /* Aggiunto per migliorare la leggibilità */
+    background-color: #eed5c0; /* Sfondo per i rettangoli dei sottotitoli */
+    border-radius: 5px; /* Angoli arrotondati per estetica */
 }
 
 .sottotitoli a:hover {
