@@ -18,7 +18,7 @@ dispositivo. Quali sono gli aspetti critici nel valutare l’osteointegrazione? 
 function loadContent(page) {
     if (page === 'pagina1') {
         document.getElementById('contenuto').innerHTML = `
-            <h2 class="titolo-riquadrato">Pagina 1: Introduzione</h2>
+            <h2 class="titolo-riquadrato">IMMAGINI</h2>
             <div class="immagine">
                 <img src="https://github.com/biomaterialsproject/osteointegration/blob/main/Fratture-Collo-Femore-Osteosintesi.jpg?raw=true" alt="Frattura collo del femore" class="img-contenuto">
             </div>
@@ -28,7 +28,7 @@ function loadContent(page) {
         `;
     } else if (page === 'sezione2') {
         document.getElementById('contenuto').innerHTML = `
-            <h2 class="titolo-riquadrato">Sezione 2: Approfondimenti</h2>
+            <h2 class="titolo-riquadrato">AUDIO</h2>
             <p>Testo</p>
             
             <h3>Ascolta il file audio:</h3>
