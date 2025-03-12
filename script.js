@@ -21,6 +21,12 @@ function loadContent(page) {
         document.getElementById('contenuto').innerHTML = `
             <h2>Sezione 2: Approfondimenti</h2>
             <p>Questa sezione conterrà ulteriori dettagli sul progetto e approfondimenti tecnici.</p>
+            
+            <h3>Ascolta il file audio:</h3>
+            <audio controls>
+                <source src="audio.mp3" type="audio/mpeg">
+                Il tuo browser non supporta l'audio HTML5.
+            </audio>
         `;
     }
 }
