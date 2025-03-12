@@ -1,33 +1,14 @@
-// Funzione per caricare dinamicamente il contenuto
-function loadContent(content) {
-    let contentDiv = document.getElementById('contenuto');
+<div id="pagina1-contenuto">
+    <h2>Pagina 1: Introduzione</h2>
     
-    // Contenuto per la Pagina 1
-    if (content === 'pagina1') {
-        contentDiv.innerHTML = `
-            <div id="pagina1-contenuto">
-                <h2>Pagina 1: Introduzione</h2>
-                
-                <!-- Immagine -->
-                <div class="immagine">
-                    <!-- Aggiungi il link diretto dell'immagine -->
-                    <img src="Fratture-Collo-Femore-Osteosintesi.jpg" alt="Frattura collo del femore">
-                </div>
-                
-                <!-- Testo -->
-                <div class="testo">
-                    <p>Benvenuti nella prima sezione del sito. Qui potete trovare una panoramica generale dei temi trattati. Questa è la sezione in cui parleremo dell'importanza della struttura e dell'organizzazione dei contenuti in un sito web.</p>
-                    
-                    <p>Un sito ben strutturato aiuta gli utenti a navigare facilmente tra le diverse informazioni. La progettazione di un sito web deve considerare vari aspetti, tra cui l'aspetto estetico, la facilità di navigazione e la velocità di caricamento delle pagine.</p>
-                </div>
-            </div>
-        `;
-    } 
-    // Contenuto per la Sezione 2
-    else if (content === 'sezione2') {
-        contentDiv.innerHTML = `
-            <h2>Sezione 2: Dettagli</h2>
-            <p>Contenuti di esempio per la sezione 2...</p>
-        `;
-    }
-}
+    <!-- Immagine -->
+    <div class="immagine">
+        <img src="Fratture-Collo-Femore-Osteosintesi.jpg" alt="Frattura collo del femore" class="img-contenuto">
+    </div>
+    
+    <!-- Testo -->
+    <div class="testo">
+        <p>Benvenuti nella prima sezione del sito. Qui potete trovare una panoramica generale dei temi trattati.</p>
+        <p>Questa è la sezione in cui parleremo dell'importanza della struttura e dell'organizzazione dei contenuti in un sito web.</p>
+    </div>
+</div>
