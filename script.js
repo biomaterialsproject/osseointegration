@@ -1,13 +1,15 @@
+// Funzione per caricare solo il titolo e il menu
+function loadHome() {
+    let contentDiv = document.getElementById('contenuto');
+    contentDiv.innerHTML = ''; // Rimuove qualsiasi contenuto attuale
+}
+
 // Funzione per caricare dinamicamente il contenuto
 function loadContent(content) {
     let contentDiv = document.getElementById('contenuto');
     
-    // Contenuto per la Home (solo titolo e menu)
-    if (content === 'home') {
-        contentDiv.innerHTML = ''; // Pulisce il contenuto attuale
-    } 
     // Contenuto per la Pagina 1
-    else if (content === 'pagina1') {
+    if (content === 'pagina1') {
         contentDiv.innerHTML = `
             <div id="pagina1-contenuto">
                 <h2>Pagina 1: Introduzione</h2>
