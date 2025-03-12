@@ -23,6 +23,9 @@ body {
     text-decoration: none;
     color: black;
     font-size: 18px;
+    padding: 10px;
+    background-color: #eed5c0;
+    border-radius: 5px;
 }
 
 .sottotitoli a:hover {
@@ -31,7 +34,7 @@ body {
 
 #contenuto {
     padding: 20px;
-    background-color: #fbf2ea; /* Stesso colore dello sfondo della pagina */
+    background-color: #fbf2ea;
 }
 
 /* Stile per i titoli delle sezioni */
