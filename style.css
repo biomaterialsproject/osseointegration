@@ -37,7 +37,7 @@ body {
     background-color: #fbf2ea;
 }
 
-/* Stile per il titolo iniziale con sfondo chiaro */
+
 .titolo-riquadrato {
     background-color: #d9af8c; /* Stesso colore dello sfondo */
     color: white; /* Testo bianco */
@@ -46,9 +46,8 @@ body {
     border-radius: 10px;
     font-size: 22px;
     font-weight: bold;
-    width: fit-content;
+    display: inline-block; /* Cambiato da block a inline-block */
     margin: 20px auto;
-    display: block;
     border: 2px solid white; /* Bordo bianco per maggiore visibilità */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
