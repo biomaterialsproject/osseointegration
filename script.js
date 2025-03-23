@@ -28,14 +28,45 @@ function loadContent(page) {
         `;
     } else if (page === 'sezione2') {
         document.getElementById('contenuto').innerHTML = `
-            <h2 class="titolo-riquadrato">AUDIO</h2>
-            <p>Testo</p>
+            <h2 class="titolo-riquadrato">PODCAST</h2>
+            <p>Qui mettiamo la descrizione per il nostro podcast</p>
             
-            <h3>Ascolta il file audio:</h3>
+            <h3>Episodio 1:</h3>
             <audio controls>
                 <source src="audioprova.mp3" type="audio/mpeg">
                 Il tuo browser non supporta l'audio HTML5.
             </audio>
+            
+            <h3>Episodio 2:</h3>
+                <audio controls>
+                    <source src="audioprova.mp3" type="audio/mpeg">
+                    Il tuo browser non supporta l'audio HTML5.
+                </audio>
+
+            <h3>Episodio 3:</h3>
+                <audio controls>
+                    <source src="audioprova.mp3" type="audio/mpeg">
+                    Il tuo browser non supporta l'audio HTML5.
+                </audio>
+            
+            <h3>Episodio 4:</h3>
+                <audio controls>
+                    <source src="audioprova.mp3" type="audio/mpeg">
+                    Il tuo browser non supporta l'audio HTML5.
+                </audio>
+
+            <h3>Episodio 5:</h3>
+                <audio controls>
+                    <source src="audioprova.mp3" type="audio/mpeg">
+                    Il tuo browser non supporta l'audio HTML5.
+                </audio>
+            
+            <h3>Episodio 6:</h3>
+                <audio controls>
+                    <source src="audioprova.mp3" type="audio/mpeg">
+                    Il tuo browser non supporta l'audio HTML5.
+                </audio>
         `;
+   
     }
 }
