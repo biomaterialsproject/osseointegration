@@ -1,87 +1,80 @@
-/* Reset globale */
-* {
+/* Stili generali per il corpo della pagina */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f4f4f4;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
-}
-
-/* Barra superiore azzurra */
+/* Barra superiore */
 .header {
-    background-color: #00aaff; /* Azzurro */
-    color: white;              /* Testo bianco */
-    text-align: center;
+    background-color: #008CBA; /* Colore azzurro */
+    color: white;
     padding: 20px;
+    text-align: center;
 }
 
-/* Titolo all'interno della barra */
-.header h1 {
-    font-size: 2.5rem;
+/* Barra di navigazione */
+.nav {
+    display: flex;
+    justify-content: center;
+    background-color: #00AEEF; /* Colore azzurro più chiaro */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Elementi di navigazione */
+.nav-item {
+    margin: 0 15px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover - cambio colore quando ci si passa sopra con il mouse */
+.nav-item:hover {
+    background-color: #4CAF50; /* Colore verde */
+    color: white;
+}
+
+/* Sezione attiva - quando è selezionata */
+.nav-item.active {
+    background-color: #4CAF50; /* Colore verde per la sezione attiva */
+    color: white;
     font-weight: bold;
 }
 
-/* Barra inferiore azzurra chiara */
-.navbar {
-    background-color: #a2d9ff; /* Azzurro più chiaro */
-    padding: 10px 0;
-    text-align: center;
+/* Contenuto delle pagine */
+#content {
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-.navbar-content {
-    display: flex; /* Utilizzo Flexbox per allineare gli elementi orizzontalmente */
-    justify-content: center; /* Allinea al centro */
-    align-items: center; /* Allinea verticalmente */
-}
-
-.nav-item {
-    margin: 0 15px;
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    display: inline-block;
-    background-color: #a2d9ff;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Colore quando ci clicchi sopra */
-.nav-item:active {
-    background-color: #00aaff; /* Cambia colore al clic */
-    color: #d3d3d3; /* Testo illuminato di grigio */
-}
-
-/* Effetto hover per migliorare l'interazione */
-.nav-item:hover {
-    background-color: #00aaff; /* Cambia colore al passaggio del mouse */
-    color: #d3d3d3; /* Testo illuminato di grigio */
-}
-
-/* La classe attiva per il link */
-.nav-item.active {
-    background-color: #00aaff; /* Colore di sfondo per il link attivo */
-    color: #d3d3d3; /* Colore del testo per il link attivo */
-}
-
-/* Contenuto principale */
-main {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 2rem;
+/* Titoli */
+h1, h2 {
     color: #333;
-    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
 }
 
-section p {
-    font-size: 1.2rem;
-    color: #666;
-    line-height: 1.8;
+/* Stilizzazione dei paragrafi */
+p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Stilizzazione delle immagini */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
 }
