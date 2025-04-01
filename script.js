@@ -1,50 +1,44 @@
-// Funzione per attivare il link selezionato
-function activateLink(selected) {
-    // Rimuovi la classe "active" da tutti i link
-    const links = document.querySelectorAll('.nav-item');
-    links.forEach(link => {
-        link.classList.remove('active');
+// Funzione per caricare il contenuto dinamico per ogni sezione
+function loadContent(section) {
+    // Aggiungi la classe 'active' alla sezione selezionata
+    setActiveSection(section);
+
+    // Carica il contenuto specifico per la sezione
+    const contentDiv = document.getElementById("content");
+    if (section === 'uno') {
+        contentDiv.innerHTML = "<h2>Contenuto della sezione Uno</h2><p>Questo è il contenuto della pagina uno.</p>";
+    } else if (section === 'due') {
+        contentDiv.innerHTML = "<h2>Contenuto della sezione Due</h2><p>Questo è il contenuto della pagina due.</p>";
+    } else if (section === 'tre') {
+        contentDiv.innerHTML = "<h2>Contenuto della sezione Tre</h2><p>Questo è il contenuto della pagina tre.</p>";
+    } else if (section === 'quattro') {
+        contentDiv.innerHTML = "<h2>Contenuto della sezione Quattro</h2><p>Questo è il contenuto della pagina quattro.</p>";
+    }
+
+    // Salva la sezione attiva nel localStorage
+    localStorage.setItem('activeSection', section);
+}
+
+// Funzione per gestire l'aggiornamento della classe 'active'
+function setActiveSection(section) {
+    // Rimuovi la classe 'active' da tutte le sezioni
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+        item.classList.remove('active');
     });
 
-    // Aggiungi la classe "active" al link selezionato
-    document.getElementById(selected).classList.add('active');
-}
-
-// Funzione per caricare il contenuto in base alla sezione selezionata
-function loadContent(section) {
-    const contentArea = document.getElementById('content'); // Aggiungi un id per l'area di contenuto
-
-    if (section === 'uno') {
-        contentArea.innerHTML = `
-            <h2>Sezione 1: Introduzione</h2>
-            <p>Questo è il contenuto della sezione 1...</p>
-        `;
-    } else if (section === 'due') {
-        contentArea.innerHTML = `
-            <h2>Sezione 2: Dettagli</h2>
-            <p>Questo è il contenuto della sezione 2...</p>
-        `;
-    } else if (section === 'tre') {
-        contentArea.innerHTML = `
-            <h2>Sezione 3: Approfondimenti</h2>
-            <p>Questo è il contenuto della sezione 3...</p>
-        `;
-    } else if (section === 'quattro') {
-        contentArea.innerHTML = `
-            <h2>Sezione 4: Conclusioni</h2>
-            <p>Questo è il contenuto della sezione 4...</p>
-        `;
+    // Aggiungi la classe 'active' alla sezione selezionata
+    const activeItem = document.getElementById(section);
+    if (activeItem) {
+        activeItem.classList.add('active');
     }
 }
 
-// Funzione per mantenere attivo il link alla pagina iniziale
+// Funzione che viene chiamata quando la pagina viene caricata
 window.onload = function() {
-    // Reindirizza sempre alla pagina "uno.html" alla ricarica
-    if (window.location.pathname === '/quattro.html' || window.location.pathname === '/tre.html' || window.location.pathname === '/due.html') {
-        window.location.replace('uno.html'); // Reindirizza a "uno.html"
-    } else {
-        // Se siamo già su "uno.html", evidenziamo il link corrispondente e carichiamo il contenuto
-        activateLink('uno');
-        loadContent('uno');
-    }
-}
+    // Controlla se c'è una sezione memorizzata nel localStorage
+    const activeSection = localStorage.getItem('activeSection') || 'uno'; // Default a 'uno' se non è presente
+
+    // Carica il contenuto della sezione attiva
+    loadContent(activeSection);
+};
