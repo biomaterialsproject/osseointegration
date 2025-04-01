@@ -1,14 +1,35 @@
-// Funzione per attivare il link cliccato
-function activateLink(id) {
-    // Rimuovi la classe 'active' da tutti i link
-    const links = document.querySelectorAll('.nav-item');
-    links.forEach(link => link.classList.remove('active'));
+// Funzione per caricare il contenuto in base alla sezione cliccata
+function loadPage(page) {
+    // Rimuovi la classe "active" da tutte le voci di navigazione
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.remove('active');
+    });
 
-    // Aggiungi la classe 'active' al link cliccato
-    document.getElementById(id).classList.add('active');
-}
+    // Aggiungi la classe "active" alla voce cliccata
+    document.getElementById('nav' + page).classList.add('active');
 
-// Attiva il primo link al caricamento della pagina
-window.onload = function() {
-    activateLink('uno'); // Imposta "Uno" come attivo all'inizio
+    // Cambia il contenuto in base alla sezione selezionata
+    const content = document.getElementById('content');
+
+    if (page === 1) {
+        content.innerHTML = `
+            <h2>Benvenuto nella sezione Uno!</h2>
+            <p>Questa è la sezione Uno. Clicca sulle altre sezioni per vedere contenuti differenti.</p>
+        `;
+    } else if (page === 2) {
+        content.innerHTML = `
+            <h2>Sezione Due</h2>
+            <p>Questa è la sezione due. Qui discuteremo degli aspetti avanzati dell'osteointegrazione.</p>
+        `;
+    } else if (page === 3) {
+        content.innerHTML = `
+            <h2>Sezione Tre</h2>
+            <p>Questa è la sezione tre. Qui esploreremo le tecniche moderne utilizzate per valutare l'osteointegrazione.</p>
+        `;
+    } else if (page === 4) {
+        content.innerHTML = `
+            <h2>Sezione Quattro</h2>
+            <p>Questa è la sezione quattro. Qui parleremo dei recenti sviluppi nella tecnologia dei biomateriali.</p>
+        `;
+    }
 }
