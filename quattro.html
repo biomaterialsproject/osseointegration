@@ -3,33 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quattro - Biomateriali</title>
+    <title>Biomateriali - Progetto - Quattro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Barra superiore azzurra -->
-    <header class="header">
-        <h1>Biomateriali</h1>
-    </header>
-
-    <!-- Barra inferiore azzurra più chiara -->
-    <nav class="navbar">
-        <div class="navbar-content">
-            <a href="uno.html" class="nav-item" id="uno" onclick="activateLink('uno')">Uno</a>
-            <a href="due.html" class="nav-item" id="due" onclick="activateLink('due')">Due</a>
-            <a href="tre.html" class="nav-item" id="tre" onclick="activateLink('tre')">Tre</a>
-            <a href="quattro.html" class="nav-item" id="quattro" onclick="activateLink('quattro')">Quattro</a>
-        </div>
-    </nav>
-
-    <!-- Contenuto della pagina Quattro -->
-    <main>
-        <section>
-            <h2>Pagina Quattro - Biomateriali</h2>
-            <p>Questa è la pagina quattro, dedicata alle ricerche future e alle innovazioni nel campo dei biomateriali.</p>
-        </section>
-    </main>
+    <div class="navbar">
+        <a href="uno.html" class="nav-item" id="uno" onclick="loadContent('uno')">Uno</a>
+        <a href="due.html" class="nav-item" id="due" onclick="loadContent('due')">Due</a>
+        <a href="tre.html" class="nav-item" id="tre" onclick="loadContent('tre')">Tre</a>
+        <a href="quattro.html" class="nav-item" id="quattro" onclick="loadContent('quattro')">Quattro</a>
+    </div>
+    
+    <div id="content">
+        <!-- Il contenuto dinamico verrà caricato qui -->
+    </div>
 
     <script src="script.js"></script>
 </body>
