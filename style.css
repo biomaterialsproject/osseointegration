@@ -62,6 +62,12 @@ body {
     color: #d3d3d3; /* Testo illuminato di grigio */
 }
 
+/* La classe attiva per il link */
+.nav-item.active {
+    background-color: #00aaff; /* Colore di sfondo per il link attivo */
+    color: #d3d3d3; /* Colore del testo per il link attivo */
+}
+
 /* Contenuto principale */
 main {
     padding: 40px 20px;
