@@ -1,55 +1,103 @@
-function loadHome() {
-    // Cambia il contenuto della home
-    document.getElementById('contenuto').innerHTML = `
-        <h2 class="titolo-riquadrato">Benvenuto nella pagina iniziale!</h2>
-        <p>Introduzione al progetto e agli obiettivi.</p>
-    `;
-
-    // Reset colore titoli
-    resetMenu();
-    document.getElementById('home').classList.add('active');
+/* Generale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-function loadContent(page) {
-    let content = '';
-    
-    if (page === 'pagina1') {
-        content = `
-            <h2 class="titolo-riquadrato">Sezione 1: Introduzione</h2>
-            <div class="immagine">
-                <img src="https://raw.githubusercontent.com/biomaterialsproject/osteointegration/main/Fratture-Collo-Femore-Osteosintesi.jpg" alt="Frattura collo del femore" class="img-contenuto">
-            </div>
-            <div class="testo">
-                <p>Benvenuti nella prima sezione del sito. Qui parliamo dell'importanza della struttura di un sito web.</p>
-            </div>
-        `;
-    } else if (page === 'sezione2') {
-        content = `
-            <h2 class="titolo-riquadrato">Sezione 2: Dettagli Tecnici</h2>
-            <p>Questa sezione tratta le tecniche per la valutazione dell'osteointegrazione.</p>
-        `;
-    } else if (page === 'podcast') {
-        content = `
-            <h2 class="titolo-riquadrato">Podcast: Osteointegrazione</h2>
-            <p>Qui mettiamo la descrizione per il nostro podcast.</p>
-            <audio controls>
-                <source src="audioprova.mp3" type="audio/mpeg">
-                Il tuo browser non supporta l'audio HTML5.
-            </audio>
-        `;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2 {
+    color: #2C3E50;
+}
+
+/* Header e Navbar */
+header {
+    background-color: #2C3E50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #18BC9C;
+    border-bottom: 2px solid #18BC9C;
+}
+
+/* Contenuto principale */
+main {
+    padding: 30px;
+    background-color: white;
+}
+
+#intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#intro img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Sezioni di contenuto */
+section {
+    margin: 40px 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2C3E50;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
     }
 
-    document.getElementById('contenuto').innerHTML = content;
+    nav ul {
+        flex-direction: column;
+    }
 
-    // Cambia il colore del titolo
-    resetMenu();
-    document.getElementById(page).classList.add('active');
-}
+    nav ul li {
+        margin: 10px 0;
+    }
 
-function resetMenu() {
-    // Rimuovi il colore verde da tutti i link
-    const links = document.querySelectorAll('.sottotitoli a');
-    links.forEach(link => {
-        link.classList.remove('active');
-    });
+    #intro img {
+        width: 100%;
+    }
 }
