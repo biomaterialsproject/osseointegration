@@ -12,4 +12,3 @@ function activateLink(id) {
 window.onload = function() {
     activateLink('uno'); // Imposta "Uno" come attivo all'inizio
 }
-
