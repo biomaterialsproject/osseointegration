@@ -1,29 +1,87 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset globale */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.navbar {
-    background-color: #007BFF;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Barra superiore azzurra */
+.header {
+    background-color: #00aaff; /* Azzurro */
+    color: white;              /* Testo bianco */
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+}
+
+/* Titolo all'interno della barra */
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Barra inferiore azzurra chiara */
+.navbar {
+    background-color: #a2d9ff; /* Azzurro più chiaro */
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar-content {
+    display: flex; /* Utilizzo Flexbox per allineare gli elementi orizzontalmente */
+    justify-content: center; /* Allinea al centro */
+    align-items: center; /* Allinea verticalmente */
 }
 
 .nav-item {
     margin: 0 15px;
-    color: white;
     text-decoration: none;
-    padding: 10px;
-    background-color: #007BFF;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    display: inline-block;
+    background-color: #a2d9ff;
     border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Colore quando ci clicchi sopra */
+.nav-item:active {
+    background-color: #00aaff; /* Cambia colore al clic */
+    color: #d3d3d3; /* Testo illuminato di grigio */
+}
+
+/* Effetto hover per migliorare l'interazione */
 .nav-item:hover {
-    background-color: #0056b3;
+    background-color: #00aaff; /* Cambia colore al passaggio del mouse */
+    color: #d3d3d3; /* Testo illuminato di grigio */
 }
 
-#content {
-    padding: 20px;
-    background-color: #f4f4f4;
+/* La classe attiva per il link */
+.nav-item.active {
+    background-color: #00aaff; /* Colore di sfondo per il link attivo */
+    color: #d3d3d3; /* Colore del testo per il link attivo */
+}
+
+/* Contenuto principale */
+main {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
 }
