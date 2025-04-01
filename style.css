@@ -1,95 +1,29 @@
-/* Stili generali per il corpo della pagina */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
-/* Barra superiore */
-.header {
-    background-color: #008CBA; /* Colore azzurro */
-    color: white;
-    padding: 20px;
+.navbar {
+    background-color: #007BFF;
     text-align: center;
+    padding: 10px;
 }
 
-/* Barra di navigazione */
-.nav {
-    display: flex;
-    justify-content: center;
-    background-color: #00AEEF; /* Colore azzurro più chiaro */
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Elementi di navigazione */
 .nav-item {
     margin: 0 15px;
-    padding: 10px 15px;
+    color: white;
     text-decoration: none;
-    color: white;
-    font-size: 18px;
+    padding: 10px;
+    background-color: #007BFF;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hover - cambio colore quando ci si passa sopra con il mouse */
 .nav-item:hover {
-    background-color: #4CAF50; /* Colore verde */
-    color: white;
+    background-color: #0056b3;
 }
 
-/* Sezione attiva - quando è selezionata */
-.nav-item.active {
-    background-color: #4CAF50; /* Colore verde per la sezione attiva */
-    color: white;
-    font-weight: bold;
-}
-
-/* Contenuto delle pagine */
 #content {
     padding: 20px;
-    background-color: white;
-    margin: 20px auto;
-    max-width: 900px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-/* Titoli */
-h1, h2 {
-    color: #333;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Stilizzazione dei paragrafi */
-p {
-    color: #555;
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-/* Stilizzazione delle immagini */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px 0;
-}
-
-/* Stile dei link (per evitare sottolineatura) */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Box shadow e bordi per un effetto più "professionale" */
-.box-shadow {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 20px;
-    background-color: white;
-    margin: 20px;
+    background-color: #f4f4f4;
 }
