@@ -1,9 +1,9 @@
 function loadHome() {
     document.getElementById('contenuto').innerHTML = `
-        <section id="intro">
-            <h2>Benvenuti nel nostro progetto di Osteointegrazione</h2>
-            <p>Il progetto si concentra sulle tecniche avanzate per valutare l'osteointegrazione, un aspetto cruciale nell'implantologia medica.</p>
-            <img src="https://via.placeholder.com/800x400" alt="Osteointegrazione" class="img-responsive">
+        <section class="intro">
+            <h2>Benvenuti nel progetto di Osteointegrazione</h2>
+            <p>Esplora le tecniche avanzate per valutare l'osteointegrazione, una parte fondamentale nell'implantologia medica.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Osteointegrazione" class="image-responsive">
         </section>
     `;
     setActiveLink('home');
@@ -15,7 +15,7 @@ function loadContent(page) {
         content = `
             <section>
                 <h2>Tecniche di Osseointegrazione</h2>
-                <p>Descrizione delle principali tecniche utilizzate per valutare l'osteointegrazione.</p>
+                <p>Scopri le tecniche avanzate utilizzate per valutare l'osteointegrazione e la loro applicazione pratica.</p>
             </section>
         `;
     } else if (page === 'podcast') {
