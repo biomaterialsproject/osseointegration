@@ -36,13 +36,13 @@ body {
 
 /* Hover - cambio colore quando ci si passa sopra con il mouse */
 .nav-item:hover {
-    background-color: #4CAF50; /* Colore verde */
+    background-color: #D3D3D3; /* Colore grigio */
     color: white;
 }
 
 /* Sezione attiva - quando è selezionata */
 .nav-item.active {
-    background-color: #4CAF50; /* Colore verde per la sezione attiva */
+    background-color: #D3D3D3; /* Colore grigio per la sezione attiva */
     color: white;
     font-weight: bold;
 }
