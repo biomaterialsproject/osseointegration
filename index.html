@@ -3,33 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Biomateriali</title>
+    <title>Biomateriali - Osteointegrazione</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Barra superiore azzurra -->
-    <header class="header">
+    <!-- Barra superiore -->
+    <div class="header">
         <h1>Biomateriali</h1>
-    </header>
+    </div>
 
-    <!-- Barra inferiore azzurra più chiara -->
-    <nav class="navbar">
-        <div class="navbar-content">
-            <a href="#" class="nav-item" id="uno" onclick="activateLink('uno')">Uno</a>
-            <a href="#" class="nav-item" id="due" onclick="activateLink('due')">Due</a>
-            <a href="#" class="nav-item" id="tre" onclick="activateLink('tre')">Tre</a>
-            <a href="#" class="nav-item" id="quattro" onclick="activateLink('quattro')">Quattro</a>
-        </div>
-    </nav>
+    <!-- Barra di navigazione -->
+    <div class="nav">
+        <a href="#" class="nav-item" id="nav1" onclick="loadPage(1)">Uno</a>
+        <a href="#" class="nav-item" id="nav2" onclick="loadPage(2)">Due</a>
+        <a href="#" class="nav-item" id="nav3" onclick="loadPage(3)">Tre</a>
+        <a href="#" class="nav-item" id="nav4" onclick="loadPage(4)">Quattro</a>
+    </div>
 
-    <!-- Contenuto della pagina -->
-    <main>
-        <section>
-            <h2>Benvenuti nella pagina di Biomateriali</h2>
-            <p>Questa è una sezione dedicata allo studio dei biomateriali, in particolare per l'osteointegrazione e altre applicazioni mediche.</p>
-        </section>
-    </main>
+    <!-- Contenuto dinamico -->
+    <div id="content">
+        <h2>Benvenuto nella sezione Uno!</h2>
+        <p>Questa è la sezione Uno. Clicca sulle altre sezioni per vedere contenuti differenti.</p>
+    </div>
 
     <script src="script.js"></script>
 </body>
