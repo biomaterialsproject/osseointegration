@@ -1,72 +1,55 @@
 function loadHome() {
-    // Ripristina solo il contenuto della home senza cambiarlo
+    // Cambia il contenuto della home
     document.getElementById('contenuto').innerHTML = `
         <h2 class="titolo-riquadrato">Benvenuto nella pagina iniziale!</h2>
-        <p>Prodotti del mini-progetto  
-1. un documento organizzato a vostro piacere, che risponda alle domande del paragrafo “contenuti”. 
-Il documento deve essere curato, con riferimenti bibliografici, figure e schemi. 
-2. Una figura/schema che riassuma il messaggio del vostro documento, che metterete subito sotto il 
-titolo, come “graphical abstract”, riassunto grafico. 
-3. Un “tweet” che usereste per lanciare sul social il vostro document</p>
-        <p>Breve introduzione: Qual è il contesto? Qual è il problema? 
-Parte principale: Quali metodi vengono utilizzati per studiare o prevedere la capacità di favorire 
-osteointegrazione? Collegate i metodi ai diversi aspetti dell’osteointegrazione e alle caratteristiche del 
-dispositivo. Quali sono gli aspetti critici nel valutare l’osteointegrazione? </p>
+        <p>Introduzione al progetto e agli obiettivi.</p>
     `;
+
+    // Reset colore titoli
+    resetMenu();
+    document.getElementById('home').classList.add('active');
 }
 
 function loadContent(page) {
+    let content = '';
+    
     if (page === 'pagina1') {
-        document.getElementById('contenuto').innerHTML = `
-            <h2 class="titolo-riquadrato">IMMAGINI</h2>
+        content = `
+            <h2 class="titolo-riquadrato">Sezione 1: Introduzione</h2>
             <div class="immagine">
-                <img src="https://github.com/biomaterialsproject/osteointegration/blob/main/Fratture-Collo-Femore-Osteosintesi.jpg?raw=true" alt="Frattura collo del femore" class="img-contenuto">
+                <img src="https://raw.githubusercontent.com/biomaterialsproject/osteointegration/main/Fratture-Collo-Femore-Osteosintesi.jpg" alt="Frattura collo del femore" class="img-contenuto">
             </div>
             <div class="testo">
-                <p>Testo</p>
+                <p>Benvenuti nella prima sezione del sito. Qui parliamo dell'importanza della struttura di un sito web.</p>
             </div>
         `;
     } else if (page === 'sezione2') {
-        document.getElementById('contenuto').innerHTML = `
-            <h2 class="titolo-riquadrato">PODCAST</h2>
-            <p>Qui mettiamo la descrizione per il nostro podcast</p>
-            
-            <h3>Episodio 1:</h3>
+        content = `
+            <h2 class="titolo-riquadrato">Sezione 2: Dettagli Tecnici</h2>
+            <p>Questa sezione tratta le tecniche per la valutazione dell'osteointegrazione.</p>
+        `;
+    } else if (page === 'podcast') {
+        content = `
+            <h2 class="titolo-riquadrato">Podcast: Osteointegrazione</h2>
+            <p>Qui mettiamo la descrizione per il nostro podcast.</p>
             <audio controls>
                 <source src="audioprova.mp3" type="audio/mpeg">
                 Il tuo browser non supporta l'audio HTML5.
             </audio>
-            
-            <h3>Episodio 2:</h3>
-                <audio controls>
-                    <source src="audioprova.mp3" type="audio/mpeg">
-                    Il tuo browser non supporta l'audio HTML5.
-                </audio>
-
-            <h3>Episodio 3:</h3>
-                <audio controls>
-                    <source src="audioprova.mp3" type="audio/mpeg">
-                    Il tuo browser non supporta l'audio HTML5.
-                </audio>
-            
-            <h3>Episodio 4:</h3>
-                <audio controls>
-                    <source src="audioprova.mp3" type="audio/mpeg">
-                    Il tuo browser non supporta l'audio HTML5.
-                </audio>
-
-            <h3>Episodio 5:</h3>
-                <audio controls>
-                    <source src="audioprova.mp3" type="audio/mpeg">
-                    Il tuo browser non supporta l'audio HTML5.
-                </audio>
-            
-            <h3>Episodio 6:</h3>
-                <audio controls>
-                    <source src="audioprova.mp3" type="audio/mpeg">
-                    Il tuo browser non supporta l'audio HTML5.
-                </audio>
         `;
-   
     }
+
+    document.getElementById('contenuto').innerHTML = content;
+
+    // Cambia il colore del titolo
+    resetMenu();
+    document.getElementById(page).classList.add('active');
+}
+
+function resetMenu() {
+    // Rimuovi il colore verde da tutti i link
+    const links = document.querySelectorAll('.sottotitoli a');
+    links.forEach(link => {
+        link.classList.remove('active');
+    });
 }
