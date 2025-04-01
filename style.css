@@ -3,7 +3,7 @@ body {
     background-color: #fbf2ea;
     margin: 0;
     padding: 0;
-    text-align: center; /* Centra il contenuto principale */
+    text-align: center;
 }
 
 .header-titolo {
@@ -33,34 +33,36 @@ body {
     text-decoration: underline;
 }
 
+.sottotitoli a.active {
+    color: green;
+}
+
 #contenuto {
     padding: 20px;
     background-color: #fbf2ea;
 }
 
-/* Stile per il titolo iniziale con sfondo */
 .titolo-riquadrato {
-    background-color: #d9af8c; /* Sfondo colorato */
-    color: white; /* Testo bianco */
+    background-color: #d9af8c;
+    color: white;
     padding: 15px;
     border-radius: 10px;
     font-size: 22px;
     font-weight: bold;
-    display: inline-block; /* Adatta la larghezza al contenuto */
+    display: inline-block;
     text-align: center;
     margin: 20px auto;
-    border: 2px solid white; /* Bordo bianco */
+    border: 2px solid white;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Stile per tutti i titoli delle sezioni */
 h2 {
     background-color: #d9af8c;
     color: white;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
-    display: inline-block; /* Mantiene il layout compatto */
+    display: inline-block;
     margin: 10px auto;
 }
 
