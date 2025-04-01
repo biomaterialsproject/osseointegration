@@ -1,4 +1,4 @@
-/* Generale */
+/* Reset globale */
 * {
     margin: 0;
     padding: 0;
@@ -6,98 +6,108 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
     color: #333;
-}
-
-h1, h2 {
-    color: #2C3E50;
+    line-height: 1.6;
 }
 
 /* Header e Navbar */
 header {
-    background-color: #2C3E50;
+    background-color: #333;
     color: white;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header .logo h1 {
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    gap: 30px;
 }
 
 nav ul li {
-    margin: 0 20px;
+    position: relative;
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
+    color: #fff;
+    font-weight: 600;
     font-size: 1rem;
-    font-weight: bold;
+    padding: 8px 15px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 nav ul li a:hover, nav ul li a.active {
-    color: #18BC9C;
-    border-bottom: 2px solid #18BC9C;
+    color: #18bc9c;
+    border-bottom: 2px solid #18bc9c;
 }
 
 /* Contenuto principale */
 main {
-    padding: 30px;
+    padding: 40px 20px;
     background-color: white;
+    min-height: 60vh;
+    transition: opacity 0.3s ease;
 }
 
-#intro {
-    text-align: center;
+section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
     margin-bottom: 30px;
 }
 
-#intro img {
-    max-width: 100%;
+section .image-responsive {
+    width: 100%;
+    max-width: 800px;
     height: auto;
     border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Sezioni di contenuto */
-section {
-    margin: 40px 0;
+section .image-responsive:hover {
+    transform: scale(1.05);
 }
 
 /* Footer */
 footer {
+    background-color: #333;
+    color: white;
     text-align: center;
     padding: 20px;
-    background-color: #2C3E50;
-    color: white;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Responsive */
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
     nav ul {
         flex-direction: column;
+        gap: 15px;
+        align-items: center;
     }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    #intro img {
-        width: 100%;
+    
+    .image-responsive {
+        max-width: 100%;
     }
 }
