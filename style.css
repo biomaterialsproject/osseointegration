@@ -28,8 +28,14 @@ body {
 /* Barra inferiore azzurra chiara */
 .navbar {
     background-color: #a2d9ff; /* Azzurro più chiaro */
-    padding: 10px;
+    padding: 10px 0;
     text-align: center;
+}
+
+.navbar-content {
+    display: flex; /* Utilizzo Flexbox per allineare gli elementi orizzontalmente */
+    justify-content: center; /* Allinea al centro */
+    align-items: center; /* Allinea verticalmente */
 }
 
 .nav-item {
@@ -37,13 +43,23 @@ body {
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 10px 20px;
+    display: inline-block;
     background-color: #a2d9ff;
     border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Colore quando ci clicchi sopra */
+.nav-item:active {
+    background-color: #00aaff; /* Cambia colore al clic */
+    color: #d3d3d3; /* Testo illuminato di grigio */
+}
+
+/* Effetto hover per migliorare l'interazione */
 .nav-item:hover {
     background-color: #00aaff; /* Cambia colore al passaggio del mouse */
+    color: #d3d3d3; /* Testo illuminato di grigio */
 }
 
 /* Contenuto principale */
