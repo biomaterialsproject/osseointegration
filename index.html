@@ -3,30 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biomaterials Project</title>
+    <title>Progetto Osteointegrazione</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
-    <header class="header-titolo">
-        <h1>Progetto di Biomateriali: Osteointegrazione</h1>
+    <!-- Navbar principale -->
+    <header>
+        <div class="logo">
+            <h1>Osteointegrazione</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="loadHome()">Home</a></li>
+                <li><a href="#" onclick="loadContent('tecniche')">Tecniche</a></li>
+                <li><a href="#" onclick="loadContent('podcast')">Podcast</a></li>
+                <li><a href="#" onclick="loadContent('risorse')">Risorse</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav class="header-menu">
-        <div class="sottotitoli">
-            <a href="#" class="sottotitolo" id="home" onclick="loadHome()">Home</a>
-            <a href="#" class="sottotitolo" id="sez1" onclick="loadContent('pagina1')">Sez1</a>
-            <a href="#" class="sottotitolo" id="sez2" onclick="loadContent('sezione2')">Sez2</a>
-            <a href="#" class="sottotitolo" id="podcast" onclick="loadContent('podcast')">Podcast</a>
-        </div>
-    </nav>
+    <!-- Contenuto -->
+    <main id="contenuto">
+        <section id="intro">
+            <h2>Benvenuti nel nostro progetto di Osteointegrazione</h2>
+            <p>Il progetto si concentra sulle tecniche avanzate per valutare l'osteointegrazione, un aspetto cruciale nell'implantologia medica.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Osteointegrazione" class="img-responsive">
+        </section>
+    </main>
 
-    <!-- Contenuto iniziale della home che non cambierà -->
-    <section id="contenuto">
-        <h2 class="titolo-riquadrato">Benvenuto nella pagina iniziale!</h2>
-        <p>Introduzione al progetto e agli obiettivi.</p>
-    </section>
-
-    <script src="script.js"></script>
 </body>
 </html>
