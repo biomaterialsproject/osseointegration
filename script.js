@@ -12,14 +12,11 @@ function activateLink(selected) {
 
 // Funzione per mantenere attivo il link alla pagina iniziale
 window.onload = function() {
-    // Ottieni il nome della pagina corrente
-    const path = window.location.pathname;
-    const page = path.split("/").pop().split(".")[0]; // Ottieni il nome del file senza l'estensione
-
-    // Se la pagina è la homepage (index.html), attiva 'uno'
-    if (page === 'index' || page === '') {
-        activateLink('uno'); // Se la home page è caricata, attiva 'uno'
+    // Reindirizza sempre alla pagina "uno.html" alla ricarica
+    if (window.location.pathname === '/quattro.html' || window.location.pathname === '/tre.html' || window.location.pathname === '/due.html') {
+        window.location.replace('uno.html'); // Reindirizza a "uno.html"
     } else {
-        activateLink(page); // Altrimenti, attiva il link della pagina attuale
+        // Se siamo già su "uno.html", evidenziamo il link corrispondente
+        activateLink('uno');
     }
 }
