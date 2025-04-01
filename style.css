@@ -9,56 +9,26 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f6f9;
     color: #333;
-    line-height: 1.6;
 }
 
-/* Header e Navbar */
-header {
-    background-color: #333;
-    color: white;
+/* Barra superiore azzurra */
+.header {
+    background-color: #00aaff; /* Azzurro */
+    color: white;              /* Testo bianco */
+    text-align: center;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-header .logo h1 {
-    font-size: 2rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-nav ul li {
-    position: relative;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 8px 15px;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-nav ul li a:hover, nav ul li a.active {
-    color: #18bc9c;
-    border-bottom: 2px solid #18bc9c;
+/* Titolo all'interno della barra */
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 /* Contenuto principale */
 main {
     padding: 40px 20px;
-    background-color: white;
-    min-height: 60vh;
-    transition: opacity 0.3s ease;
+    text-align: center;
 }
 
 section h2 {
@@ -71,43 +41,4 @@ section p {
     font-size: 1.2rem;
     color: #666;
     line-height: 1.8;
-    margin-bottom: 30px;
-}
-
-section .image-responsive {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-section .image-responsive:hover {
-    transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-    
-    .image-responsive {
-        max-width: 100%;
-    }
 }
