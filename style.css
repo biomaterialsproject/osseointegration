@@ -78,3 +78,17 @@ img {
     display: block;
     margin: 20px 0;
 }
+/* Aggiungi uno spazio tra gli episodi */
+audio {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+}
+
+/* Styling per i titoli degli episodi */
+h3 {
+    color: #333;
+    font-size: 18px;
+    margin-top: 20px;
+}
