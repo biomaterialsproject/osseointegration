@@ -1,7 +1,43 @@
-<div>
-    <h2>Podcast</h2>
-    <p class="content-text">
-        Tune into our podcast series, where we discuss osseointegration with experts in the field. 
-        Each episode covers a different aspect, from fundamental principles to cutting-edge research.
-    </p>
-</div>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomateriali - Osteointegrazione</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Stile per il contenuto giustificato e larghezza personalizzabile */
+        .content-text {
+            max-width: 800px; /* Imposta la larghezza massima desiderata */
+            width: 100%; /* Usa il 100% della larghezza disponibile fino al limite */
+            margin: 0 auto; /* Centra il testo orizzontalmente */
+            text-align: justify; /* Giustifica il testo */
+            word-wrap: break-word; /* Forza il testo ad andare a capo quando necessario */
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra superiore -->
+    <div class="header">
+        <h1>Biomaterials - Group M4</h1>
+    </div>
+
+    <!-- Barra di navigazione -->
+    <div class="nav">
+        <a href="#" class="nav-item" id="nav1" onclick="loadPage(1)">Home</a>
+        <a href="#" class="nav-item" id="nav2" onclick="loadPage(2)">Techniques</a>
+        <a href="#" class="nav-item" id="nav3" onclick="loadPage(3)">New Researches</a>
+        <a href="#" class="nav-item" id="nav4" onclick="loadPage(4)">Podcast</a>
+    </div>
+
+    <!-- Contenuto dinamico -->
+    <div id="content">
+        <h2>Podcast</h2>
+        <p class="content-text">
+            Tune into our podcast series. Each episode covers a different aspect of osseointegration, from fundamental principles to cutting-edge research.
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
