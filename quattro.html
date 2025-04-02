@@ -123,14 +123,20 @@
         </div>
     </div>
 
+    <!-- Script per attivare i sottotitoli -->
     <script>
         // Funzione per mostrare o nascondere i sottotitoli
         function toggleSubtitles(subtitleId) {
             var subtitle = document.getElementById(subtitleId);
-            if (subtitle.style.display === "none" || subtitle.style.display === "") {
-                subtitle.style.display = "block"; // Mostra i sottotitoli
+            if (subtitle) {
+                // Controlla se i sottotitoli sono visibili
+                if (subtitle.style.display === "none" || subtitle.style.display === "") {
+                    subtitle.style.display = "block"; // Mostra i sottotitoli
+                } else {
+                    subtitle.style.display = "none"; // Nascondi i sottotitoli
+                }
             } else {
-                subtitle.style.display = "none"; // Nascondi i sottotitoli
+                console.log("Elemento sottotitoli non trovato:", subtitleId);
             }
         }
     </script>
