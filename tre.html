@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research - Osseointegration</title>
     <style>
+        /* Stili CSS */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -24,7 +25,6 @@
             margin-top: 20px;
         }
 
-        /* Style for the container of images */
         .research-container {
             display: flex;
             justify-content: space-between;
@@ -33,7 +33,6 @@
             flex-wrap: wrap;
         }
 
-        /* Style for each image box */
         .research-box {
             width: 32%;
             position: relative;
@@ -66,7 +65,6 @@
             opacity: 1;
         }
 
-        /* Overlay text */
         .text-overlay {
             position: absolute;
             top: 60%;
@@ -88,14 +86,12 @@
             opacity: 1;
         }
 
-        /* Content container for the paragraphs */
         .research-content-container {
             max-width: 800px;
             margin: 40px auto;
             scroll-margin-top: 20px;
         }
 
-        /* Hidden content for each section */
         .research-content {
             display: none;
             padding: 20px;
@@ -106,7 +102,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Style for active content */
         .active {
             display: block;
             animation: fadeIn 0.5s;
@@ -128,11 +123,6 @@
         }
     </style>
 </head>
-
-
-
-
-    
 <body>
     <h2>Researches on Osseointegration</h2>
     <p class="content-text">
@@ -173,30 +163,26 @@
             <p>In the future, osseointegration could be revolutionized with the use of 3D printing, smart materials, and enhanced biomaterial composites, offering better functionality and compatibility with biological systems.</p>
         </div>
     </div>
-
 <script>
-        function toggleContent(id) {
-    console.log("toggleContent function is called"); // Debugging log
+// Funzione per mostrare o nascondere i contenuti di ricerca
+function toggleContent(id) {
     var selectedContent = document.getElementById(id);
-
-    // Check if the clicked content is already active (open)
+    
+    // Verifica se il contenuto è già visibile
     var isAlreadyActive = selectedContent.classList.contains('active');
-
-    // Hide all content sections first
+    
+    // Nascondi tutti i contenuti
     var contents = document.querySelectorAll('.research-content');
     contents.forEach(function(content) {
         content.classList.remove('active');
     });
-
-    // If the clicked content wasn't already active, show it
-    // If it was already active, it stays closed (since we removed all 'active' classes above)
+    
+    // Mostra il contenuto cliccato, se non è già attivo
     if (!isAlreadyActive) {
         selectedContent.classList.add('active');
-        // Scroll to the content
         selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
-
-    </script>    
+</script>    
 </body>
 </html>
