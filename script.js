@@ -11,25 +11,27 @@ function loadPage(page) {
     // Cambia il contenuto in base alla sezione selezionata
     const content = document.getElementById('content');
 
+    // File da caricare in base alla sezione
+    let fileToLoad = '';
+
     if (page === 1) {
-        content.innerHTML = `
-            <h2>Benvenuto nella sezione Home!</h2>
-            <p>Questa è la sezione Home. Clicca sulle altre sezioni per vedere contenuti differenti.</p>
-        `;
+        fileToLoad = 'uno.html'; // Carica il contenuto da uno.html
     } else if (page === 2) {
-        content.innerHTML = `
-            <h2>Sezione Due</h2>
-            <p>Questa è la sezione due. Qui discuteremo degli aspetti avanzati dell'osteointegrazione.</p>
-        `;
+        fileToLoad = 'due.html'; // Carica il contenuto da due.html
     } else if (page === 3) {
-        content.innerHTML = `
-            <h2>Sezione Tre</h2>
-            <p>Questa è la sezione tre. Qui esploreremo le tecniche moderne utilizzate per valutare l'osteointegrazione.</p>
-        `;
+        fileToLoad = 'tre.html'; // Carica il contenuto da tre.html
     } else if (page === 4) {
-        content.innerHTML = `
-            <h2>Sezione Quattro</h2>
-            <p>Questa è la sezione quattro. Qui parleremo dei recenti sviluppi nella tecnologia dei biomateriali.</p>
-        `;
+        fileToLoad = 'quattro.html'; // Carica il contenuto da quattro.html
     }
+
+    // Carica il contenuto usando fetch
+    fetch(fileToLoad)
+        .then(response => response.text())
+        .then(data => {
+            content.innerHTML = data; // Imposta il contenuto del file HTML nella pagina
+        })
+        .catch(error => {
+            console.error('Errore nel caricamento del file:', error);
+            content.innerHTML = '<p>Impossibile caricare il contenuto. Riprova più tardi.</p>';
+        });
 }
