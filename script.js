@@ -1,37 +1,46 @@
 // Funzione per caricare il contenuto in base alla sezione cliccata
 function loadPage(page) {
+    // Mappa delle pagine ai file HTML corrispondenti
+    const pages = {
+        1: 'uno.html',
+        2: 'due.html',
+        3: 'tre.html',
+        4: 'quattro.html'
+    };
+
     // Rimuovi la classe "active" da tutte le voci di navigazione
     document.querySelectorAll('.nav-item').forEach(item => {
         item.classList.remove('active');
     });
 
     // Aggiungi la classe "active" alla voce cliccata
-    document.getElementById('nav' + page).classList.add('active');
+    const navItem = document.getElementById('nav' + page);
+    if (navItem) {
+        navItem.classList.add('active');
+    }
 
-    // Cambia il contenuto in base alla sezione selezionata
-    const content = document.getElementById('content');
+    // Ottieni il file corrispondente
+    const fileToLoad = pages[page];
 
-    // File da caricare in base alla sezione
-    let fileToLoad = '';
-
-    if (page === 1) {
-        fileToLoad = 'uno.html'; // Carica il contenuto da uno.html
-    } else if (page === 2) {
-        fileToLoad = 'due.html'; // Carica il contenuto da due.html
-    } else if (page === 3) {
-        fileToLoad = 'tre.html'; // Carica il contenuto da tre.html
-    } else if (page === 4) {
-        fileToLoad = 'quattro.html'; // Carica il contenuto da quattro.html
+    if (!fileToLoad) {
+        console.error('Pagina non trovata:', page);
+        document.getElementById('content').innerHTML = '<p>Errore: Pagina non disponibile.</p>';
+        return;
     }
 
     // Carica il contenuto usando fetch
     fetch(fileToLoad)
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Errore nel caricamento del file: ' + response.statusText);
+            }
+            return response.text();
+        })
         .then(data => {
-            content.innerHTML = data; // Imposta il contenuto del file HTML nella pagina
+            document.getElementById('content').innerHTML = data;
         })
         .catch(error => {
-            console.error('Errore nel caricamento del file:', error);
-            content.innerHTML = '<p>Impossibile caricare il contenuto. Riprova più tardi.</p>';
+            console.error(error);
+            document.getElementById('content').innerHTML = '<p>Impossibile caricare il contenuto. Riprova più tardi.</p>';
         });
 }
