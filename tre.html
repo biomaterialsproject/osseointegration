@@ -60,9 +60,8 @@
             opacity: 1; 
         }
         
-        /* Aggiungo un contenitore per i paragrafi sotto le immagini */
         .research-content-container {
-            margin-top: 40px; /* Spazio tra immagini e testo */
+            margin-top: 40px;
             padding: 20px;
             max-width: 800px;
             margin-left: auto;
@@ -75,7 +74,7 @@
             border: 1px solid #ccc;
             border-radius: 8px;
             background: #f9f9f9;
-            margin-bottom: 20px; /* Spazio tra i paragrafi */
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -85,7 +84,6 @@
         This page is dedicated to discovering the latest scientific advancements and research in the field of osseointegration:
     </p>
 
-    <!-- CONTENITORE DELLE IMMAGINI -->
     <div class="research-container">
         <div class="research-box" onclick="toggleContent('research1')">
             <h4>Innovative implants surface</h4>
@@ -104,7 +102,6 @@
         </div>
     </div>
 
-    <!-- CONTENITORE PER I PARAGRAFI (posizionato sotto le immagini) -->
     <div class="research-content-container">
         <div id="research1" class="research-content">
             <h3>Material Science in Osseointegration</h3>
@@ -121,27 +118,20 @@
     </div>
 
     <script>
-
-    function toggleContent(id) {
-        // Seleziona tutti i paragrafi
-        var contents = document.querySelectorAll('.research-content');
-
-        // Controlla se il paragrafo selezionato è già visibile
-        var selectedContent = document.getElementById(id);
-        var isVisible = selectedContent.style.display === "block";
-
-        // Nasconde tutti i paragrafi
-        contents.forEach(function(content) {
-            content.style.display = "none";
-        });
-
-        // Se il paragrafo selezionato non era visibile, lo mostra
-        if (!isVisible) {
-            selectedContent.style.display = "block";
-            selectedContent.scrollIntoView({ behavior: "smooth" });
+        function toggleContent(id) {
+            var contents = document.querySelectorAll('.research-content');
+            var selectedContent = document.getElementById(id);
+            var isCurrentlyVisible = selectedContent.style.display === "block";
+            
+            contents.forEach(function(content) {
+                content.style.display = "none";
+            });
+            
+            if (!isCurrentlyVisible) {
+                selectedContent.style.display = "block";
+                selectedContent.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
         }
-    }
-</script>
-
+    </script>
 </body>
 </html>
