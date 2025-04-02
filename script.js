@@ -1,46 +1,48 @@
+// Funzione per mostrare o nascondere i sottotitoli di un episodio
+function toggleSubtitles(subtitleId) {
+    var subtitle = document.getElementById(subtitleId);
+
+    if (subtitle.style.display === "none" || subtitle.style.display === "") {
+        subtitle.style.display = "block"; // Mostra i sottotitoli
+    } else {
+        subtitle.style.display = "none"; // Nascondi i sottotitoli
+    }
+}
+
 // Funzione per caricare il contenuto in base alla sezione cliccata
 function loadPage(page) {
-    // Mappa delle pagine ai file HTML corrispondenti
-    const pages = {
-        1: 'uno.html',
-        2: 'due.html',
-        3: 'tre.html',
-        4: 'quattro.html'
-    };
-
     // Rimuovi la classe "active" da tutte le voci di navigazione
     document.querySelectorAll('.nav-item').forEach(item => {
         item.classList.remove('active');
     });
 
     // Aggiungi la classe "active" alla voce cliccata
-    const navItem = document.getElementById('nav' + page);
-    if (navItem) {
-        navItem.classList.add('active');
-    }
+    document.getElementById('nav' + page).classList.add('active');
 
-    // Ottieni il file corrispondente
-    const fileToLoad = pages[page];
+    // Cambia il contenuto in base alla sezione selezionata
+    const content = document.getElementById('content');
 
-    if (!fileToLoad) {
-        console.error('Pagina non trovata:', page);
-        document.getElementById('content').innerHTML = '<p>Errore: Pagina non disponibile.</p>';
-        return;
+    // File da caricare in base alla sezione
+    let fileToLoad = '';
+
+    if (page === 1) {
+        fileToLoad = 'home.html'; // Carica il contenuto da home.html
+    } else if (page === 2) {
+        fileToLoad = 'due.html'; // Carica il contenuto da due.html
+    } else if (page === 3) {
+        fileToLoad = 'tre.html'; // Carica il contenuto da tre.html
+    } else if (page === 4) {
+        fileToLoad = 'quattro.html'; // Carica il contenuto da quattro.html
     }
 
     // Carica il contenuto usando fetch
     fetch(fileToLoad)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Errore nel caricamento del file: ' + response.statusText);
-            }
-            return response.text();
-        })
+        .then(response => response.text())
         .then(data => {
-            document.getElementById('content').innerHTML = data;
+            content.innerHTML = data; // Imposta il contenuto del file HTML nella pagina
         })
         .catch(error => {
-            console.error(error);
-            document.getElementById('content').innerHTML = '<p>Impossibile caricare il contenuto. Riprova più tardi.</p>';
+            console.error('Errore nel caricamento del file:', error);
+            content.innerHTML = '<p>Impossibile caricare il contenuto. Riprova più tardi.</p>';
         });
 }
