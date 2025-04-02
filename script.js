@@ -9,7 +9,7 @@
         /* Stile per la voce di navigazione attiva */
         .active {
             font-weight: bold;
-            color: #007bff; /* Aggiungi il colore che preferisci */
+            color: #007bff; /* Colore evidenziato per la voce attiva */
         }
 
         /* Stile per i contenuti testuali giustificati */
