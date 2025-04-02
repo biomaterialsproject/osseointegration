@@ -1,3 +1,8 @@
+// Carica la home all'avvio
+document.addEventListener("DOMContentLoaded", function () {
+    loadPage(1);
+});
+
 // Funzione per mostrare o nascondere i sottotitoli di un episodio
 function toggleSubtitles(subtitleId) {
     var subtitle = document.getElementById(subtitleId);
@@ -36,7 +41,12 @@ function loadPage(page) {
 
     // Carica il contenuto usando fetch
     fetch(fileToLoad)
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Errore nel caricamento del file");
+            }
+            return response.text();
+        })
         .then(data => {
             content.innerHTML = data; // Imposta il contenuto del file HTML nella pagina
         })
