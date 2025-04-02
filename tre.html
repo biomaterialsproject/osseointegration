@@ -169,25 +169,24 @@
 
         function toggleContent(id) {
             const selectedContent = document.getElementById(id);
-            
+
             // Se è lo stesso elemento cliccato, chiudilo
             if (lastClicked === id) {
                 selectedContent.classList.remove('active');
                 lastClicked = null;
-                return;
+            } else {
+                // Se è un nuovo elemento, chiudi quello precedente (se esiste)
+                if (lastClicked !== null) {
+                    document.getElementById(lastClicked).classList.remove('active');
+                }
+
+                // Aggiungi la classe 'active' all'elemento cliccato
+                selectedContent.classList.add('active');
+
+                // Aggiorna l'ultimo elemento cliccato
+                lastClicked = id;
             }
 
-            // Se è un nuovo elemento, chiudi quello precedente (se esiste)
-            if (lastClicked !== null) {
-                document.getElementById(lastClicked).classList.remove('active');
-            }
-
-            // Aggiungi la classe 'active' all'elemento cliccato
-            selectedContent.classList.add('active');
-
-            // Aggiorna l'ultimo elemento cliccato
-            lastClicked = id;
-            
             // Scroll to the content
             selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
