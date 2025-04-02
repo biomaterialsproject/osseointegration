@@ -7,6 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
         }
         h2 {
             text-align: center;
@@ -26,7 +28,9 @@
         .research-container {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            flex-wrap: wrap;
         }
 
         /* Style for each image box */
@@ -37,15 +41,22 @@
             overflow: hidden;
             cursor: pointer;
             transition: transform 0.3s ease;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .research-box:hover {
             transform: scale(1.05);
         }
 
+        .research-box h4 {
+            text-align: center;
+            margin: 10px 0;
+        }
+
         .research-box img {
             width: 100%;
-            height: 250px;
+            height: 200px;
             object-fit: cover;
             opacity: 0.7;
             transition: opacity 0.3s ease;
@@ -58,7 +69,7 @@
         /* Overlay text */
         .text-overlay {
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: white;
@@ -68,6 +79,9 @@
             text-align: center;
             opacity: 0;
             transition: opacity 0.3s ease;
+            padding: 5px 10px;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 5px;
         }
 
         .research-box:hover .text-overlay {
@@ -78,6 +92,7 @@
         .research-content-container {
             max-width: 800px;
             margin: 40px auto;
+            scroll-margin-top: 20px;
         }
 
         /* Hidden content for each section */
@@ -88,11 +103,28 @@
             border-radius: 8px;
             background: #f9f9f9;
             margin-bottom: 20px;
+            transition: all 0.3s ease;
         }
 
         /* Style for active content */
         .active {
             display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .research-box {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .research-container {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -139,16 +171,23 @@
 
     <script>
         function toggleContent(id) {
+            var selectedContent = document.getElementById(id);
+            
+            // Check if the clicked content is already active (open)
+            var isAlreadyActive = selectedContent.classList.contains('active');
+            
             // Hide all content sections first
             var contents = document.querySelectorAll('.research-content');
             contents.forEach(function(content) {
                 content.classList.remove('active');
             });
-
-            // Show the selected content
-            var selectedContent = document.getElementById(id);
-            if (selectedContent) {
+            
+            // If the clicked content wasn't already active, show it
+            // If it was already active, it stays closed (since we removed all 'active' classes above)
+            if (!isAlreadyActive) {
                 selectedContent.classList.add('active');
+                // Scroll to the content
+                selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
     </script>
