@@ -121,17 +121,22 @@
     </div>
 
     <script>
-    
+
     function toggleContent(id) {
-        // Seleziona tutti gli elementi con classe "research-content" e li nasconde
+        // Seleziona tutti i paragrafi
         var contents = document.querySelectorAll('.research-content');
+
+        // Controlla se il paragrafo selezionato è già visibile
+        var selectedContent = document.getElementById(id);
+        var isVisible = selectedContent.style.display === "block";
+
+        // Nasconde tutti i paragrafi
         contents.forEach(function(content) {
             content.style.display = "none";
         });
 
-        // Mostra solo il paragrafo selezionato
-        var selectedContent = document.getElementById(id);
-        if (selectedContent.style.display === "none" || selectedContent.style.display === "") {
+        // Se il paragrafo selezionato non era visibile, lo mostra
+        if (!isVisible) {
             selectedContent.style.display = "block";
             selectedContent.scrollIntoView({ behavior: "smooth" });
         }
