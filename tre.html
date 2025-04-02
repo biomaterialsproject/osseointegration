@@ -8,6 +8,7 @@
         body {
             font-family: Arial, sans-serif;
         }
+
         h2 {
             text-align: center;
             margin-top: 20px;
@@ -36,11 +37,6 @@
             border-radius: 8px;
             overflow: hidden;
             cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .research-box:hover {
-            transform: scale(1.05);
         }
 
         .research-box img {
@@ -55,7 +51,7 @@
             opacity: 1;
         }
 
-        /* Overlay text */
+        /* Style for the "Learn More" button */
         .text-overlay {
             position: absolute;
             top: 50%;
@@ -72,6 +68,20 @@
 
         .research-box:hover .text-overlay {
             opacity: 1;
+        }
+
+        .text-overlay button {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .text-overlay button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
         /* Content container for the paragraphs */
@@ -107,17 +117,23 @@
         <div class="research-box" onclick="toggleContent('research1')">
             <h4>Innovative Implants Surface</h4>
             <img src="plasmaspray.jpg" alt="Research Image 1">
-            <div class="text-overlay">Learn More</div>
+            <div class="text-overlay">
+                <button>Learn More</button>
+            </div>
         </div>
         <div class="research-box" onclick="toggleContent('research2')">
             <h4>New Biomaterials</h4>
             <img src="mat.jpg" alt="Research Image 2">
-            <div class="text-overlay">Learn More</div>
+            <div class="text-overlay">
+                <button>Learn More</button>
+            </div>
         </div>
         <div class="research-box" onclick="toggleContent('research3')">
             <h4>Future Trends in Osseointegration</h4>
             <img src="newmat.jpg" alt="Research Image 3">
-            <div class="text-overlay">Learn More</div>
+            <div class="text-overlay">
+                <button>Learn More</button>
+            </div>
         </div>
     </div>
 
