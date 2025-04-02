@@ -14,132 +14,42 @@
             text-align: justify; /* Giustifica il testo */
             word-wrap: break-word; /* Forza il testo ad andare a capo quando necessario */
         }
-        /* Aggiungi un po' di stile per il bottone dei sottotitoli */
-        .sub-icon {
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            background-color: blue;
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin-left: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .sub-icon:hover {
-            background-color: darkblue; /* Colore di hover per il bottone */
-        }
-
-        .subtitles {
-            display: none; /* Sottotitoli nascosti di default */
-            margin-top: 10px;
-            font-style: italic;
+        /* Stile per il riquadro grigio */
+        .definition-box {
+            background-color: #f0f0f0; /* Colore di sfondo grigio chiaro */
+            border: 1px solid #ccc; /* Bordo grigio chiaro */
+            padding: 20px; /* Spaziatura interna */
+            max-width: 800px; /* Imposta la larghezza massima */
+            width: 100%; /* Usa il 100% della larghezza disponibile fino al limite */
+            margin: 20px auto; /* Centra il riquadro e aggiungi uno spazio sopra e sotto */
+            text-align: justify; /* Giustifica il testo all'interno */
+            font-size: 1.1em; /* Imposta la dimensione del font */
         }
     </style>
 </head>
 <body>
+    
+    <!-- Contenuto dinamico -->
 
-    <h2>Podcast</h2>
+    <h2>Home</h2>
     <p class="content-text">
-        Tune into our podcast series. Each episode covers a different aspect of osseointegration, from fundamental principles to cutting-edge research.
+        Welcome to our website! Our project is dedicated to explore osseointegration, 
+        a key concept in biomaterials. Here, you will find information 
+        about definition of osseointegration, evaluation techniques, challenges in this field, and the latest 
+        research and technologies that are shaping the future of biomaterials.
     </p>
 
-    <!-- Audio files with titles -->
-    <div class="episode">
-        <h3>1. Episodio 1</h3>
-        <audio controls>
-            <source src="audioprova.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-        <span class="sub-icon" onclick="toggleSubtitles('sub1')">SUB</span>
-        <div id="sub1" class="subtitles">
-            <!-- Sottotitoli per il primo episodio -->
-            Questi sono i sottotitoli per il primo episodio.
-        </div>
+    <!-- Riquadro per la definizione di osteointegrazione -->
+    <div class="definition-box">
+        <h3>Definizione di Osteointegrazione</h3>
+        <p>
+            L'osteointegrazione è un processo biologico in cui un impianto, tipicamente in titanio o altri biomateriali, 
+            si fonde saldamente con il tessuto osseo circostante. Questo processo è essenziale per garantire la stabilità 
+            e la funzionalità degli impianti, come le protesi dentali o gli impianti ortopedici. La buona osteointegrazione 
+            è fondamentale per il successo a lungo termine di questi dispositivi medici.
+        </p>
     </div>
 
-    <div class="episode">
-        <h3>2. Episodio 2</h3>
-        <audio controls>
-            <source src="audioprova.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-        <span class="sub-icon" onclick="toggleSubtitles('sub2')">SUB</span>
-        <div id="sub2" class="subtitles">
-            <!-- Sottotitoli per il secondo episodio -->
-            Questi sono i sottotitoli per il secondo episodio.
-        </div>
-    </div>
-
-    <div class="episode">
-        <h3>3. Episodio 3</h3>
-        <audio controls>
-            <source src="audioprova.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-        <span class="sub-icon" onclick="toggleSubtitles('sub3')">SUB</span>
-        <div id="sub3" class="subtitles">
-            <!-- Sottotitoli per il terzo episodio -->
-            Questi sono i sottotitoli per il terzo episodio.
-        </div>
-    </div>
-
-    <div class="episode">
-        <h3>4. Episodio 4</h3>
-        <audio controls>
-            <source src="audioprova.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-        <span class="sub-icon" onclick="toggleSubtitles('sub4')">SUB</span>
-        <div id="sub4" class="subtitles">
-            <!-- Sottotitoli per il quarto episodio -->
-            Questi sono i sottotitoli per il quarto episodio.
-        </div>
-    </div>
-
-    <div class="episode">
-        <h3>5. Episodio 5</h3>
-        <audio controls>
-            <source src="audioprova.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-        <span class="sub-icon" onclick="toggleSubtitles('sub5')">SUB</span>
-        <div id="sub5" class="subtitles">
-            <!-- Sottotitoli per il quinto episodio -->
-            Questi sono i sottotitoli per il quinto episodio.
-        </div>
-    </div>
-
-    <div class="episode">
-        <h3>6. Episodio 6</h3>
-        <audio controls>
-            <source src="audioprova.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-        <span class="sub-icon" onclick="toggleSubtitles('sub6')">SUB</span>
-        <div id="sub6" class="subtitles">
-            <!-- Sottotitoli per il sesto episodio -->
-            Questi sono i sottotitoli per il sesto episodio.
-        </div>
-    </div>
-
-    <!-- Script per attivare i sottotitoli -->
-    <script>
-        // Funzione per mostrare o nascondere i sottotitoli
-        function toggleSubtitles(subtitleId) {
-            var subtitle = document.getElementById(subtitleId);
-            if (subtitle) {
-                // Controlla se i sottotitoli sono visibili
-                if (subtitle.style.display === "none" || subtitle.style.display === "") {
-                    subtitle.style.display = "block"; // Mostra i sottotitoli
-                } else {
-                    subtitle.style.display = "none"; // Nascondi i sottotitoli
-                }
-            } else {
-                console.log("Elemento sottotitoli non trovato:", subtitleId);
-            }
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
