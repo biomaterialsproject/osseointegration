@@ -5,25 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biomateriali - Osteointegrazione</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Stile per il testo con larghezza massima */
+        .content-text {
+            max-width: 600px; /* Imposta una larghezza massima */
+            word-wrap: break-word; /* Forza il testo ad andare a capo se necessario */
+            margin: 0 auto; /* Centra il testo nella pagina */
+        }
+    </style>
 </head>
 <body>
     <!-- Barra superiore -->
     <div class="header">
-        <h1>Biomateriali</h1>
+        <h1>Biomaterials - Group M4</h1>
     </div>
 
     <!-- Barra di navigazione -->
     <div class="nav">
-        <a href="#" class="nav-item" id="nav1" onclick="loadPage(1)">Uno</a>
-        <a href="#" class="nav-item" id="nav2" onclick="loadPage(2)">Due</a>
-        <a href="#" class="nav-item" id="nav3" onclick="loadPage(3)">Tre</a>
-        <a href="#" class="nav-item" id="nav4" onclick="loadPage(4)">Quattro</a>
+        <a href="#" class="nav-item" id="nav1" onclick="loadPage(1)">Home</a>
+        <a href="#" class="nav-item" id="nav2" onclick="loadPage(2)">Techniques</a>
+        <a href="#" class="nav-item" id="nav3" onclick="loadPage(3)">New Researches</a>
+        <a href="#" class="nav-item" id="nav4" onclick="loadPage(4)">Podcast</a>
     </div>
 
     <!-- Contenuto dinamico -->
     <div id="content">
-        <h2>Benvenuto nella sezione Uno!</h2>
-        <p>Questa è la sezione Uno. Clicca sulle altre sezioni per vedere contenuti differenti.</p>
+        <h2>Osseointegration</h2>
+        <p class="content-text">
+            Our project focuses on osseointegration. Through this website, we will explore the definition of osseointegration, 
+            the challenges associated with it, the evaluation techniques, and the latest technological innovations in this field.
+        </p>
     </div>
 
     <script src="script.js"></script>
