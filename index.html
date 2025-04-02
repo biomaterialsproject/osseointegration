@@ -23,60 +23,28 @@
 
     <!-- Barra di navigazione -->
     <div class="nav">
-        <a href="#" class="nav-item" id="nav1" onclick="loadPage(1)">Home</a>
-        <a href="#" class="nav-item" id="nav2" onclick="loadPage(2)">Techniques</a>
-        <a href="#" class="nav-item" id="nav3" onclick="loadPage(3)">New Researches</a>
-        <a href="#" class="nav-item" id="nav4" onclick="loadPage(4)">Podcast</a>
+        <a href="#" class="nav-item" id="nav1" onclick="loadPage('home.html')">Home</a>
+        <a href="#" class="nav-item" id="nav2" onclick="loadPage('techniques.html')">Techniques</a>
+        <a href="#" class="nav-item" id="nav3" onclick="loadPage('new_researches.html')">New Researches</a>
+        <a href="#" class="nav-item" id="nav4" onclick="loadPage('podcast.html')">Podcast</a>
     </div>
 
     <!-- Contenuto dinamico -->
     <div id="content">
-        <h2>Osseointegration</h2>
-        <p class="content-text">
-            Our project focuses on osseointegration. Through this website, we will explore the definition of osseointegration, 
-            the challenges associated with it, the evaluation techniques, and the latest technological innovations in this field.
-        </p>
+        <!-- Il contenuto dinamico sarà caricato qui -->
     </div>
 
     <script>
+        // Funzione per caricare il contenuto dinamico
         function loadPage(page) {
-            let content = document.getElementById("content");
-
-            if (page === 1) {
-                content.innerHTML = `
-                    <h2>Home</h2>
-                    <p class="content-text">
-                        Welcome to our website! This platform is dedicated to exploring osseointegration, 
-                        a key concept in biomaterials and implantology. Here, you will find information 
-                        about the fundamentals of osseointegration, the challenges in this field, and the latest 
-                        research and technologies that are shaping the future of biomaterials.
-                    </p>
-                `;
-            } else if (page === 2) {
-                content.innerHTML = `
-                    <h2>Techniques</h2>
-                    <p class="content-text">
-                        In this section, we will discuss the different techniques used to evaluate osseointegration, 
-                        including imaging methods, mechanical testing, and advanced analytical tools.
-                    </p>
-                `;
-            } else if (page === 3) {
-                content.innerHTML = `
-                    <h2>New Researches</h2>
-                    <p class="content-text">
-                        Discover the latest scientific advancements and research in the field of osseointegration. 
-                        We will explore new materials, innovative implant surfaces, and future trends.
-                    </p>
-                `;
-            } else if (page === 4) {
-                content.innerHTML = `
-                    <h2>Podcast</h2>
-                    <p class="content-text">
-                        Tune into our podcast series, where we discuss osseointegration with experts in the field. 
-                        Each episode covers a different aspect, from fundamental principles to cutting-edge research.
-                    </p>
-                `;
-            }
+            fetch(page)
+                .then(response => response.text()) // Ottieni il contenuto del file come testo
+                .then(html => {
+                    document.getElementById("content").innerHTML = html; // Inserisci il contenuto nel div con id "content"
+                })
+                .catch(error => {
+                    console.error('Error loading the page: ', error); // Gestisci eventuali errori
+                });
         }
     </script>
 </body>
