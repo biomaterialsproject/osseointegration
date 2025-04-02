@@ -6,16 +6,15 @@
     <title>Biomateriali - Osteointegrazione</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Stile per il contenuto */
+        /* Stile per il contenuto giustificato e larghezza personalizzabile */
         .content-text {
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-            text-align: justify;
-            word-wrap: break-word;
+            max-width: 800px; /* Imposta la larghezza massima desiderata */
+            width: 100%; /* Usa il 100% della larghezza disponibile fino al limite */
+            margin: 0 auto; /* Centra il testo orizzontalmente */
+            text-align: justify; /* Giustifica il testo */
+            word-wrap: break-word; /* Forza il testo ad andare a capo quando necessario */
         }
-
-        /* Stile per il bottone dei sottotitoli */
+        /* Aggiungi un po' di stile per il bottone dei sottotitoli */
         .sub-icon {
             cursor: pointer;
             font-weight: bold;
@@ -25,59 +24,122 @@
             border-radius: 5px;
             margin-left: 10px;
             transition: background-color 0.3s ease;
-            display: inline-block;
         }
 
         .sub-icon:hover {
-            background-color: darkblue;
+            background-color: darkblue; /* Colore di hover per il bottone */
         }
 
         .subtitles {
-            display: none;
+            display: none; /* Sottotitoli nascosti di default */
             margin-top: 10px;
             font-style: italic;
-        }
-
-        /* Stile per la navigazione */
-        .nav {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .nav-item {
-            cursor: pointer;
-            padding: 10px;
-            background: lightgray;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-
-        .nav-item:hover {
-            background: gray;
-            color: white;
-        }
-
-        .active {
-            background: blue;
-            color: white;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigazione -->
-    <div class="nav">
-        <span id="nav1" class="nav-item" onclick="loadPage(1)">Home</span>
-        <span id="nav2" class="nav-item" onclick="loadPage(2)">Sezione 2</span>
-        <span id="nav3" class="nav-item" onclick="loadPage(3)">Sezione 3</span>
-        <span id="nav4" class="nav-item" onclick="loadPage(4)">Quattro</span>
+    <h2>Podcast</h2>
+    <p class="content-text">
+        Tune into our podcast series. Each episode covers a different aspect of osseointegration, from fundamental principles to cutting-edge research.
+    </p>
+
+    <!-- Audio files with titles -->
+    <div class="episode">
+        <h3>1. Episodio 1</h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub1')">SUB</span>
+        <div id="sub1" class="subtitles">
+            <!-- Sottotitoli per il primo episodio -->
+            Questi sono i sottotitoli per il primo episodio.
+        </div>
     </div>
 
-    <div id="content">
-        <!-- Il contenuto della home viene caricato qui inizialmente -->
+    <div class="episode">
+        <h3>2. Episodio 2</h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub2')">SUB</span>
+        <div id="sub2" class="subtitles">
+            <!-- Sottotitoli per il secondo episodio -->
+            Questi sono i sottotitoli per il secondo episodio.
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="episode">
+        <h3>3. Episodio 3</h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub3')">SUB</span>
+        <div id="sub3" class="subtitles">
+            <!-- Sottotitoli per il terzo episodio -->
+            Questi sono i sottotitoli per il terzo episodio.
+        </div>
+    </div>
+
+    <div class="episode">
+        <h3>4. Episodio 4</h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub4')">SUB</span>
+        <div id="sub4" class="subtitles">
+            <!-- Sottotitoli per il quarto episodio -->
+            Questi sono i sottotitoli per il quarto episodio.
+        </div>
+    </div>
+
+    <div class="episode">
+        <h3>5. Episodio 5</h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub5')">SUB</span>
+        <div id="sub5" class="subtitles">
+            <!-- Sottotitoli per il quinto episodio -->
+            Questi sono i sottotitoli per il quinto episodio.
+        </div>
+    </div>
+
+    <div class="episode">
+        <h3>6. Episodio 6</h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub6')">SUB</span>
+        <div id="sub6" class="subtitles">
+            <!-- Sottotitoli per il sesto episodio -->
+            Questi sono i sottotitoli per il sesto episodio.
+        </div>
+    </div>
+
+    <!-- Script per attivare i sottotitoli -->
+    <script>
+        // Funzione per mostrare o nascondere i sottotitoli
+        function toggleSubtitles(subtitleId) {
+            var subtitle = document.getElementById(subtitleId);
+            if (subtitle) {
+                // Controlla se i sottotitoli sono visibili
+                if (subtitle.style.display === "none" || subtitle.style.display === "") {
+                    subtitle.style.display = "block"; // Mostra i sottotitoli
+                } else {
+                    subtitle.style.display = "none"; // Nascondi i sottotitoli
+                }
+            } else {
+                console.log("Elemento sottotitoli non trovato:", subtitleId);
+            }
+        }
+    </script>
+
 </body>
 </html>
