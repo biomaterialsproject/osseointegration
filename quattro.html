@@ -37,98 +37,84 @@
             margin-top: 10px;
             font-style: italic;
         }
-
-        /* Stile per la navigazione */
-        .nav {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .nav-item {
-            cursor: pointer;
-            padding: 10px;
-            background: lightgray;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-
-        .nav-item:hover {
-            background: gray;
-            color: white;
-        }
-
-        .active {
-            background: blue;
-            color: white;
-        }
     </style>
 </head>
 <body>
-        <h2>Podcast</h2>
-        <p class="content-text">
-            Tune into our podcast series. Each episode covers a different aspect of osseointegration, from fundamental principles to cutting-edge research.
-        </p>
+    <h2>Podcast</h2>
+    <p class="content-text">
+        Tune into our podcast series. Each episode covers a different aspect of osseointegration, from fundamental principles to cutting-edge research.
+    </p>
 
-        <!-- Lista Episodi -->
-        <div class="episode">
-            <h3>1. Episodio 1</h3>
-            <audio controls>
-                <source src="audioprova.mp3" type="audio/mp3">
-                Your browser does not support the audio element.
-            </audio>
-            <span class="sub-icon" onclick="toggleSubtitles('sub1')">SUB</span>
-            <div id="sub1" class="subtitles">Questi sono i sottotitoli per il primo episodio.</div>
-        </div>
+    <!-- Lista Episodi -->
+    <div class="episode">
+        <h3>1. Episodio 1</h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub1')">SUB</span>
+        <div id="sub1" class="subtitles">Questi sono i sottotitoli per il primo episodio.</div>
+    </div>
 
-        <div class="episode">
-            <h3>2. Episodio 2</h3>
-            <audio controls>
-                <source src="audioprova.mp3" type="audio/mp3">
-                Your browser does not support the audio element.
-            </audio>
-            <span class="sub-icon" onclick="toggleSubtitles('sub2')">SUB</span>
-            <div id="sub2" class="subtitles">Questi sono i sottotitoli per il secondo episodio.</div>
-        </div>
+    <div class="episode">
+        <h3>2. Episodio 2</h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub2')">SUB</span>
+        <div id="sub2" class="subtitles">Questi sono i sottotitoli per il secondo episodio.</div>
+    </div>
 
-        <div class="episode">
-            <h3>3. Episodio 3</h3>
-            <audio controls>
-                <source src="audioprova.mp3" type="audio/mp3">
-                Your browser does not support the audio element.
-            </audio>
-            <span class="sub-icon" onclick="toggleSubtitles('sub3')">SUB</span>
-            <div id="sub3" class="subtitles">Questi sono i sottotitoli per il terzo episodio.</div>
-        </div>
-        <div class="episode">
-                <h3>4. Episodio 4</h3>
-                <audio controls>
-                    <source src="audioprova.mp3" type="audio/mp3">
-                    Your browser does not support the audio element.
-                </audio>
-                <span class="sub-icon" onclick="toggleSubtitles('sub3')">SUB</span>
-                <div id="sub3" class="subtitles">Questi sono i sottotitoli per il terzo episodio.</div>
-            </div>
-        <div class="episode">
-            <h3>5. Episodio 5</h3>
-            <audio controls>
-                <source src="audioprova.mp3" type="audio/mp3">
-                Your browser does not support the audio element.
-            </audio>
-            <span class="sub-icon" onclick="toggleSubtitles('sub3')">SUB</span>
-            <div id="sub3" class="subtitles">Questi sono i sottotitoli per il terzo episodio.</div>
-        </div>
-        <div class="episode">
-            <h3>6. Episodio 6</h3>
-            <audio controls>
-                <source src="audioprova.mp3" type="audio/mp3">
-                Your browser does not support the audio element.
-            </audio>
-            <span class="sub-icon" onclick="toggleSubtitles('sub3')">SUB</span>
-            <div id="sub3" class="subtitles">Questi sono i sottotitoli per il terzo episodio.</div>
-        </div>
+    <div class="episode">
+        <h3>3. Episodio 3</h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub3')">SUB</span>
+        <div id="sub3" class="subtitles">Questi sono i sottotitoli per il terzo episodio.</div>
+    </div>
 
+    <div class="episode">
+        <h3>4. Episodio 4</h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub4')">SUB</span>
+        <div id="sub4" class="subtitles">Questi sono i sottotitoli per il quarto episodio.</div>
+    </div>
 
-    <script src="script.js"></script> <!-- Collegamento al file JavaScript esterno -->
+    <div class="episode">
+        <h3>5. Episodio 5</h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub5')">SUB</span>
+        <div id="sub5" class="subtitles">Questi sono i sottotitoli per il quinto episodio.</div>
+    </div>
+
+    <div class="episode">
+        <h3>6. Episodio 6</h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub6')">SUB</span>
+        <div id="sub6" class="subtitles">Questi sono i sottotitoli per il sesto episodio.</div>
+    </div>
+
+    <script>
+        function toggleSubtitles(id) {
+            var subtitleDiv = document.getElementById(id);
+            if (subtitleDiv.style.display === "none" || subtitleDiv.style.display === "") {
+                subtitleDiv.style.display = "block";
+            } else {
+                subtitleDiv.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
