@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biomateriali - Osteointegrazione</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Stile per i contenuti testuali giustificati */
-        .content-text {
-            max-width: 600px; /* Imposta una larghezza massima */
-            word-wrap: break-word; /* Forza il testo ad andare a capo se necessario */
-            margin: 0 auto; /* Centra il testo nella pagina */
-            text-align: justify; /* Giustifica il testo */
-        }
-    </style>
 </head>
 <body>
     <!-- Barra superiore -->
@@ -23,10 +14,10 @@
 
     <!-- Barra di navigazione -->
     <div class="nav">
-        <a href="#" class="nav-item" id="nav1" onclick="loadPage('uno.html')">Home</a>
-        <a href="#" class="nav-item" id="nav2" onclick="loadPage('due.html')">Techniques</a>
-        <a href="#" class="nav-item" id="nav3" onclick="loadPage('tre.html')">New Researches</a>
-        <a href="#" class="nav-item" id="nav4" onclick="loadPage('quattro.html')">Podcast</a>
+        <a href="#" class="nav-item" id="nav1" onclick="loadPage(1)">Home</a>
+        <a href="#" class="nav-item" id="nav2" onclick="loadPage(2)">Techniques</a>
+        <a href="#" class="nav-item" id="nav3" onclick="loadPage(3)">New Researches</a>
+        <a href="#" class="nav-item" id="nav4" onclick="loadPage(4)">Podcast</a>
     </div>
 
     <!-- Contenuto dinamico -->
@@ -34,18 +25,14 @@
         <!-- Il contenuto dinamico sarà caricato qui -->
     </div>
 
+    <!-- Inclusione del file script.js -->
+    <script src="script.js"></script>
+
     <script>
-        // Funzione per caricare il contenuto dinamico
-        function loadPage(page) {
-            fetch(page)
-                .then(response => response.text()) // Ottieni il contenuto del file come testo
-                .then(html => {
-                    document.getElementById("content").innerHTML = html; // Inserisci il contenuto nel div con id "content"
-                })
-                .catch(error => {
-                    console.error('Error loading the page: ', error); // Gestisci eventuali errori
-                });
-        }
+        // Al caricamento della pagina, carica la sezione Home
+        window.onload = function() {
+            loadPage(1); // Carica la pagina "Home" al caricamento
+        };
     </script>
 </body>
 </html>
