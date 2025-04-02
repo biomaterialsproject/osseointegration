@@ -121,11 +121,22 @@
     </div>
 
     <script>
-        function toggleContent(id) {
-            var content = document.getElementById(id);
-            content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
-            content.scrollIntoView({ behavior: "smooth" });
+    
+    function toggleContent(id) {
+        // Seleziona tutti gli elementi con classe "research-content" e li nasconde
+        var contents = document.querySelectorAll('.research-content');
+        contents.forEach(function(content) {
+            content.style.display = "none";
+        });
+
+        // Mostra solo il paragrafo selezionato
+        var selectedContent = document.getElementById(id);
+        if (selectedContent.style.display === "none" || selectedContent.style.display === "") {
+            selectedContent.style.display = "block";
+            selectedContent.scrollIntoView({ behavior: "smooth" });
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
