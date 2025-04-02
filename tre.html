@@ -44,13 +44,10 @@
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             text-align: center;
-            opacity: 0;
+            opacity: 1;
             transition: opacity 0.3s ease;
         }
         .research-box:hover img {
-            opacity: 1;
-        }
-        .research-box:hover .text-overlay {
             opacity: 1;
         }
         .research-content {
@@ -101,13 +98,8 @@
     <script>
         function toggleContent(id) {
             var content = document.getElementById(id);
-            if (content.style.display === "none" || content.style.display === "") {
-                document.querySelectorAll('.research-content').forEach(el => el.style.display = "none");
-                content.style.display = "block";
-                content.scrollIntoView({ behavior: "smooth" });
-            } else {
-                content.style.display = "none";
-            }
+            content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
+            content.scrollIntoView({ behavior: "smooth" });
         }
     </script>
 </body>
