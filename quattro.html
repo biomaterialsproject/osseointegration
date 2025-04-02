@@ -14,19 +14,117 @@
             text-align: justify; /* Giustifica il testo */
             word-wrap: break-word; /* Forza il testo ad andare a capo quando necessario */
         }
+        /* Aggiungi un po' di stile per l'icona dei sottotitoli */
+        .sub-icon {
+            cursor: pointer;
+            font-weight: bold;
+            color: blue;
+            margin-left: 10px;
+        }
+        .subtitles {
+            display: none; /* Sottotitoli nascosti di default */
+            margin-top: 10px;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
 
+    <h2>Podcast</h2>
+    <p class="content-text">
+        Tune into our podcast series. Each episode covers a different aspect of osseointegration, from fundamental principles to cutting-edge research.
+    </p>
 
-    <!-- Contenuto dinamico -->
-    
-        <h2>Podcast</h2>
-        <p class="content-text">
-            Tune into our podcast series. Each episode covers a different aspect of osseointegration, from fundamental principles to cutting-edge research.
-        </p>
-   
+    <!-- Audio files with titles -->
+    <div class="episode">
+        <h3>1. </h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub1')">SUB</span>
+        <div id="sub1" class="subtitles">
+            <!-- Sottotitoli per il primo episodio -->
+            Questi sono i sottotitoli per il primo episodio.
+        </div>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="episode">
+        <h3>2. </h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub2')">SUB</span>
+        <div id="sub2" class="subtitles">
+            <!-- Sottotitoli per il secondo episodio -->
+            Questi sono i sottotitoli per il secondo episodio.
+        </div>
+    </div>
+
+    <div class="episode">
+        <h3>3. </h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub3')">SUB</span>
+        <div id="sub3" class="subtitles">
+            <!-- Sottotitoli per il terzo episodio -->
+            Questi sono i sottotitoli per il terzo episodio.
+        </div>
+    </div>
+
+    <div class="episode">
+        <h3>4. </h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub4')">SUB</span>
+        <div id="sub4" class="subtitles">
+            <!-- Sottotitoli per il quarto episodio -->
+            Questi sono i sottotitoli per il quarto episodio.
+        </div>
+    </div>
+
+    <div class="episode">
+        <h3>5. </h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub5')">SUB</span>
+        <div id="sub5" class="subtitles">
+            <!-- Sottotitoli per il quinto episodio -->
+            Questi sono i sottotitoli per il quinto episodio.
+        </div>
+    </div>
+
+    <div class="episode">
+        <h3>6. </h3>
+        <audio controls>
+            <source src="audioprova.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="sub-icon" onclick="toggleSubtitles('sub6')">SUB</span>
+        <div id="sub6" class="subtitles">
+            <!-- Sottotitoli per il sesto episodio -->
+            Questi sono i sottotitoli per il sesto episodio.
+        </div>
+    </div>
+
+    <script>
+        // Funzione per mostrare o nascondere i sottotitoli
+        function toggleSubtitles(subtitleId) {
+            var subtitle = document.getElementById(subtitleId);
+            if (subtitle.style.display === "none" || subtitle.style.display === "") {
+                subtitle.style.display = "block";
+            } else {
+                subtitle.style.display = "none";
+            }
+        }
+    </script>
+
 </body>
 </html>
