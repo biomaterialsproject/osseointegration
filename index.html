@@ -5,34 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biomateriali - Osteointegrazione</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Stile per il contenuto giustificato */
+        .content-text {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: justify;
+            word-wrap: break-word;
+        }
+
+        /* Stile per il bottone dei sottotitoli */
+        .sub-icon {
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            background-color: blue;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .sub-icon:hover {
+            background-color: darkblue;
+        }
+
+        .subtitles {
+            display: none;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Stile per la navigazione */
+        .nav {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .nav-item {
+            cursor: pointer;
+            padding: 10px;
+            background: lightgray;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background: gray;
+            color: white;
+        }
+
+        .active {
+            background: blue;
+            color: white;
+        }
+    </style>
 </head>
-<body>
-    <!-- Barra superiore -->
-    <div class="header">
-        <h1>Biomaterials - Group M4</h1>
-    </div>
+<body onload="loadPage(1)"> <!-- Carica la Home al primo avvio -->
 
-    <!-- Barra di navigazione -->
+    <!-- Navigazione -->
     <div class="nav">
-        <a href="#" class="nav-item" id="nav1" onclick="loadPage(1)">Home</a>
-        <a href="#" class="nav-item" id="nav2" onclick="loadPage(2)">Techniques</a>
-        <a href="#" class="nav-item" id="nav3" onclick="loadPage(3)">New Researches</a>
-        <a href="#" class="nav-item" id="nav4" onclick="loadPage(4)">Podcast</a>
+        <span id="nav1" class="nav-item" onclick="loadPage(1)">Home</span>
+        <span id="nav2" class="nav-item" onclick="loadPage(2)">Sezione 2</span>
+        <span id="nav3" class="nav-item" onclick="loadPage(3)">Sezione 3</span>
+        <span id="nav4" class="nav-item" onclick="loadPage(4)">Quattro</span>
     </div>
 
-    <!-- Contenuto dinamico -->
     <div id="content">
-        <!-- Il contenuto dinamico sarà caricato qui -->
+        <!-- Il contenuto della pagina viene caricato qui dinamicamente -->
     </div>
 
-    <!-- Inclusione del file script.js -->
-    <script src="script.js"></script>
-
-    <script>
-        // Al caricamento della pagina, carica la sezione Home
-        window.onload = function() {
-            loadPage(1); // Carica la pagina "Home" al caricamento
-        };
-    </script>
+    <script src="script.js"></script> <!-- Collegamento al file JavaScript esterno -->
 </body>
 </html>
