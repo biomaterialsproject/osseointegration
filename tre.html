@@ -173,18 +173,16 @@
             // Se è lo stesso elemento cliccato, chiudilo
             if (lastClicked === id) {
                 selectedContent.classList.remove('active');
-                lastClicked = null;
+                lastClicked = null; // Reset dell'elemento cliccato
             } else {
-                // Se è un nuovo elemento, chiudi quello precedente (se esiste)
+                // Se è un nuovo elemento, nascondi quello precedente (se esiste)
                 if (lastClicked !== null) {
                     document.getElementById(lastClicked).classList.remove('active');
                 }
 
-                // Aggiungi la classe 'active' all'elemento cliccato
+                // Aggiungi la classe 'active' al nuovo elemento
                 selectedContent.classList.add('active');
-
-                // Aggiorna l'ultimo elemento cliccato
-                lastClicked = id;
+                lastClicked = id; // Aggiorna l'ultimo elemento cliccato
             }
 
             // Scroll to the content
