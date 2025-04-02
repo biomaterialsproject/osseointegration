@@ -14,13 +14,22 @@
             text-align: justify; /* Giustifica il testo */
             word-wrap: break-word; /* Forza il testo ad andare a capo quando necessario */
         }
-        /* Aggiungi un po' di stile per l'icona dei sottotitoli */
+        /* Aggiungi un po' di stile per il bottone dei sottotitoli */
         .sub-icon {
             cursor: pointer;
             font-weight: bold;
-            color: blue;
+            color: white;
+            background-color: blue;
+            padding: 5px 10px;
+            border-radius: 5px;
             margin-left: 10px;
+            transition: background-color 0.3s ease;
         }
+
+        .sub-icon:hover {
+            background-color: darkblue; /* Colore di hover per il bottone */
+        }
+
         .subtitles {
             display: none; /* Sottotitoli nascosti di default */
             margin-top: 10px;
