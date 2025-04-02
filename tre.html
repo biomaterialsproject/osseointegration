@@ -34,6 +34,17 @@
             opacity: 0.7;
             transition: opacity 0.3s ease;
         }
+        .research-box h4 {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            z-index: 1; /* Ensures the title is above the image */
+        }
         .research-box .text-overlay {
             position: absolute;
             top: 50%;
@@ -46,6 +57,7 @@
             text-align: center;
             opacity: 1;
             transition: opacity 0.3s ease;
+            z-index: 2; /* Makes sure the "Learn more" text is clickable */
         }
         .research-box:hover img {
             opacity: 1;
@@ -71,14 +83,17 @@
     </p>
     <div class="research-container">
         <div class="research-box" onclick="toggleContent('research1')">
+            <h4>Material Science</h4>
             <img src="mat2.jpg" alt="Research Image 1">
             <div class="text-overlay">Learn more</div>
         </div>
         <div class="research-box" onclick="toggleContent('research2')">
+            <h4>Plasma Spray Coatings</h4>
             <img src="plasmaspray2.jpg" alt="Research Image 2">
             <div class="text-overlay">Learn more</div>
         </div>
         <div class="research-box" onclick="toggleContent('research3')">
+            <h4>Next-Gen Implant Materials</h4>
             <img src="newmat2.jpg" alt="Research Image 3">
             <div class="text-overlay">Learn more</div>
         </div>
