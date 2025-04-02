@@ -128,6 +128,32 @@
         }
     </style>
 </head>
+
+
+<script>
+        function toggleContent(id) {
+            var selectedContent = document.getElementById(id);
+            
+            // Check if the clicked content is already active (open)
+            var isAlreadyActive = selectedContent.classList.contains('active');
+            
+            // Hide all content sections first
+            var contents = document.querySelectorAll('.research-content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+            
+            // If the clicked content wasn't already active, show it
+            // If it was already active, it stays closed (since we removed all 'active' classes above)
+            if (!isAlreadyActive) {
+                selectedContent.classList.add('active');
+                // Scroll to the content
+                selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+
+    
 <body>
     <h2>Researches on Osseointegration</h2>
     <p class="content-text">
@@ -169,27 +195,6 @@
         </div>
     </div>
 
-    <script>
-        function toggleContent(id) {
-            var selectedContent = document.getElementById(id);
-            
-            // Check if the clicked content is already active (open)
-            var isAlreadyActive = selectedContent.classList.contains('active');
-            
-            // Hide all content sections first
-            var contents = document.querySelectorAll('.research-content');
-            contents.forEach(function(content) {
-                content.classList.remove('active');
-            });
-            
-            // If the clicked content wasn't already active, show it
-            // If it was already active, it stays closed (since we removed all 'active' classes above)
-            if (!isAlreadyActive) {
-                selectedContent.classList.add('active');
-                // Scroll to the content
-                selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-    </script>
+    
 </body>
 </html>
