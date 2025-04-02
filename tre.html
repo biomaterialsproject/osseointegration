@@ -1,7 +1,44 @@
-<div>
-    <h2>New Researches</h2>
-    <p class="content-text">
-        Discover the latest scientific advancements and research in the field of osseointegration. 
-        We will explore new materials, innovative implant surfaces, and future trends.
-    </p>
-</div>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomateriali - Osteointegrazione</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Stile per il contenuto giustificato e larghezza personalizzabile */
+        .content-text {
+            max-width: 800px; /* Imposta la larghezza massima desiderata */
+            width: 100%; /* Usa il 100% della larghezza disponibile fino al limite */
+            margin: 0 auto; /* Centra il testo orizzontalmente */
+            text-align: justify; /* Giustifica il testo */
+            word-wrap: break-word; /* Forza il testo ad andare a capo quando necessario */
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra superiore -->
+    <div class="header">
+        <h1>Biomaterials - Group M4</h1>
+    </div>
+
+    <!-- Barra di navigazione -->
+    <div class="nav">
+        <a href="#" class="nav-item" id="nav1" onclick="loadPage(1)">Home</a>
+        <a href="#" class="nav-item" id="nav2" onclick="loadPage(2)">Techniques</a>
+        <a href="#" class="nav-item" id="nav3" onclick="loadPage(3)">New Researches</a>
+        <a href="#" class="nav-item" id="nav4" onclick="loadPage(4)">Podcast</a>
+    </div>
+
+    <!-- Contenuto dinamico -->
+    <div id="content">
+        <h2>New researches</h2>
+        <p class="content-text">
+            This page is dedicated to discover the latest scientific advancements and research in the field of osseointegration: 
+            new materials, innovative implant surfaces, and future trends.
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
