@@ -1,8 +1,3 @@
-// Carica la home all'avvio
-document.addEventListener("DOMContentLoaded", function () {
-    loadPage(1);
-});
-
 // Funzione per mostrare o nascondere i sottotitoli di un episodio
 function toggleSubtitles(subtitleId) {
     var subtitle = document.getElementById(subtitleId);
@@ -30,7 +25,7 @@ function loadPage(page) {
     let fileToLoad = '';
 
     if (page === 1) {
-        fileToLoad = 'home.html'; // Carica il contenuto da home.html
+        fileToLoad = 'uno.html'; // Carica il contenuto da uno.html per la Home
     } else if (page === 2) {
         fileToLoad = 'due.html'; // Carica il contenuto da due.html
     } else if (page === 3) {
