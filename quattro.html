@@ -123,24 +123,15 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Funzione che alterna la visibilità dei sottotitoli
-            function toggleSubtitles(id) {
-                var subtitleDiv = document.getElementById(id);
-                if (subtitleDiv) {
-                    subtitleDiv.style.display = (subtitleDiv.style.display === "none" || subtitleDiv.style.display === "") ? "block" : "none";
-                }
+        // Funzione per alternare la visibilità dei sottotitoli
+        function toggleSubtitles(id) {
+            var subtitleDiv = document.getElementById(id);
+            if (subtitleDiv.style.display === "none" || subtitleDiv.style.display === "") {
+                subtitleDiv.style.display = "block";
+            } else {
+                subtitleDiv.style.display = "none";
             }
-
-            // Aggiungi un event listener per ogni pulsante di trascrizione
-            var buttons = document.querySelectorAll(".sub-icon");
-            buttons.forEach(function (button) {
-                button.addEventListener("click", function () {
-                    var targetId = this.getAttribute("data-target");
-                    toggleSubtitles(targetId);
-                });
-            });
-        });
+        }
     </script>
 </body>
 </html>
