@@ -187,6 +187,12 @@
 
             // Scroll to the content
             selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Crea un nuovo paragrafo aggiuntivo
+            let newParagraph = document.createElement("p");
+            newParagraph.innerHTML = "This is the additional information for the selected research topic.";
+            newParagraph.classList.add('content-text');
+            selectedContent.appendChild(newParagraph);
         }
     </script>
 </body>
