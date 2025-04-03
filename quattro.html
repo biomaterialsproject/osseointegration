@@ -61,7 +61,7 @@
 
     <div class="episode">
         <h3>Episode 1: Introduction to Osseointegration</h3>
-        <span class="sub-icon" data-target="sub1">TRANSCRIPTION</span>
+        <span class="sub-icon" data-target="sub1" onclick="toggleSubtitles('sub1')">TRANSCRIPTION</span>
         <audio controls>
             <source src="audioprova.mp3" type="audio/mp3">
             Your browser does not support the audio element.
@@ -73,7 +73,7 @@
 
     <div class="episode">
         <h3>Episode 2: How to Evaluate Osseointegration – Parameters</h3>
-        <span class="sub-icon" data-target="sub2">TRANSCRIPTION</span>
+        <span class="sub-icon" data-target="sub2" onclick="toggleSubtitles('sub2')">TRANSCRIPTION</span>
         <audio controls>
             <source src="audioprova.mp3" type="audio/mp3">
             Your browser does not support the audio element.
@@ -83,7 +83,7 @@
 
     <div class="episode">
         <h3>Episode 3: Techniques to Visualize the Bone-Implant Interface</h3>
-        <span class="sub-icon" data-target="sub3">TRANSCRIPTION</span>
+        <span class="sub-icon" data-target="sub3" onclick="toggleSubtitles('sub3')">TRANSCRIPTION</span>
         <audio controls>
             <source src="audioprova.mp3" type="audio/mp3">
             Your browser does not support the audio element.
@@ -93,7 +93,7 @@
 
     <div class="episode">
         <h3>Episode 4: Evaluation Techniques: Micro-CT vs. Multiscale-Nano</h3>
-        <span class="sub-icon" data-target="sub4">TRANSCRIPTION</span>
+        <span class="sub-icon" data-target="sub4" onclick="toggleSubtitles('sub4')">TRANSCRIPTION</span>
         <audio controls>
             <source src="audioprova.mp3" type="audio/mp3">
             Your browser does not support the audio element.
@@ -103,7 +103,7 @@
 
     <div class="episode">
         <h3>Episode 5: Failure and Challenges</h3>
-        <span class="sub-icon" data-target="sub5">TRANSCRIPTION</span>
+        <span class="sub-icon" data-target="sub5" onclick="toggleSubtitles('sub5')">TRANSCRIPTION</span>
         <audio controls>
             <source src="audioprova.mp3" type="audio/mp3">
             Your browser does not support the audio element.
@@ -113,7 +113,7 @@
 
     <div class="episode">
         <h3>Episode 6: Conclusions and Further Studies</h3>
-        <span class="sub-icon" data-target="sub6">TRANSCRIPTION</span>
+        <span class="sub-icon" data-target="sub6" onclick="toggleSubtitles('sub6')">TRANSCRIPTION</span>
         <audio controls>
             <source src="audioprova.mp3" type="audio/mp3">
             Your browser does not support the audio element.
@@ -138,24 +138,6 @@
                 });
             });
         });
-        function loadPage(page) {
-    fetch(page)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('content').innerHTML = data;
-
-            // Ricollega gli eventi per il toggle dei sottotitoli
-            var buttons = document.querySelectorAll(".sub-icon");
-            buttons.forEach(function (button) {
-                button.addEventListener("click", function () {
-                    var targetId = this.getAttribute("data-target");
-                    toggleSubtitles(targetId);
-                });
-            });
-        })
-        .catch(error => console.error('Errore nel caricamento:', error));
-}
-
     </script>
 </body>
 </html>
