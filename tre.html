@@ -89,7 +89,6 @@
         .research-content-container {
             max-width: 800px;
             margin: 40px auto;
-            scroll-margin-top: 20px;
         }
 
         .research-content {
@@ -159,34 +158,36 @@
             <p>This research investigates novel biomaterials designed to improve the biological integration of implants with bone tissue. These materials aim to optimize performance and minimize the risk of complications.</p>
         </div>
         <div id="research3" class="research-content">
-            <h3>Future Trends in Osseointegration</h3>
+            <h3>Future Trends</h3>
             <p>In the future, osseointegration could be revolutionized with the use of 3D printing, smart materials, and enhanced biomaterial composites, offering better functionality and compatibility with biological systems.</p>
         </div>
     </div>
 
     <script>
-        let lastClicked = null; // Variabile per tenere traccia dell'ultimo elemento cliccato
+        let lastClicked = null;
 
         function showContent(id) {
             const selectedContent = document.getElementById(id);
-
-            // Se è lo stesso elemento cliccato, chiudilo
+            
             if (lastClicked === id) {
+                // Se è già aperto, chiudilo
                 selectedContent.classList.remove('active');
-                lastClicked = null; // Reset dell'elemento cliccato
+                lastClicked = null;
             } else {
-                // Se è un nuovo elemento, nascondi quello precedente (se esiste)
+                // Chiudi il precedente (se esiste)
                 if (lastClicked !== null) {
                     document.getElementById(lastClicked).classList.remove('active');
                 }
 
-                // Aggiungi la classe 'active' al nuovo elemento
+                // Mostra il nuovo
                 selectedContent.classList.add('active');
-                lastClicked = id; // Aggiorna l'ultimo elemento cliccato
-            }
+                lastClicked = id;
 
-            // Scroll to the content
-            selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Scorri solo se il nuovo contenuto viene aperto
+                setTimeout(() => {
+                    selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
         }
     </script>
 </body>
