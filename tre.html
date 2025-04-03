@@ -1,3 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osseointegration Research</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .content-text {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .research-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .research-box {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .research-box img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        .text-overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        /* Content section */
+        .research-content-container {
+            display: none;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        .research-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
 <h2>Researches on Osseointegration</h2>
 <p class="content-text">
     This page presents new research related to osseointegration. Click on the images below to read more about each topic.
@@ -39,27 +104,30 @@
 </div>
 
 <script>
-    let lastClicked = null; // Variabile per tenere traccia dell'ultimo elemento cliccato
+    let lastClicked = null; // Variable to track the last clicked element
 
     function showContent(id) {
         const selectedContent = document.getElementById(id);
 
-        // Se è lo stesso elemento cliccato, chiudilo
+        // If the same element is clicked, close it
         if (lastClicked === id) {
             selectedContent.classList.remove('active');
-            lastClicked = null; // Reset dell'elemento cliccato
+            lastClicked = null; // Reset clicked element
         } else {
-            // Se è un nuovo elemento, nascondi quello precedente (se esiste)
+            // If another element is clicked, hide the previous one (if any)
             if (lastClicked !== null) {
                 document.getElementById(lastClicked).classList.remove('active');
             }
 
-            // Aggiungi la classe 'active' al nuovo elemento
+            // Add 'active' class to the new clicked element
             selectedContent.classList.add('active');
-            lastClicked = id; // Aggiorna l'ultimo elemento cliccato
+            lastClicked = id; // Update the last clicked element
         }
 
         // Scroll to the content
         selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 </script>
+
+</body>
+</html>
