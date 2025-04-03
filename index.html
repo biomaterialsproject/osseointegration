@@ -44,6 +44,7 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
+            cursor: pointer;
         }
         nav a:hover {
             text-decoration: underline;
@@ -69,23 +70,38 @@
 <body>
     <header>
         <img src="logo.png" alt="Politecnico Logo" class="logo">
-        <h1>Biomaterials - Osteointegration - Group S3</h1>
+        <h1>Biomateriali - Osteointegrazione</h1>
     </header>
 
     <nav>
-        <a href="uno.html">Home</a>
-        <a href="due.html">Techniques</a>
-        <a href="tre.html">New Researches</a>
-        <a href="quattro.html">Podcast</a>
+        <a onclick="loadPage('uno.html')">Home</a>
+        <a onclick="loadPage('due.html')">Tecniche</a>
+        <a onclick="loadPage('tre.html')">Nuove Ricerche</a>
+        <a onclick="loadPage('quattro.html')">Podcast</a>
     </nav>
 
-    <div class="container">
-        <h2>Benvenuti</h2>
-        <p>Benvenuti nel nostro sito! Seleziona una sezione dal menu per esplorare il contenuto.</p>
+    <div id="content" class="container">
+        <!-- Il contenuto delle pagine verrà caricato qui -->
     </div>
 
     <footer>
         &copy; 2025 Politecnico di Milano - Biomateriali. Tutti i diritti riservati.
     </footer>
+
+    <script>
+        function loadPage(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('content').innerHTML = data;
+                })
+                .catch(error => console.error('Errore nel caricamento:', error));
+        }
+
+        // Carica la Home all'avvio
+        window.onload = function() {
+            loadPage('uno.html');
+        };
+    </script>
 </body>
 </html>
