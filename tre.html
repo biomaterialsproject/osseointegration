@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research - Osseointegration</title>
     <style>
+        /* Stili CSS */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -89,6 +90,7 @@
             max-width: 800px;
             margin: 40px auto;
             scroll-margin-top: 20px;
+            position: relative;
         }
 
         .research-content {
@@ -98,10 +100,17 @@
             border-radius: 8px;
             background: #f9f9f9;
             margin-bottom: 20px;
+            transition: all 0.3s ease;
         }
 
         .active {
             display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         @media (max-width: 768px) {
@@ -121,24 +130,26 @@
         This page presents new research related to osseointegration. Click on the images below to read more about each topic.
     </p>
 
+    <!-- Images Section -->
     <div class="research-container">
-        <div class="research-box" onclick="showContent('research1')">
+        <div class="research-box" onclick="toggleContent('research1')">
             <h4>Innovative Implants Surface</h4>
             <img src="plasmaspray.jpg" alt="Research Image 1">
             <div class="text-overlay">Learn More</div>
         </div>
-        <div class="research-box" onclick="showContent('research2')">
+        <div class="research-box" onclick="toggleContent('research2')">
             <h4>New Biomaterials</h4>
             <img src="mat.jpg" alt="Research Image 2">
             <div class="text-overlay">Learn More</div>
         </div>
-        <div class="research-box" onclick="showContent('research3')">
+        <div class="research-box" onclick="toggleContent('research3')">
             <h4>Future Trends in Osseointegration</h4>
             <img src="newmat.jpg" alt="Research Image 3">
             <div class="text-overlay">Learn More</div>
         </div>
     </div>
 
+    <!-- Paragraphs Section -->
     <div class="research-content-container">
         <div id="research1" class="research-content">
             <h3>Innovative Implants Surface</h3>
@@ -155,14 +166,31 @@
     </div>
 
     <script>
-        function showContent(id) {
-            var contents = document.querySelectorAll('.research-content');
-            contents.forEach(function(content) {
-                content.classList.remove('active');
-            });
+        let lastClicked = null; // Variabile per tenere traccia dell'ultimo elemento cliccato
+
+        function toggleContent(id) {
+            const selectedContent = document.getElementById(id);
             
-            var selectedContent = document.getElementById(id);
+            // Se è lo stesso elemento cliccato, chiudilo
+            if (lastClicked === id) {
+                selectedContent.classList.remove('active');
+                lastClicked = null;
+                return;
+            }
+
+            // Se è un nuovo elemento, chiudi quello precedente (se esiste)
+            if (lastClicked !== null) {
+                document.getElementById(lastClicked).classList.remove('active');
+            }
+
+            // Aggiungi la classe 'active' all'elemento cliccato
             selectedContent.classList.add('active');
+
+            // Aggiorna l'ultimo elemento cliccato
+            lastClicked = id;
+            
+            // Scroll to the content
+            selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     </script>
 </body>
