@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research - Osseointegration</title>
     <style>
-        /* Stili CSS */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -25,6 +24,7 @@
             margin-top: 20px;
         }
 
+        /* Style for the container of images */
         .research-container {
             display: flex;
             justify-content: space-between;
@@ -33,6 +33,7 @@
             flex-wrap: wrap;
         }
 
+        /* Style for each image box */
         .research-box {
             width: 32%;
             position: relative;
@@ -65,6 +66,7 @@
             opacity: 1;
         }
 
+        /* Overlay text */
         .text-overlay {
             position: absolute;
             top: 60%;
@@ -86,12 +88,14 @@
             opacity: 1;
         }
 
+        /* Content container for the paragraphs */
         .research-content-container {
             max-width: 800px;
             margin: 40px auto;
             scroll-margin-top: 20px;
         }
 
+        /* Hidden content for each section */
         .research-content {
             display: none;
             padding: 20px;
@@ -102,6 +106,7 @@
             transition: all 0.3s ease;
         }
 
+        /* Style for active content */
         .active {
             display: block;
             animation: fadeIn 0.5s;
@@ -131,17 +136,17 @@
 
     <!-- Images Section -->
     <div class="research-container">
-        <div class="research-box" data-target="research1">
+        <div class="research-box" onclick="toggleContent('research1')">
             <h4>Innovative Implants Surface</h4>
             <img src="plasmaspray.jpg" alt="Research Image 1">
             <div class="text-overlay">Learn More</div>
         </div>
-        <div class="research-box" data-target="research2">
+        <div class="research-box" onclick="toggleContent('research2')">
             <h4>New Biomaterials</h4>
             <img src="mat.jpg" alt="Research Image 2">
             <div class="text-overlay">Learn More</div>
         </div>
-        <div class="research-box" data-target="research3">
+        <div class="research-box" onclick="toggleContent('research3')">
             <h4>Future Trends in Osseointegration</h4>
             <img src="newmat.jpg" alt="Research Image 3">
             <div class="text-overlay">Learn More</div>
@@ -165,31 +170,26 @@
     </div>
 
     <script>
-        // Ottieni tutti i box di ricerca
-        const researchBoxes = document.querySelectorAll('.research-box');
-        
-        // Aggiungi event listener a ciascun box
-        researchBoxes.forEach(box => {
-            box.addEventListener('click', function() {
-                // Ottieni l'ID del contenuto target da mostrare
-                const targetId = this.getAttribute('data-target');
-                const targetContent = document.getElementById(targetId);
-                
-                // Se il contenuto cliccato è già attivo (visibile), chiudilo
-                if (targetContent.classList.contains('active')) {
-                    targetContent.classList.remove('active');
-                } else {
-                    // Altrimenti, nascondi tutti i contenuti
-                    const allContents = document.querySelectorAll('.research-content');
-                    allContents.forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    
-                    // E mostra solo quello selezionato
-                    targetContent.classList.add('active');
-                }
+        function toggleContent(id) {
+            var selectedContent = document.getElementById(id);
+            
+            // Check if the clicked content is already active (open)
+            var isAlreadyActive = selectedContent.classList.contains('active');
+            
+            // Hide all content sections first
+            var contents = document.querySelectorAll('.research-content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
             });
-        });
+            
+            // If the clicked content wasn't already active, show it
+            // If it was already active, it stays closed (since we removed all 'active' classes above)
+            if (!isAlreadyActive) {
+                selectedContent.classList.add('active');
+                // Scroll to the content
+                selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
     </script>
 </body>
 </html>
