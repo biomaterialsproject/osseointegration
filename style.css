@@ -8,7 +8,7 @@ body {
 
 /* Barra superiore */
 .header {
-    background-color: #008CBA; /* Colore azzurro */
+    background-color: #8abad2; /* Colore azzurro */
     color: white;
     padding: 20px;
     text-align: center;
@@ -18,7 +18,7 @@ body {
 .nav {
     display: flex;
     justify-content: center;
-    background-color: #00AEEF; /* Colore azzurro più chiaro */
+    background-color: ##d4e5ee; /* Colore azzurro più chiaro */
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
