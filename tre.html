@@ -100,6 +100,10 @@
             margin-bottom: 20px;
         }
 
+        .active {
+            display: block;
+        }
+
         @media (max-width: 768px) {
             .research-box {
                 width: 100%;
@@ -118,17 +122,17 @@
     </p>
 
     <div class="research-container">
-        <div class="research-box" onclick="toggleContent('research1')">
+        <div class="research-box" onclick="showContent('research1')">
             <h4>Innovative Implants Surface</h4>
             <img src="plasmaspray.jpg" alt="Research Image 1">
             <div class="text-overlay">Learn More</div>
         </div>
-        <div class="research-box" onclick="toggleContent('research2')">
+        <div class="research-box" onclick="showContent('research2')">
             <h4>New Biomaterials</h4>
             <img src="mat.jpg" alt="Research Image 2">
             <div class="text-overlay">Learn More</div>
         </div>
-        <div class="research-box" onclick="toggleContent('research3')">
+        <div class="research-box" onclick="showContent('research3')">
             <h4>Future Trends in Osseointegration</h4>
             <img src="newmat.jpg" alt="Research Image 3">
             <div class="text-overlay">Learn More</div>
@@ -151,21 +155,14 @@
     </div>
 
     <script>
-        function toggleContent(id) {
+        function showContent(id) {
+            var contents = document.querySelectorAll('.research-content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+            
             var selectedContent = document.getElementById(id);
-            var activeContent = document.querySelector('.research-content.active');
-            
-            if (activeContent && activeContent !== selectedContent) {
-                activeContent.classList.remove('active');
-                activeContent.style.display = 'none';
-            }
-            
-            if (selectedContent.style.display === 'block') {
-                selectedContent.style.display = 'none';
-            } else {
-                selectedContent.style.display = 'block';
-                selectedContent.classList.add('active');
-            }
+            selectedContent.classList.add('active');
         }
     </script>
 </body>
