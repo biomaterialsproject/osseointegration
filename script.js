@@ -50,3 +50,20 @@ function loadPage(page) {
             content.innerHTML = '<p>Impossibile caricare il contenuto. Riprova più tardi.</p>';
         });
 }
+
+function showContent(id) {
+            const selectedContent = document.getElementById(id);
+
+            if (lastClicked === id) {
+                selectedContent.classList.remove('active');
+                lastClicked = null;
+            } else {
+                if (lastClicked !== null) {
+                    document.getElementById(lastClicked).classList.remove('active');
+                }
+                selectedContent.classList.add('active');
+                lastClicked = id;
+            }
+
+            selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
