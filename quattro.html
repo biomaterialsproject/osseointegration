@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biomateriali - Osteointegrazione</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Aggiunto il link per la favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         .content-text {
             max-width: 800px;
@@ -124,6 +124,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Funzione che alterna la visibilità dei sottotitoli
             function toggleSubtitles(id) {
                 var subtitleDiv = document.getElementById(id);
                 if (subtitleDiv) {
@@ -131,6 +132,7 @@
                 }
             }
 
+            // Aggiungi un event listener per ogni pulsante di trascrizione
             var buttons = document.querySelectorAll(".sub-icon");
             buttons.forEach(function (button) {
                 button.addEventListener("click", function () {
