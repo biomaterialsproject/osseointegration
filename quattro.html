@@ -138,6 +138,24 @@
                 });
             });
         });
+        function loadPage(page) {
+    fetch(page)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('content').innerHTML = data;
+
+            // Ricollega gli eventi per il toggle dei sottotitoli
+            var buttons = document.querySelectorAll(".sub-icon");
+            buttons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    var targetId = this.getAttribute("data-target");
+                    toggleSubtitles(targetId);
+                });
+            });
+        })
+        .catch(error => console.error('Errore nel caricamento:', error));
+}
+
     </script>
 </body>
 </html>
