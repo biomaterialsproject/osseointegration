@@ -56,26 +56,11 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .container h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        .card {
-            background-color: #dbe3ec;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-        }
-        .card h3 {
-            margin-top: 0;
-        }
         footer {
             background-color: #2c3e50;
             color: white;
             text-align: center;
             padding: 1rem;
-            position: relative;
-            bottom: 0;
             width: 100%;
             margin-top: 2rem;
         }
@@ -84,70 +69,23 @@
 <body>
     <header>
         <img src="logo.png" alt="Politecnico Logo" class="logo">
-        <h1>Biomateriali - Osteointegrazione</h1>
+        <h1>Biomaterials - Osteointegration - Group S3</h1>
     </header>
 
     <nav>
-        <a href="#" class="nav-item" id="nav1" onclick="loadPage(1)">Home</a>
-        <a href="#" class="nav-item" id="nav2" onclick="loadPage(2)">Tecniche</a>
-        <a href="#" class="nav-item" id="nav3" onclick="loadPage(3)">Nuove Ricerche</a>
-        <a href="#" class="nav-item" id="nav4" onclick="loadPage(4)">Podcast</a>
+        <a href="uno.html">Home</a>
+        <a href="due.html">Techniques</a>
+        <a href="tre.html">New Researches</a>
+        <a href="quattro.html">Podcast</a>
     </nav>
 
-    <div id="content" class="container">
-        <!-- Il contenuto dinamico sarà caricato qui -->
+    <div class="container">
+        <h2>Benvenuti</h2>
+        <p>Benvenuti nel nostro sito! Seleziona una sezione dal menu per esplorare il contenuto.</p>
     </div>
 
     <footer>
         &copy; 2025 Politecnico di Milano - Biomateriali. Tutti i diritti riservati.
     </footer>
-
-    <script>
-        // Funzione per caricare il contenuto dinamico per ciascuna sezione
-        function loadPage(pageNumber) {
-            const contentDiv = document.getElementById('content');
-            
-            switch(pageNumber) {
-                case 1:
-                    contentDiv.innerHTML = `
-                        <h2>Home</h2>
-                        <p>Benvenuti nel nostro sito! Il nostro progetto è dedicato all'osteointegrazione, un concetto chiave nei biomateriali. Qui troverete informazioni sulla definizione di osteointegrazione, le tecniche di valutazione, le sfide in questo campo e le ultime ricerche e tecnologie che stanno plasmando il futuro dei biomateriali.</p>
-                        <div class="card">
-                            <h3>Definizione di Osteointegrazione</h3>
-                            <p>L'osteointegrazione è un processo biologico in cui un impianto, tipicamente in titanio o altri biomateriali, si fonde saldamente con il tessuto osseo circostante. Questo processo è essenziale per garantire la stabilità e la funzionalità degli impianti, come le protesi dentali o gli impianti ortopedici.</p>
-                        </div>
-                    `;
-                    break;
-                case 2:
-                    contentDiv.innerHTML = `
-                        <h2>Tecniche</h2>
-                        <p>Dettagli sulle tecniche per la valutazione dell'osteointegrazione, inclusi i metodi di visualizzazione e le tecniche avanzate come la micro-TC e la nanoscalabilità.</p>
-                    `;
-                    break;
-                case 3:
-                    contentDiv.innerHTML = `
-                        <h2>Nuove Ricerche</h2>
-                        <p>Le ultime ricerche nel campo dell'osteointegrazione e dei biomateriali. Scopri le innovazioni più recenti e le direzioni future della scienza dei biomateriali.</p>
-                    `;
-                    break;
-                case 4:
-                    contentDiv.innerHTML = `
-                        <h2>Podcast</h2>
-                        <p>Ascolta il nostro podcast sull'osteointegrazione, con esperti che parlano delle tecniche di valutazione, delle sfide e delle innovazioni nel campo.</p>
-                    `;
-                    break;
-                default:
-                    contentDiv.innerHTML = `
-                        <h2>Errore</h2>
-                        <p>Pagina non trovata.</p>
-                    `;
-            }
-        }
-
-        // Al caricamento della pagina, carica la sezione Home
-        window.onload = function() {
-            loadPage(1); // Carica la pagina "Home" al caricamento
-        };
-    </script>
 </body>
 </html>
