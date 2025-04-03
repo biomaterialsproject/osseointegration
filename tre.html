@@ -194,6 +194,24 @@
             newParagraph.classList.add('content-text');
             selectedContent.appendChild(newParagraph);
         }
+        function loadPage(page) {
+    fetch(page)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('content').innerHTML = data;
+
+            // Ricollega gli eventi dopo aver caricato il nuovo contenuto
+            const researchBoxes = document.querySelectorAll('.research-box');
+            researchBoxes.forEach(box => {
+                box.addEventListener('click', function() {
+                    const id = box.getAttribute('onclick').match(/'([^']+)'/)[1];
+                    showContent(id);
+                });
+            });
+        })
+        .catch(error => console.error('Errore nel caricamento:', error));
+}
+
     </script>
 </body>
 </html>
