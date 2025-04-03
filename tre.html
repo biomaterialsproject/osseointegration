@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research - Osseointegration</title>
     <style>
+        /* Stili CSS */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -24,7 +25,6 @@
             margin-top: 20px;
         }
 
-        /* Style for the container of images */
         .research-container {
             display: flex;
             justify-content: space-between;
@@ -33,7 +33,6 @@
             flex-wrap: wrap;
         }
 
-        /* Style for each image box */
         .research-box {
             width: 32%;
             position: relative;
@@ -66,7 +65,6 @@
             opacity: 1;
         }
 
-        /* Overlay text */
         .text-overlay {
             position: absolute;
             top: 60%;
@@ -88,14 +86,12 @@
             opacity: 1;
         }
 
-        /* Content container for the paragraphs */
         .research-content-container {
             max-width: 800px;
             margin: 40px auto;
             scroll-margin-top: 20px;
         }
 
-        /* Hidden content for each section */
         .research-content {
             display: none;
             padding: 20px;
@@ -106,7 +102,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Style for active content */
         .active {
             display: block;
             animation: fadeIn 0.5s;
@@ -136,18 +131,18 @@
 
     <!-- Images Section -->
     <div class="research-container">
-        <div class="research-box" onclick="toggleContent('research1')">
+        <div class="research-box" onclick="showContent('research1')">
             <h4>Innovative Implants Surface</h4>
             <img src="plasmaspray.jpg" alt="Research Image 1">
             <div class="text-overlay">Learn More</div>
         </div>
-        <div class="research-box" onclick="toggleContent('research2')">
+        <div class="research-box" onclick="showContent('research2')">
             <h4>New Biomaterials</h4>
             <img src="mat.jpg" alt="Research Image 2">
             <div class="text-overlay">Learn More</div>
         </div>
-        <div class="research-box" onclick="toggleContent('research3')">
-            <h4>Future Trends </h4>
+        <div class="research-box" onclick="showContent('research3')">
+            <h4>Future Trends in Osseointegration</h4>
             <img src="newmat.jpg" alt="Research Image 3">
             <div class="text-overlay">Learn More</div>
         </div>
@@ -170,25 +165,28 @@
     </div>
 
     <script>
-        function toggleContent(id) {
-            var selectedContent = document.getElementById(id);
-            
-            // Check if the clicked content is already active (open)
-            var isAlreadyActive = selectedContent.classList.contains('active');
-            
-            // Hide all content sections first
-            var contents = document.querySelectorAll('.research-content');
-            contents.forEach(function(content) {
-                content.classList.remove('active');
-            });
-            
-            // If the clicked content wasn't already active, show it
-            // If it was already active, it stays closed (since we removed all 'active' classes above)
-            if (!isAlreadyActive) {
+        let lastClicked = null; // Variabile per tenere traccia dell'ultimo elemento cliccato
+
+        function showContent(id) {
+            const selectedContent = document.getElementById(id);
+
+            // Se è lo stesso elemento cliccato, chiudilo
+            if (lastClicked === id) {
+                selectedContent.classList.remove('active');
+                lastClicked = null; // Reset dell'elemento cliccato
+            } else {
+                // Se è un nuovo elemento, nascondi quello precedente (se esiste)
+                if (lastClicked !== null) {
+                    document.getElementById(lastClicked).classList.remove('active');
+                }
+
+                // Aggiungi la classe 'active' al nuovo elemento
                 selectedContent.classList.add('active');
-                // Scroll to the content
-                selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                lastClicked = id; // Aggiorna l'ultimo elemento cliccato
             }
+
+            // Scroll to the content
+            selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     </script>
 </body>
