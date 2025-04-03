@@ -131,18 +131,18 @@
 
     <!-- Images Section -->
     <div class="research-container">
-        <div class="research-box" onclick="document.getElementById('research1').classList.toggle('active');">
+        <div class="research-box" data-target="research1">
             <h4>Innovative Implants Surface</h4>
             <img src="plasmaspray.jpg" alt="Research Image 1">
             <div class="text-overlay">Learn More</div>
         </div>
-        <div class="research-box" onclick="document.getElementById('research2').classList.toggle('active');">
+        <div class="research-box" data-target="research2">
             <h4>New Biomaterials</h4>
             <img src="mat.jpg" alt="Research Image 2">
             <div class="text-overlay">Learn More</div>
         </div>
-        <div class="research-box" onclick="document.getElementById('research3').classList.toggle('active');">
-            <h4>Future Trends</h4>
+        <div class="research-box" data-target="research3">
+            <h4>Future Trends in Osseointegration</h4>
             <img src="newmat.jpg" alt="Research Image 3">
             <div class="text-overlay">Learn More</div>
         </div>
@@ -163,5 +163,33 @@
             <p>In the future, osseointegration could be revolutionized with the use of 3D printing, smart materials, and enhanced biomaterial composites, offering better functionality and compatibility with biological systems.</p>
         </div>
     </div>
+
+    <script>
+        // Ottieni tutti i box di ricerca
+        const researchBoxes = document.querySelectorAll('.research-box');
+        
+        // Aggiungi event listener a ciascun box
+        researchBoxes.forEach(box => {
+            box.addEventListener('click', function() {
+                // Ottieni l'ID del contenuto target da mostrare
+                const targetId = this.getAttribute('data-target');
+                const targetContent = document.getElementById(targetId);
+                
+                // Se il contenuto cliccato è già attivo (visibile), chiudilo
+                if (targetContent.classList.contains('active')) {
+                    targetContent.classList.remove('active');
+                } else {
+                    // Altrimenti, nascondi tutti i contenuti
+                    const allContents = document.querySelectorAll('.research-content');
+                    allContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // E mostra solo quello selezionato
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
