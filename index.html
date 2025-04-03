@@ -1,84 +1,104 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biomateriali - Osteointegrazione</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f4f8fb;
-            color: #2c3e50;
-        }
-
-        .header {
-            display: flex;
-            align-items: center;
-            padding: 1rem 2rem;
-            background-color: #e6f0f8;
-        }
-
-        .header img {
-            height: 60px;
-            margin-right: 1rem;
-        }
-
-        .header h1 {
-            font-size: 1.8rem;
-            color: #2c3e50;
-        }
-
-        .nav {
-            background-color: #4a6c8a;
-            padding: 0.5rem 2rem;
-            display: flex;
-        }
-
-        .nav-item {
-            color: white;
-            text-decoration: none;
-            margin-right: 1.5rem;
-            font-weight: bold;
-            transition: opacity 0.2s;
-        }
-
-        .nav-item:hover {
-            opacity: 0.8;
-        }
-
-        #content {
-            padding: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biomaterials - Group M4</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1f3f6;
+      color: #2c3e50;
+    }
+    header {
+      background-color: #2c3e50;
+      padding: 1.5rem;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      background-color: #34495e;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background-color: #dfe6ed;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header with logo -->
-    <div class="header">
-        <img src="logo.png" alt="Group Logo">
-        <h1>Biomaterials - Group M4</h1>
+  <header>
+    <h1>Biomaterials - Group M4</h1>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#techniques">Techniques</a>
+    <a href="#research">New Researches</a>
+    <a href="#podcast">Podcast</a>
+  </nav>
+
+  <div class="container" id="home">
+    <h2>Home</h2>
+    <p>Welcome to our website! Our project is dedicated to exploring osseointegration, a key concept in biomaterials. Here, you will find information about the definition of osseointegration, evaluation techniques, challenges in this field, and the latest research and technologies that are shaping the future of biomaterials.</p>
+
+    <div class="card">
+      <h3>Branemark definition</h3>
+      <p>“Osseointegration is a direct contact—on light microscopic level—between living bone and implant.”</p>
     </div>
 
-    <!-- Navigation bar -->
-    <div class="nav">
-        <a href="#" class="nav-item" id="nav1" onclick="loadPage(1)">Home</a>
-        <a href="#" class="nav-item" id="nav2" onclick="loadPage(2)">Techniques</a>
-        <a href="#" class="nav-item" id="nav3" onclick="loadPage(3)">New Researches</a>
-        <a href="#" class="nav-item" id="nav4" onclick="loadPage(4)">Podcast</a>
+    <div class="card">
+      <h3>Current definition</h3>
+      <p>“An implant is considered as osseointegrated if it doesn't have progressive relative movement with the bone at its interface.”</p>
     </div>
+  </div>
 
-    <!-- Dynamic content -->
-    <div id="content">
-        <!-- Dynamic content will load here -->
-    </div>
-
-    <!-- Script inclusion -->
-    <script src="script.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            loadPage(1); // Load "Home" on page load
-        });
-    </script>
+  <footer>
+    &copy; 2025 Politecnico di Milano - Biomaterials Group M4. All rights reserved.
+  </footer>
 </body>
 </html>
