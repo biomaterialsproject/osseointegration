@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research - Osseointegration</title>
     <style>
-        /* Stili CSS */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,16 +14,12 @@
             text-align: center;
             margin-top: 20px;
         }
-
         .content-text {
             max-width: 800px;
-            width: 100%;
             margin: 0 auto;
             text-align: justify;
-            word-wrap: break-word;
             margin-top: 20px;
         }
-
         .research-container {
             display: flex;
             justify-content: space-between;
@@ -32,94 +27,52 @@
             max-width: 800px;
             flex-wrap: wrap;
         }
-
         .research-box {
             width: 32%;
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            position: relative;
             margin-bottom: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
-        .research-box:hover {
-            transform: scale(1.05);
-        }
-
-        .research-box h4 {
-            text-align: center;
-            margin: 10px 0;
-        }
-
         .research-box img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             opacity: 0.7;
-            transition: opacity 0.3s ease;
         }
-
-        .research-box:hover img {
-            opacity: 1;
+        .research-box h4 {
+            text-align: center;
         }
-
         .text-overlay {
             position: absolute;
             top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: white;
-            font-size: 18px;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             text-align: center;
             opacity: 0;
             transition: opacity 0.3s ease;
-            padding: 5px 10px;
             background-color: rgba(0,0,0,0.5);
-            border-radius: 5px;
+            padding: 5px 10px;
         }
-
         .research-box:hover .text-overlay {
             opacity: 1;
         }
-
         .research-content-container {
+            margin-top: 40px;
             max-width: 800px;
-            margin: 40px auto;
-            scroll-margin-top: 20px;
+            margin: 0 auto;
         }
-
         .research-content {
             display: none;
             padding: 20px;
             border: 1px solid #ccc;
-            border-radius: 8px;
-            background: #f9f9f9;
+            background-color: #f9f9f9;
             margin-bottom: 20px;
-            transition: all 0.3s ease;
         }
-
         .active {
             display: block;
-            animation: fadeIn 0.5s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @media (max-width: 768px) {
-            .research-box {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-            .research-container {
-                flex-direction: column;
-            }
         }
     </style>
 </head>
@@ -129,7 +82,6 @@
         This page presents new research related to osseointegration. Click on the images below to read more about each topic.
     </p>
 
-    <!-- Images Section -->
     <div class="research-container">
         <div class="research-box" onclick="showContent('research1')">
             <h4>Innovative Implants Surface</h4>
@@ -148,70 +100,41 @@
         </div>
     </div>
 
-    <!-- Paragraphs Section -->
     <div class="research-content-container">
         <div id="research1" class="research-content">
             <h3>Innovative Implants Surface</h3>
-            <p>In this section, we explore the latest advancements in the surface treatments of implants, including new coatings and textures that enhance osseointegration and longevity of implants.</p>
+            <p>Exploring the latest advancements in surface treatments for implants.</p>
         </div>
         <div id="research2" class="research-content">
             <h3>New Biomaterials for Implants</h3>
-            <p>This research investigates novel biomaterials designed to improve the biological integration of implants with bone tissue. These materials aim to optimize performance and minimize the risk of complications.</p>
+            <p>Investigating novel biomaterials for improved bone integration.</p>
         </div>
         <div id="research3" class="research-content">
             <h3>Future Trends in Osseointegration</h3>
-            <p>In the future, osseointegration could be revolutionized with the use of 3D printing, smart materials, and enhanced biomaterial composites, offering better functionality and compatibility with biological systems.</p>
+            <p>Revolutionizing osseointegration with smart materials and 3D printing.</p>
         </div>
     </div>
 
+    <!-- Place the script at the bottom -->
     <script>
-        let lastClicked = null; // Variabile per tenere traccia dell'ultimo elemento cliccato
+        let lastClicked = null;
 
         function showContent(id) {
             const selectedContent = document.getElementById(id);
 
-            // Se è lo stesso elemento cliccato, chiudilo
             if (lastClicked === id) {
                 selectedContent.classList.remove('active');
-                lastClicked = null; // Reset dell'elemento cliccato
+                lastClicked = null;
             } else {
-                // Se è un nuovo elemento, nascondi quello precedente (se esiste)
                 if (lastClicked !== null) {
                     document.getElementById(lastClicked).classList.remove('active');
                 }
-
-                // Aggiungi la classe 'active' al nuovo elemento
                 selectedContent.classList.add('active');
-                lastClicked = id; // Aggiorna l'ultimo elemento cliccato
+                lastClicked = id;
             }
 
-            // Scroll to the content
             selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-            // Crea un nuovo paragrafo aggiuntivo
-            let newParagraph = document.createElement("p");
-            newParagraph.innerHTML = "This is the additional information for the selected research topic.";
-            newParagraph.classList.add('content-text');
-            selectedContent.appendChild(newParagraph);
         }
-        function loadPage(page) {
-    fetch(page)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('content').innerHTML = data;
-
-            // Ricollega gli eventi dopo aver caricato il nuovo contenuto
-            const researchBoxes = document.querySelectorAll('.research-box');
-            researchBoxes.forEach(box => {
-                box.addEventListener('click', function() {
-                    const id = box.getAttribute('onclick').match(/'([^']+)'/)[1];
-                    showContent(id);
-                });
-            });
-        })
-        .catch(error => console.error('Errore nel caricamento:', error));
-}
-
     </script>
 </body>
 </html>
