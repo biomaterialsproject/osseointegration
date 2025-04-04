@@ -114,27 +114,5 @@
             <p>Revolutionizing osseointegration with smart materials and 3D printing.</p>
         </div>
     </div>
-
-    <!-- Place the script at the bottom -->
-    <script>
-        let lastClicked = null;
-
-        function showContent(id) {
-            const selectedContent = document.getElementById(id);
-
-            if (lastClicked === id) {
-                selectedContent.classList.remove('active');
-                lastClicked = null;
-            } else {
-                if (lastClicked !== null) {
-                    document.getElementById(lastClicked).classList.remove('active');
-                }
-                selectedContent.classList.add('active');
-                lastClicked = id;
-            }
-
-            selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    </script>
 </body>
 </html>
