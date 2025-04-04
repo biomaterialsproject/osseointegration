@@ -21,17 +21,16 @@ function loadPage(page) {
     // Cambia il contenuto in base alla sezione selezionata
     const content = document.getElementById('content');
 
-    // File da caricare in base alla sezione
     let fileToLoad = '';
 
     if (page === 1) {
-        fileToLoad = 'uno.html'; // Carica il contenuto da uno.html per la Home
+        fileToLoad = 'uno.html'; 
     } else if (page === 2) {
-        fileToLoad = 'due.html'; // Carica il contenuto da due.html
+        fileToLoad = 'due.html'; 
     } else if (page === 3) {
-        fileToLoad = 'tre.html'; // Carica il contenuto da tre.html
+        fileToLoad = 'tre.html'; 
     } else if (page === 4) {
-        fileToLoad = 'quattro.html'; // Carica il contenuto da quattro.html
+        fileToLoad = 'quattro.html'; 
     }
 
     // Carica il contenuto usando fetch
@@ -43,7 +42,12 @@ function loadPage(page) {
             return response.text();
         })
         .then(data => {
-            content.innerHTML = data; // Imposta il contenuto del file HTML nella pagina
+            content.innerHTML = data; 
+
+            // Se abbiamo caricato "tre.html", colleghiamo di nuovo gli eventi
+            if (page === 3) {
+                setTimeout(attachClickHandlers, 100);
+            }
         })
         .catch(error => {
             console.error('Errore nel caricamento del file:', error);
@@ -51,47 +55,19 @@ function loadPage(page) {
         });
 }
 
-function showContent(id) {
-            const selectedContent = document.getElementById(id);
-
-            if (lastClicked === id) {
-                selectedContent.classList.remove('active');
-                lastClicked = null;
-            } else {
-                if (lastClicked !== null) {
-                    document.getElementById(lastClicked).classList.remove('active');
-                }
-                selectedContent.classList.add('active');
-                lastClicked = id;
-            }
-
-            selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-function loadPage(page) {
-    fetch(page)
-        .then(response => response.text())
-        .then(data => {
-            const contentDiv = document.getElementById('content');
-            contentDiv.innerHTML = data;
-
-            // Attendere che il nuovo contenuto sia caricato prima di aggiungere gli eventi
-            setTimeout(() => {
-                attachClickHandlers();
-            }, 100);
-        })
-        .catch(error => console.error('Errore nel caricamento:', error));
-}
-
-// Questa funzione aggiunge i listener agli elementi caricati dinamicamente
+// Funzione per aggiungere gli event listener alle immagini di "tre.html"
 function attachClickHandlers() {
     const researchBoxes = document.querySelectorAll('.research-box');
     researchBoxes.forEach(box => {
         box.addEventListener('click', function () {
-            const contentId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+            const contentId = this.getAttribute('data-target');
             showContent(contentId);
         });
     });
 }
+
+// Funzione per mostrare il contenuto delle ricerche
+let lastClicked = null;
 
 function showContent(id) {
     const selectedContent = document.getElementById(id);
@@ -109,7 +85,7 @@ function showContent(id) {
     selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// Carica la pagina home di default
+// Carica la Home di default
 window.onload = function () {
-    loadPage('uno.html');
+    loadPage(1);
 };
