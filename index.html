@@ -67,12 +67,12 @@
     }
 
     .card {
-    background-color: #dbe3ec;
-    color: #1f2d3d; /* matching the header/nav tone */
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1rem;
-}
+        background-color: #dbe3ec;
+        color: #1f2d3d;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
 
     footer {
         background-color: #2c3e50;
@@ -98,7 +98,23 @@
     </nav>
 
     <div id="content" class="container">
-        <!-- Il contenuto delle pagine verrà caricato qui -->
+        <!-- Home content with cards -->
+        <h2>Home</h2>
+        <p>
+            Welcome to our website! Our project is dedicated to exploring osseointegration, a key concept in biomaterials.
+            Here, you will find information about the definition of osseointegration, evaluation techniques, challenges in this field,
+            and the latest research and technologies that are shaping the future of biomaterials.
+        </p>
+
+        <div class="card">
+            <h3>Branemark definition</h3>
+            <p>“Osseointegration is a direct contact—on light microscopic level—between living bone and implant.”</p>
+        </div>
+
+        <div class="card">
+            <h3>Current definition</h3>
+            <p>“An implant is considered as osseointegrated if it doesn't have progressive relative movement with the bone at its interface.”</p>
+        </div>
     </div>
 
     <footer>
@@ -106,10 +122,8 @@
     </footer>
 
     <script>
-        // Variabile globale per tenere traccia dell'ultimo elemento di ricerca cliccato
         var lastClicked = null;
 
-        // Funzione per mostrare/nascondere i contenuti delle ricerche
         function showContent(id) {
             const selectedContent = document.getElementById(id);
 
@@ -127,7 +141,6 @@
             selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Funzione per mostrare/nascondere le trascrizioni dei podcast
         function toggleSubtitles(id) {
             var subtitleDiv = document.getElementById(id);
             if (subtitleDiv.style.display === "none" || subtitleDiv.style.display === "") {
@@ -142,8 +155,6 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('content').innerHTML = data;
-                    
-                    // Esegui eventuali script nel contenuto appena caricato
                     const scripts = document.getElementById('content').getElementsByTagName('script');
                     for (let i = 0; i < scripts.length; i++) {
                         eval(scripts[i].innerText);
@@ -152,10 +163,11 @@
                 .catch(error => console.error('Errore nel caricamento:', error));
         }
 
-        // Carica la Home all'avvio
+        // Load home page by default
         window.onload = function() {
             loadPage('uno.html');
         };
     </script>
 </body>
 </html>
+
