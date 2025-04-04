@@ -67,3 +67,49 @@ function showContent(id) {
 
             selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+function loadPage(page) {
+    fetch(page)
+        .then(response => response.text())
+        .then(data => {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = data;
+
+            // Attendere che il nuovo contenuto sia caricato prima di aggiungere gli eventi
+            setTimeout(() => {
+                attachClickHandlers();
+            }, 100);
+        })
+        .catch(error => console.error('Errore nel caricamento:', error));
+}
+
+// Questa funzione aggiunge i listener agli elementi caricati dinamicamente
+function attachClickHandlers() {
+    const researchBoxes = document.querySelectorAll('.research-box');
+    researchBoxes.forEach(box => {
+        box.addEventListener('click', function () {
+            const contentId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+            showContent(contentId);
+        });
+    });
+}
+
+function showContent(id) {
+    const selectedContent = document.getElementById(id);
+    if (!selectedContent) {
+        console.error(`Elemento con ID '${id}' non trovato.`);
+        return;
+    }
+
+    // Nasconde tutti gli altri contenuti prima di mostrare il nuovo
+    document.querySelectorAll('.research-content').forEach(content => {
+        content.classList.remove('active');
+    });
+
+    selectedContent.classList.add('active');
+    selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Carica la pagina home di default
+window.onload = function () {
+    loadPage('uno.html');
+};
