@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -90,11 +89,48 @@
     </footer>
 
     <script>
+        // Variabile globale per tenere traccia dell'ultimo elemento di ricerca cliccato
+        var lastClicked = null;
+
+        // Funzione per mostrare/nascondere i contenuti delle ricerche
+        function showContent(id) {
+            const selectedContent = document.getElementById(id);
+
+            if (lastClicked === id) {
+                selectedContent.classList.remove('active');
+                lastClicked = null;
+            } else {
+                if (lastClicked !== null) {
+                    document.getElementById(lastClicked).classList.remove('active');
+                }
+                selectedContent.classList.add('active');
+                lastClicked = id;
+            }
+
+            selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Funzione per mostrare/nascondere le trascrizioni dei podcast
+        function toggleSubtitles(id) {
+            var subtitleDiv = document.getElementById(id);
+            if (subtitleDiv.style.display === "none" || subtitleDiv.style.display === "") {
+                subtitleDiv.style.display = "block";
+            } else {
+                subtitleDiv.style.display = "none";
+            }
+        }
+
         function loadPage(page) {
             fetch(page)
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('content').innerHTML = data;
+                    
+                    // Esegui eventuali script nel contenuto appena caricato
+                    const scripts = document.getElementById('content').getElementsByTagName('script');
+                    for (let i = 0; i < scripts.length; i++) {
+                        eval(scripts[i].innerText);
+                    }
                 })
                 .catch(error => console.error('Errore nel caricamento:', error));
         }
