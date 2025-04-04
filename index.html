@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -93,20 +94,7 @@
             fetch(page)
                 .then(response => response.text())
                 .then(data => {
-                    const contentDiv = document.getElementById('content');
-                    contentDiv.innerHTML = data;
-
-                    // Esegue gli script caricati dinamicamente
-                    contentDiv.querySelectorAll("script").forEach(oldScript => {
-                        const newScript = document.createElement("script");
-                        if (oldScript.src) {
-                            newScript.src = oldScript.src;
-                            newScript.onload = () => console.log(`Script ${oldScript.src} caricato.`);
-                        } else {
-                            newScript.textContent = oldScript.textContent;
-                        }
-                        document.body.appendChild(newScript);
-                    });
+                    document.getElementById('content').innerHTML = data;
                 })
                 .catch(error => console.error('Errore nel caricamento:', error));
         }
@@ -115,31 +103,6 @@
         window.onload = function() {
             loadPage('uno.html');
         };
-
-        let lastClicked = null;
-
-        function showContent(id) {
-            const selectedContent = document.getElementById(id);
-
-            if (!selectedContent) {
-                console.error(`Elemento con ID '${id}' non trovato.`);
-                return;
-            }
-
-            if (lastClicked === id) {
-                selectedContent.classList.remove('active');
-                lastClicked = null;
-            } else {
-                if (lastClicked !== null) {
-                    const prevElement = document.getElementById(lastClicked);
-                    if (prevElement) prevElement.classList.remove('active');
-                }
-                selectedContent.classList.add('active');
-                lastClicked = id;
-            }
-
-            selectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
     </script>
 </body>
 </html>
