@@ -3,116 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research - Osseointegration</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        h2 {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .content-text {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: justify;
-            margin-top: 20px;
-        }
-        .research-container {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px auto;
-            max-width: 800px;
-            flex-wrap: wrap;
-        }
-        .research-box {
-            width: 32%;
-            cursor: pointer;
-            position: relative;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .research-box img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            opacity: 0.7;
-        }
-        .research-box h4 {
-            text-align: center;
-        }
-        .text-overlay {
-            position: absolute;
-            top: 60%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-weight: bold;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            background-color: rgba(0,0,0,0.5);
-            padding: 5px 10px;
-        }
-        .research-box:hover .text-overlay {
-            opacity: 1;
-        }
-        .research-content-container {
-            margin-top: 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .research-content {
-            display: none;
-            padding: 20px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-            margin-bottom: 20px;
-        }
-        .active {
-            display: block;
-        }
-    </style>
+    <title>Osseointegrazione - Tecniche</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Researches on Osseointegration</h2>
-    <p class="content-text">
-        This page presents new research related to osseointegration. Click on the images below to read more about each topic.
-    </p>
 
-    <div class="research-container">
-        <div class="research-box" onclick="showContent('research1')">
-            <h4>Innovative Implants Surface</h4>
-            <img src="plasmaspray.jpg" alt="Research Image 1">
-            <div class="text-overlay">Learn More</div>
+    <div class="container">
+        <h2>Tecniche di Osseointegrazione</h2>
+        <p>Esplora le principali tecniche utilizzate per migliorare l’osseointegrazione negli impianti.</p>
+
+        <div class="research-section">
+            <div class="research-box" data-target="research1">
+                <h4>Superfici Innovative per Impianti</h4>
+                <img src="plasmaspray.jpg" alt="Ricerca 1">
+                <div class="text-overlay">Scopri di più</div>
+            </div>
+            <div class="research-box" data-target="research2">
+                <h4>Nuovi Biomateriali</h4>
+                <img src="mat.jpg" alt="Ricerca 2">
+                <div class="text-overlay">Scopri di più</div>
+            </div>
+            <div class="research-box" data-target="research3">
+                <h4>Tendenze Future</h4>
+                <img src="newmat.jpg" alt="Ricerca 3">
+                <div class="text-overlay">Scopri di più</div>
+            </div>
         </div>
-        <div class="research-box" onclick="showContent('research2')">
-            <h4>New Biomaterials</h4>
-            <img src="mat.jpg" alt="Research Image 2">
-            <div class="text-overlay">Learn More</div>
+
+        <div class="research-content" id="research1">
+            <h3>Superfici Innovative per Impianti</h3>
+            <p>Le nuove tecnologie, come il plasma spray, permettono di migliorare la connessione tra osso e impianto.</p>
         </div>
-        <div class="research-box" onclick="showContent('research3')">
-            <h4>Future Trends in Osseointegration</h4>
-            <img src="newmat.jpg" alt="Research Image 3">
-            <div class="text-overlay">Learn More</div>
+
+        <div class="research-content" id="research2">
+            <h3>Nuovi Biomateriali</h3>
+            <p>La ricerca sui biomateriali ha portato allo sviluppo di nuove leghe e rivestimenti per migliorare la biocompatibilità.</p>
         </div>
+
+        <div class="research-content" id="research3">
+            <h3>Tendenze Future</h3>
+            <p>L’uso di nanotecnologie e materiali intelligenti promette di rivoluzionare il settore dell’osseointegrazione.</p>
+        </div>
+
     </div>
 
-    <div class="research-content-container">
-        <div id="research1" class="research-content">
-            <h3>Innovative Implants Surface</h3>
-            <p>Exploring the latest advancements in surface treatments for implants.</p>
-        </div>
-        <div id="research2" class="research-content">
-            <h3>New Biomaterials for Implants</h3>
-            <p>Investigating novel biomaterials for improved bone integration.</p>
-        </div>
-        <div id="research3" class="research-content">
-            <h3>Future Trends in Osseointegration</h3>
-            <p>Revolutionizing osseointegration with smart materials and 3D printing.</p>
-        </div>
-    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".research-box").forEach(box => {
+                box.addEventListener("click", function () {
+                    const contentId = this.getAttribute("data-target");
+                    showContent(contentId);
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
