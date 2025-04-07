@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Osseointegration - Group M4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .content-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+            margin-top: 20px;
+        }
+        .research-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+            max-width: 800px;
+            flex-wrap: wrap;
+        }
+        .research-box {
+            width: 32%;
+            cursor: pointer;
+            position: relative;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .research-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            opacity: 1;
+        }
+        .research-box h4 {
+            text-align: center;
+        }
+        .text-overlay {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background-color: rgba(0,0,0,0.5);
+            padding: 5px 10px;
+        }
+        .research-box:hover .text-overlay {
+            opacity: 1;
+        }
+        .research-content-container {
+            margin-top: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .research-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .active {
+            display: block;
+        }
+        ref{
+            color: #B0C4DE
+        }
+    </style>
+</head>
+<body>
+    <h2>Researches on Osseointegration</h2>
+    <p class="content-text">
+        This page presents new research related to osseointegration. Click on the images below to read more about each topic.
+    </p>
 
+    <div class="research-container">
+        <div class="research-box" onclick="showContent('research1')">
+            <h4>TEM</h4>
+            <img src="plasmaspray.jpg" alt="Research Image 1">
+            <div class="text-overlay">Learn More</div>
+        </div>
+        <div class="research-box" onclick="showContent('research2')">
+            <h4>SEM<br> </h4>
+            <img src="mat.jpg" alt="Research Image 2">
+            <div class="text-overlay">Learn More</div>
+        </div>
+        <div class="research-box" onclick="showContent('research3')">
+            <h4>Others </h4>
+            <img src="newmat.jpg" alt="Research Image 3">
+            <div class="text-overlay">Learn More</div>
+        </div>
+    </div>
+
+    <div class="research-content-container">
+        <div id="research1" class="research-content">
+            <h3>TEM</h3>
+            <p>
+                 </p>
+        </div>
+        <div id="research2" class="research-content">
+            <h3>SEM</h3>
+            <p>
+              
+            </p>
+        </div>
+        <div id="research3" class="research-content">
+            <h3>Others</h3>
+            <p>   
+        </div>
+    </div>
+</body>
+</html>
