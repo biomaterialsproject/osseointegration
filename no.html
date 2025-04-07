@@ -90,10 +90,13 @@
       display: flex;
       flex-direction: row;
       gap: 20px;
-      align-items: flex-start;
+      align-items: center; 
       flex-wrap: wrap;
     }
-
+    .research-content-inner.full-width {
+      flex-direction: column;
+      align-items: stretch;
+    }
     .research-text,
     .research-image {
       flex: 1;
@@ -183,6 +186,11 @@
         <div class="research-text">
           <h3>EDS</h3>
           <p>Energy-Dispersive X-ray Spectroscopy (EDS) provides a chemical spectrum of the sample, where each peak or “spike” corresponds to a specific chemical element present on the surface. EDS analysis is often integrated with Scanning Electron Microscopy (SEM) or Transmission Electron Microscopy (TEM) to not only examine the material’s microstructure but also gain detailed information about its elemental composition.</p>
+        </div>
+      </div>
+
+    <div class="research-content-inner full-width">
+      <div class="research-text">
 
           <h3>XRD</h3>
           <p>X-ray Diffraction is a powerful technique used to determine the atomic and molecular structure of crystalline materials. It works by directing X-rays at the sample and measuring the angles and intensities of the diffracted beams. This data is used to determine the spacing between planes in the crystal lattice, allowing identification of crystalline phases and their orientation. To analyze the crystallinity and phase composition of the coating on an implant. Applications in bone-implant research:
