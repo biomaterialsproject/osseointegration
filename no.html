@@ -63,6 +63,12 @@
       font-weight: bold;
       background-color: rgba(0, 0, 0, 0.5);
       padding: 5px 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .research-box:hover .text-overlay {
+      opacity: 1;
     }
 
     .research-content {
@@ -116,22 +122,20 @@
       color: #B0C4DE;
     }
   </style>
+
   <script>
     let currentActive = null;
 
     function showContent(id) {
       const section = document.getElementById(id);
 
-      // Se la sezione cliccata è già attiva, la chiude
       if (section.classList.contains("active")) {
         section.classList.remove("active");
         currentActive = null;
       } else {
-        // Chiude eventuale sezione attiva
         if (currentActive) {
           currentActive.classList.remove("active");
         }
-        // Apre nuova sezione
         section.classList.add("active");
         currentActive = section;
       }
@@ -145,7 +149,6 @@
   </p>
 
   <div class="research-container">
-    <!-- TEM -->
     <div class="research-box" onclick="showContent('research1')">
       <h4>TEM</h4>
       <img src="plasmaspray.jpg" alt="Research Image 1" />
@@ -166,7 +169,6 @@
       </div>
     </div>
 
-    <!-- SEM -->
     <div class="research-box" onclick="showContent('research2')">
       <h4>SEM</h4>
       <img src="mat.jpg" alt="Research Image 2" />
@@ -187,7 +189,6 @@
       </div>
     </div>
 
-    <!-- Others -->
     <div class="research-box" onclick="showContent('research3')">
       <h4>Others</h4>
       <img src="newmat.jpg" alt="Research Image 3" />
