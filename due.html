@@ -1,26 +1,146 @@
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
     <style>
-        /* Stile per il contenuto giustificato e larghezza personalizzabile */
-        .content-text {
-            max-width: 800px; /* Imposta la larghezza massima desiderata */
-            width: 100%; /* Usa il 100% della larghezza disponibile fino al limite */
-            margin: 0 auto; /* Centra il testo orizzontalmente */
-            text-align: justify; /* Giustifica il testo */
-            word-wrap: break-word; /* Forza il testo ad andare a capo quando necessario */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
         }
-        /* Stile per il riquadro grigio */
-        .definition-box {
-            background-color: #f9f9f9; /* Colore di sfondo grigio chiaro */
-            border: 1px solid #ccc; /* Bordo grigio chiaro */
-            padding: 20px; /* Spaziatura interna */
-            max-width: 800px; /* Imposta la larghezza massima */
-            width: 100%; /* Usa il 100% della larghezza disponibile fino al limite */
-            margin: 20px auto; /* Centra il riquadro e aggiungi uno spazio sopra e sotto */
-            text-align: justify; /* Giustifica il testo all'interno */
-            font-size: 1.1em; /* Imposta la dimensione del font */
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .content-text {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: justify;
+            word-wrap: break-word;
+        }
+        .research-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+            max-width: 800px;
+            flex-wrap: wrap;
+        }
+        .research-box {
+            width: 32%;
+            cursor: pointer;
+            position: relative;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .research-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            opacity: 1;
+        }
+        .research-box h4 {
+            text-align: center;
+        }
+        .text-overlay {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background-color: rgba(0,0,0,0.5);
+            padding: 5px 10px;
+        }
+        .research-box:hover .text-overlay {
+            opacity: 1;
+        }
+        .research-content-container {
+            margin-top: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .research-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .active {
+            display: block;
+        }
+        ref{
+            color: #B0C4DE
         }
     </style>
 <body>
-  
-    <script src="script.js"></script>
-</body>
+    <h2>Researches on Osseointegration</h2>
+    <p class="content-text">
+        This page presents new research related to osseointegration. Click on the images below to read more about each topic.
+    </p>
+
+    <div class="research-container">
+        <div class="research-box" onclick="showContent('research1')">
+            <h4>Innovative Implants Surface</h4>
+            <img src="plasmaspray.jpg" alt="Research Image 1">
+            <div class="text-overlay">Learn More</div>
+        </div>
+        <div class="research-box" onclick="showContent('research2')">
+            <h4>New Biomaterials<br> </h4>
+            <img src="mat.jpg" alt="Research Image 2">
+            <div class="text-overlay">Learn More</div>
+        </div>
+        <div class="research-box" onclick="showContent('research3')">
+            <h4>Future Trends <br> </h4>
+            <img src="newmat.jpg" alt="Research Image 3">
+            <div class="text-overlay">Learn More</div>
+        </div>
+    </div>
+
+    <div class="research-content-container">
+        <div id="research1" class="research-content">
+            <h3>Innovative Implants Surface</h3>
+            <p>Recent studies have focused on innovative strategies to enhance the interaction between implants and the surrounding bone. In particular, research has highlighted the <strong>crucial role</strong> of the implant surface. New technologies are advancing beyond traditional treatments that increase surface roughness, incorporating<strong> biochemical and nanotechnological </strong> approaches.
+
+One promising strategy involves the use of <strong>biomolecules </strong>, such as peptides, which promote cell adhesion and stimulate the regeneration of new bone tissue.
+
+Additionally, the growing use of <strong> bioactive materials </strong>, such as <strong>hydroxyapatite </strong>, further improves the biocompatibility of implants, ensuring long-term stability.
+              <br> <br>  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4958483/" target="_blank" style="color: #B0C4DE">
+    <ref> REF: Smeets, R., Stadlinger, B., Schwarz, F., Beck-Broichsitter, B., Jung, O., Precht, C., Kloss, F., Gröbe, A., Heiland, M., & Ebker, T. (2016). Impact of Dental Implant Surface Modifications on Osseointegration. In BioMed Research International (Vol. 2016). Hindawi Limited. https://doi.org/10.1155/2016/6285620 
+            </ref>
+</a>
+                 </p>
+        </div>
+        <div id="research2" class="research-content">
+            <h3>New Biomaterials</h3>
+            <p>Traditionally, <strong>hydroxyapatite </strong>has been the most widely used bioactive material for implant surfaces due to its <strong>excellent biocompatibility </strong>. This has made it a key material in enhancing implant integration and long-term stability.
+
+However, recent studies are exploring alternative materials with improved properties. One area of significant interest is the research on <strong>bioglasses </strong>, which offer not only bioactivity but also the ability to <strong>stimulate bone regeneration </strong> by releasing beneficial ions that promote cellular activity.
+
+In particular, some studies are investigating a <strong> combination </strong> of hydroxyapatite and bioglass. This hybrid material appears to enhance osseointegration by leveraging the <strong>osteoconductive </strong> properties of hydroxyapatite along with the bioactive and <strong>osteoinductive </strong> capabilities of bioglasses. Moreover, this combination is particularly advantageous for <strong> low-temperature sintering processes </strong>, making it a promising option for the development of next-generation implants with improved mechanical and biological performance.
+                <br> <br>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/25580589/" target="_blank" style="color: #B0C4DE">
+                <ref>REF: Pina, S., Oliveira, J. M., & Reis, R. L. (2015). Natural-based nanocomposites for bone tissue engineering and regenerative medicine: A review. In Advanced Materials (Vol. 27, Issue 7, pp. 1143–1169). Wiley-VCH Verlag. https://doi.org/10.1002/adma.201403354 >
+                </ref></a></p>
+        </div>
+        <div id="research3" class="research-content">
+            <h3>Future Trends</h3>
+            <p>Research in biomaterials for osseointegration is still very open and making significant progress.
+
+One of the main challenges is the <strong>risk of peri-implant infections</strong>, which can compromise the success of the implant. Another challenge is the <strong>variability</strong> in the biological response between patients, influenced by factors such as bone quality or the patient's overall health condition.
+
+To address these issues, researchers are investigating smart biomaterials capable of <strong>releasing drugs </strong> (e.g., antibiotics) or <strong>growth factors </strong>directly at the implant site.
+
+Furthermore, nanotechnologies and 3D printing will enable the creation of <strong>customized implants</strong>, optimized for the specific characteristics of each patient.
+
+The direction being pursued is the development of bioactive implants that not only integrate with the bone but also <strong>actively stimulate </strong> its regeneration.
+                <br> <br> 
+                <a href="https://pubmed.ncbi.nlm.nih.gov/28000280/" target="_blank" style="color: #B0C4DE"> <\a>
+                <ref> REF: Buser, D., Sennerby, L., & de Bruyn, H. (2017). Modern implant dentistry based on osseointegration: 50 years of progress, current trends and open questions. In Periodontology 2000 (Vol. 73, Issue 1, pp. 7–21). Blackwell Munksgaard. https://doi.org/10.1111/prd.12185 
+            </ref> </a> </p>
+        </div>
+    </div>
+</body> 
+<script src="script.js"></script>
