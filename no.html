@@ -1,197 +1,212 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research - Osseointegration - Group M4</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research - Osseointegration - Group M4</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
 
-        h2 {
-            text-align: center;
-            margin-top: 20px;
-        }
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+    }
 
-        .content-text {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: justify;
-            margin-top: 20px;
-        }
+    .content-text {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: justify;
+      margin-top: 20px;
+    }
 
-        .research-container {
-            display: block;
-            margin: 20px auto;
-            max-width: 1000px;
-        }
+    .research-container {
+      display: block;
+      margin: 20px auto;
+      max-width: 1000px;
+    }
 
-        .research-box {
-            width: 100%;
-            cursor: pointer;
-            position: relative;
-            margin-bottom: 10px;
-        }
+    .research-box {
+      width: 100%;
+      cursor: pointer;
+      position: relative;
+      margin-bottom: 10px;
+    }
 
-        .research-box img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            opacity: 1;
-        }
+    .research-box img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      opacity: 1;
+    }
 
-        .research-box h4 {
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 5px 10px;
-            margin: 0;
-            font-size: 20px;
-            z-index: 2;
-        }
+    .research-box h4 {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 5px 10px;
+      margin: 0;
+      font-size: 20px;
+      z-index: 2;
+    }
 
-        .text-overlay {
-            position: absolute;
-            bottom: 10px;
-            right: 20px;
-            color: white;
-            font-weight: bold;
-            background-color: rgba(0,0,0,0.5);
-            padding: 5px 10px;
-        }
+    .text-overlay {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      color: white;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px 10px;
+    }
 
-        .research-content {
-            display: none;
-            padding: 20px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-            text-align: justify;
-            margin-bottom: 20px;
-        }
+    .research-content {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
 
-        .research-content-inner {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            align-items: flex-start;
-            flex-wrap: wrap;
-        }
+    .research-content-inner {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
 
-        .research-text {
-            flex: 1;
-            min-width: 250px;
-        }
+    .research-text {
+      flex: 1;
+      min-width: 250px;
+    }
 
-        .research-image {
-            max-width: 300px;
-            flex-shrink: 0;
-        }
+    .research-image {
+      max-width: 300px;
+      flex-shrink: 0;
+    }
 
-        .research-image img {
-            width: 100%;
-            height: auto;
-            border: 1px solid #ccc;
-        }
+    .research-image img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
 
-        .active {
-            display: block;
-        }
+    .active {
+      display: block;
+    }
 
-        @media (max-width: 768px) {
-            .research-content-inner {
-                flex-direction: column;
-            }
-            .research-image {
-                max-width: 100%;
-            }
-        }
+    @media (max-width: 768px) {
+      .research-content-inner {
+        flex-direction: column;
+      }
 
-        ref {
-            color: #B0C4DE;
+      .research-image {
+        max-width: 100%;
+      }
+    }
+
+    ref {
+      color: #B0C4DE;
+    }
+  </style>
+  <script>
+    let currentActive = null;
+
+    function showContent(id) {
+      const section = document.getElementById(id);
+
+      // Se la sezione cliccata è già attiva, la chiude
+      if (section.classList.contains("active")) {
+        section.classList.remove("active");
+        currentActive = null;
+      } else {
+        // Chiude eventuale sezione attiva
+        if (currentActive) {
+          currentActive.classList.remove("active");
         }
-    </style>
-    <script>
-        function showContent(id) {
-            const contents = document.querySelectorAll('.research-content');
-            contents.forEach(c => c.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-        }
-    </script>
+        // Apre nuova sezione
+        section.classList.add("active");
+        currentActive = section;
+      }
+    }
+  </script>
 </head>
 <body>
-    <h2>Techniques</h2>
-    <p class="content-text">
-        There are lots of techniques that are used to evaluate osseointegration. Click on the images below to find the description of the most common techniques.
-    </p>
+  <h2>Techniques</h2>
+  <p class="content-text">
+    There are lots of techniques that are used to evaluate osseointegration. Click on the images below to find the description of the most common techniques.
+  </p>
 
-    <div class="research-container">
-        <!-- TEM -->
-        <div class="research-box" onclick="showContent('research1')">
-            <h4>TEM</h4>
-            <img src="plasmaspray.jpg" alt="Research Image 1">
-            <div class="text-overlay">Learn More</div>
-        </div>
-        <div id="research1" class="research-content">
-            <h3>TEM</h3>
-            <div class="research-content-inner">
-                <div class="research-text">
-                    <p>
-                        Il microscopio elettronico a trasmissione (TEM) consente di osservare strutture interne dei materiali a livello nanometrico.
-                        È particolarmente utile per studiare l’interfaccia tra osso e impianto, offrendo immagini dettagliate della distribuzione del materiale e dell’adesione cellulare.
-                    </p>
-                </div>
-                <div class="research-image">
-                    <img src="esempio_tem.jpg" alt="Esempio TEM">
-                </div>
-            </div>
-        </div>
-
-        <!-- SEM -->
-        <div class="research-box" onclick="showContent('research2')">
-            <h4>SEM</h4>
-            <img src="mat.jpg" alt="Research Image 2">
-            <div class="text-overlay">Learn More</div>
-        </div>
-        <div id="research2" class="research-content">
-            <h3>SEM</h3>
-            <div class="research-content-inner">
-                <div class="research-text">
-                    <p>
-                        Il microscopio elettronico a scansione (SEM) permette di ottenere immagini ad alta risoluzione della superficie degli impianti.
-                        Questa tecnica è utile per analizzare la morfologia dell’interfaccia osso-impianto e la topografia superficiale.
-                    </p>
-                </div>
-                <div class="research-image">
-                    <img src="esempio_sem.jpg" alt="Esempio SEM">
-                </div>
-            </div>
-        </div>
-
-        <!-- Others -->
-        <div class="research-box" onclick="showContent('research3')">
-            <h4>Others</h4>
-            <img src="newmat.jpg" alt="Research Image 3">
-            <div class="text-overlay">Learn More</div>
-        </div>
-        <div id="research3" class="research-content">
-            <h3>Other Techniques</h3>
-            <div class="research-content-inner">
-                <div class="research-text">
-                    <p>
-                        Altre tecniche includono micro-CT, istomorfometria e spettroscopia, utili per valutare quantitativamente la qualità dell’osseointegrazione.
-                        Queste tecniche permettono analisi tridimensionali, valutazioni meccaniche e identificazione chimica della composizione del tessuto.
-                    </p>
-                </div>
-                <div class="research-image">
-                    <img src="esempio_altri.jpg" alt="Altre Tecniche">
-                </div>
-            </div>
-        </div>
+  <div class="research-container">
+    <!-- TEM -->
+    <div class="research-box" onclick="showContent('research1')">
+      <h4>TEM</h4>
+      <img src="plasmaspray.jpg" alt="Research Image 1" />
+      <div class="text-overlay">Learn More</div>
     </div>
+    <div id="research1" class="research-content">
+      <h3>TEM</h3>
+      <div class="research-content-inner">
+        <div class="research-text">
+          <p>
+            Il microscopio elettronico a trasmissione (TEM) consente di osservare strutture interne dei materiali a livello nanometrico.
+            È particolarmente utile per studiare l’interfaccia tra osso e impianto, offrendo immagini dettagliate della distribuzione del materiale e dell’adesione cellulare.
+          </p>
+        </div>
+        <div class="research-image">
+          <img src="esempio_tem.jpg" alt="Esempio TEM" />
+        </div>
+      </div>
+    </div>
+
+    <!-- SEM -->
+    <div class="research-box" onclick="showContent('research2')">
+      <h4>SEM</h4>
+      <img src="mat.jpg" alt="Research Image 2" />
+      <div class="text-overlay">Learn More</div>
+    </div>
+    <div id="research2" class="research-content">
+      <h3>SEM</h3>
+      <div class="research-content-inner">
+        <div class="research-text">
+          <p>
+            Il microscopio elettronico a scansione (SEM) permette di ottenere immagini ad alta risoluzione della superficie degli impianti.
+            Questa tecnica è utile per analizzare la morfologia dell’interfaccia osso-impianto e la topografia superficiale.
+          </p>
+        </div>
+        <div class="research-image">
+          <img src="esempio_sem.jpg" alt="Esempio SEM" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Others -->
+    <div class="research-box" onclick="showContent('research3')">
+      <h4>Others</h4>
+      <img src="newmat.jpg" alt="Research Image 3" />
+      <div class="text-overlay">Learn More</div>
+    </div>
+    <div id="research3" class="research-content">
+      <h3>Other Techniques</h3>
+      <div class="research-content-inner">
+        <div class="research-text">
+          <p>
+            Altre tecniche includono micro-CT, istomorfometria e spettroscopia, utili per valutare quantitativamente la qualità dell’osseointegrazione.
+            Queste tecniche permettono analisi tridimensionali, valutazioni meccaniche e identificazione chimica della composizione del tessuto.
+          </p>
+        </div>
+        <div class="research-image">
+          <img src="esempio_altri.jpg" alt="Altre Tecniche" />
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
