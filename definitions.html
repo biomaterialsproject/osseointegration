@@ -1,30 +1,72 @@
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .content-text {
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-            text-align: justify;
-            word-wrap: break-word;
-        }
+<link rel="stylesheet" href="style.css">
+<style>
+    .content-text {
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between; /* Space between text and image */
+        align-items: center; /* Center align vertically */
+        text-align: justify;
+    }
 
-        .sub-icon:hover {
-            background-color: #8abad2;
-        }
- 
-    </style>
-    <script>
-        function toggleSubtitles(id) {
-            const element = document.getElementById(id);
-            element.style.display = element.style.display === "block" ? "none" : "block";
-        }
-    </script>
+    .text-left {
+        flex: 1; /* Text takes up remaining space */
+        margin-right: 20px; /* Space between text and image */
+    }
+
+    .image-right {
+        flex-shrink: 0; /* Prevent image from shrinking */
+        width: 150px; /* Adjust image width */
+        height: auto;
+        text-align: center;
+    }
+
+    .image-right img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .sub-icon:hover {
+        background-color: #8abad2;
+    }
+</style>
+
+<script>
+    function toggleSubtitles(id) {
+        const element = document.getElementById(id);
+        element.style.display = element.style.display === "block" ? "none" : "block";
+    }
+</script>
 
 <body>
     <h2>Definitions</h2>
-    <p class="content-text">
-        Def
-    </p>
 
+    <div class="content-text">
+        <div class="text-left">
+            <p>
+                Osseointegration is a key biological process for the long-term success of endosseous implants, such as dental or orthopedic devices. It refers to the stable and functional connection between bone and the surface of the implant, allowing it to support mechanical loads and integrate into surrounding tissues. Understanding this process is crucial for designing safe, long-lasting, and biocompatible devices.
+            </p>
+        </div>
+        <div class="image-right">
+            <img src="osteo.jpg" alt="Osseointegration illustration">
+        </div>
+    </div>
+
+
+    
+    
+    <div class="content-text">
+        <div class="text-left">
+            <p>
+           Levels </p>
+        </div>
+        <div class="image-right">
+            <img src="levels.jpg" alt="Osseointegration illustration">
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
