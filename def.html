@@ -1,6 +1,43 @@
 
   <link rel="stylesheet" href="style.css">
   <style>
+  .definition-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .definition-box {
+    background-color: blue;
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 45%; /* Narrower than the paragraph width */
+    text-align: center;
+  }
+
+  .definition-box h4 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .definition-box p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .definition-boxes {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .definition-box {
+      width: 80%; /* Adjust width for smaller screens */
+    }
+  }
 
     h2 {
       text-align: center;
@@ -126,31 +163,40 @@
 <body>
   <h2>Definitions</h2>
 
-      <div class="research-content-inner">
-        <div class="research-text">
-          <p>
-              Osseointegration is a key biological process for the long-term success of endosseous implants, such as dental or orthopedic devices. It refers to the stable and functional connection between bone and the surface of the implant, allowing it to support mechanical loads and integrate into surrounding tissues. Understanding this process is crucial for designing safe, long-lasting, and biocompatible devices. The definitions below highlight how the concept has evolved over time — from a microscopic observation to a clinical assessment of mechanical stability.    
-          </p>
-        </div>
-        <div class="research-image">
-          <img src="osteo.jpg" alt="osseo">
-        </div>
-      </div>
-<p>
-        BOX DEF          
-          </p>
-        
-<div class="research-content-inner">
-        <div class="research-text">
-          <p>
-                  Since Brånemark's initial observation, osseointegration has been studied at multiple levels, ranging from molecular and cellular interactions to tissue-level responses and clinical outcomes. This multiscale approach helps researchers understand how implant surface properties affect protein adsorption, how cells like osteoblasts adhere and proliferate, and how bone remodeling takes place around the implant. By combining insights from biology, biomechanics, and materials science, the goal is to optimize implant design and improve long-term success. Recent studies also emphasize the role of the immune response, angiogenesis, and mechanical loading in modulating the osseointegration process.
- </p>
-        </div>
-        <div class="research-image">
-          <img src="levels.jpg" alt="levels">
-        </div>
-      </div>
-        
-    
+  <div class="research-content-inner">
+    <div class="research-text">
+      <p>
+        Osseointegration is a key biological process for the long-term success of endosseous implants, such as dental or orthopedic devices. It refers to the stable and functional connection between bone and the surface of the implant, allowing it to support mechanical loads and integrate into surrounding tissues. Understanding this process is crucial for designing safe, long-lasting, and biocompatible devices. The definitions below highlight how the concept has evolved over time — from a microscopic observation to a clinical assessment of mechanical stability.
+      </p>
+    </div>
+    <div class="research-image">
+      <img src="osteo.jpg" alt="osseo">
+    </div>
+  </div>
+
+  <!-- Replacing the "BOX DEF" paragraph with the blue boxes -->
+  <div class="definition-boxes">
+    <div class="definition-box">
+      <h4>Definition 1</h4>
+      <p>Osseointegration is the biological process where bone integrates with the surface of an implant, leading to long-term stability and functionality.</p>
+    </div>
+    <div class="definition-box">
+      <h4>Definition 2</h4>
+      <p>It involves molecular, cellular, and tissue-level interactions that support the mechanical load and promote integration into surrounding tissues.</p>
+    </div>
+  </div>
+
+  <div class="research-content-inner">
+    <div class="research-text">
+      <p>
+        Since Brånemark's initial observation, osseointegration has been studied at multiple levels, ranging from molecular and cellular interactions to tissue-level responses and clinical outcomes. This multiscale approach helps researchers understand how implant surface properties affect protein adsorption, how cells like osteoblasts adhere and proliferate, and how bone remodeling takes place around the implant. By combining insights from biology, biomechanics, and materials science, the goal is to optimize implant design and improve long-term success. Recent studies also emphasize the role of the immune response, angiogenesis, and mechanical loading in modulating the osseointegration process.
+      </p>
+    </div>
+    <div class="research-image">
+      <img src="levels.jpg" alt="levels">
+    </div>
+  </div>
+
 </body>
+
 <script src="script.js"></script>
