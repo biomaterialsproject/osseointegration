@@ -1,123 +1,30 @@
-<link rel="stylesheet" href="style.css">
-<style>
-    h2 {
-      text-align: center;
-      margin-top: 20px;
-    }
-    body {
-        font-family: Arial, sans-serif;
-    }
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .content-text {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: justify;
+            word-wrap: break-word;
+        }
 
-    .content-text {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: justify;
-      margin-top: 20px;
-    }
-    
-
-    /* Aggiungi il margine a sinistra al contenitore della sezione */
-    .section-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        margin: 30px auto;
-        max-width: 1000px;
-        padding-left: 20px; /* Margine a sinistra */
-    }
-
-    .text-half {
-        flex: 1 1 400px;
-        min-width: 300px;
-        margin-left: 20px; /* Aggiungi il margine a sinistra per il testo */
-    }
-
-    .image-half {
-        flex: 1 1 300px;
-        text-align: center;
-    }
-
-    .image-half img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .definition-box {
-        background-color: #8abad2;
-        border: 1px solid #b3d8f2;
-        padding: 20px;
-        width: 80%;
-        max-width: 600px;
-        text-align: justify;
-        font-size: 1.1em;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        opacity: 0.7;
-    }
-
-    /* Assicurati che i paragrafi dentro le definition box siano correttamente allineati */
-    .definition-box p {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .definitions-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        margin: 30px auto;
-    }
-
-    h2 {
-        text-align: center;
-        margin-top: 40px;
-    }
-</style>
+        .sub-icon:hover {
+            background-color: #8abad2;
+        }
+ 
+    </style>
+    <script>
+        function toggleSubtitles(id) {
+            const element = document.getElementById(id);
+            element.style.display = element.style.display === "block" ? "none" : "block";
+        }
+    </script>
 
 <body>
-
-    <h2>Definitions 5</h2>
-
-    <!-- Intro paragraph + image -->
-    <div class="section-wrapper">
-        <div class="text-half content-text">
-            <p class="content-text">
-                Osseointegration is a key biological process for the long-term success of endosseous implants, such as dental or orthopedic devices. It refers to the stable and functional connection between bone and the surface of the implant, allowing it to support mechanical loads and integrate into surrounding tissues. Understanding this process is crucial for designing safe, long-lasting, and biocompatible devices. The definitions below highlight how the concept has evolved over time — from a microscopic observation to a clinical assessment of mechanical stability.
-            </p>
-        </div>
-        <div class="image-half">
-            <img src="osteo.jpg" alt="Osseointegration illustration">
-        </div>
-    </div>
-
-    <!-- Two definition boxes stacked -->
-    <div class="definitions-container">
-        <div class="definition-box">
-            <h3>Brånemark Definition</h3>
-            <p class="content-text">“Osseointegration is a <strong>direct contact</strong> – on light microscopic level – <strong>between living bone and implant</strong>.”</p>
-        </div>
-        <div class="definition-box">
-            <h3>Current Definition</h3>
-            <p class="content-text">“An implant is considered as osseointegrated if <strong>it doesn't have progressive relative movement with the bone at its interface</strong>.”</p>
-        </div>
-    </div>
-
-    <!-- Multilevel paragraph + image -->
-    <div class="section-wrapper">
-        <div class="text-half content-text">
-            <p class="content-text">
-                Since Brånemark's initial observation, osseointegration has been studied at <strong>multiple levels</strong>, ranging from <strong>molecular and cellular interactions</strong> to <strong>tissue-level responses</strong> and <strong>clinical outcomes</strong>. This multiscale approach helps researchers understand how implant surface properties affect protein adsorption, how cells like osteoblasts adhere and proliferate, and how bone remodeling takes place around the implant. By combining insights from biology, biomechanics, and materials science, the goal is to optimize implant design and improve long-term success. Recent studies also emphasize the role of the <strong>immune response</strong>, <strong>angiogenesis</strong>, and <strong>mechanical loading</strong> in modulating the osseointegration process.
-            </p>
-        </div>
-        <div class="image-half">
-            <img src="levels.jpg" alt="Implant surface micrograph">
-        </div>
-    </div>
+    <h2>Definitions</h2>
+    <p class="content-text">
+        Def
+    </p>
 
     <script src="script.js"></script>
 </body>
