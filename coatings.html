@@ -1,19 +1,142 @@
 <link rel="stylesheet" href="style.css">
 
-<p>
-    Surface coatings play a crucial role in enhancing the biological performance of titanium implants. They transform inert surfaces into bioactive interfaces capable of promoting bone healing, controlling inflammation, and delivering therapeutic agents directly at the implant site.
+h2 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .content-text {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: justify;
+      margin-top: 20px;
+    }
+
+    .research-container {
+      display: block;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+
+    .research-box {
+      width: 100%;
+      cursor: pointer;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .research-box img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      opacity: 1;
+      display: block;
+    }
+
+    .research-box h4 {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      color: white;
+      font-size: 50px;
+      font-weight: bold;
+      margin: 0;
+      z-index: 2;
+      /* Tolto lo sfondo grigio */
+    }
+
+    .text-overlay {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      color: white;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .research-box:hover .text-overlay {
+      opacity: 1;
+    }
+
+    .research-content {
+      display: none;
+      padding: 20px 0;
+      text-align: justify;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .research-content-inner {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center; 
+      flex-wrap: wrap;
+    }
+    .research-content-inner.full-width {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .research-text,
+    .research-image {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .research-image img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .research-content-inner {
+        flex-direction: column;
+      }
+
+      .research-image {
+        max-width: 100%;
+      }
+    }
+  </style>
+
+  <script>
+    function showContent(id) {
+      const content = document.getElementById(id);
+      const allContents = document.querySelectorAll('.research-content');
+
+      if (content.classList.contains('active')) {
+        content.classList.remove('active'); // Chiude se già aperto
+      } else {
+        allContents.forEach(c => c.classList.remove('active')); // Chiude gli altri
+        content.classList.add('active'); // Apre quello selezionato
+      }
+    }
+  </script>
+
+<body>
+  <h2>Coatings</h2>
+  <p class="content-text">
+    Surface coatings play a crucial role in enhancing the biological performance of titanium implants. They transform inert surfaces into <strong>bioactive interfaces </strong> capable of promoting bone healing, controlling inflammation, and delivering therapeutic agents directly at the implant site.
   </p>
 
-  <p><strong>The main types of coatings applied to implants include:</strong></p>
+  <p class="content-text">The main types of coatings applied to implants include:</p>
 
-  <p><strong>1. Inorganic Coatings</strong></p>
+  <p class="content-text"><strong>1. Inorganic Coatings</strong></p>
   <ul>
     <li>Hydroxyapatite (HA), calcium phosphate (CaP), and β-tricalcium phosphate (β-TCP) are the most common inorganic coatings.</li>
     <li>These materials closely mimic the mineral phase of natural bone, enhancing osteoconduction and facilitating early-stage bone formation around the implant.</li>
     <li>Their bioactive nature encourages rapid bonding between the implant and the host bone, improving long-term stability.</li>
   </ul>
 
-  <p><strong>2. Polymeric and Drug-Delivery Coatings</strong></p>
+  <p class="content-text"><strong>2. Polymeric and Drug-Delivery Coatings</strong></p>
   <ul>
     <li>Advanced polymeric systems, such as hydrogels, multilayer coatings, and nanocarriers, are engineered to deliver therapeutic molecules directly at the implant surface.</li>
     <li>These coatings enable the controlled release of:
@@ -25,13 +148,13 @@
     </li>
   </ul>
 
-  <p><strong>3. Peptides and Protein Functionalization</strong></p>
+  <p class="content-text"><strong>3. Peptides and Protein Functionalization</strong></p>
   <ul>
     <li>The immobilization of bioactive molecules such as fibronectin, RGD peptides, and BMPs onto the implant surface enhances cell adhesion, proliferation, and osteogenic differentiation.</li>
     <li>These functionalized surfaces actively communicate biochemical signals to surrounding cells, accelerating the osseointegration process.</li>
   </ul>
 
-  <p>
+  <p class="content-text">
     Through the integration of inorganic, polymeric, and biologically active coatings, modern implants are designed not only to replace missing structures but also to actively promote tissue regeneration, reduce complications, and optimize clinical outcomes.
   </p>
 
