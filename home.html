@@ -1,30 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Osseointegration Project</title>
     <link rel="stylesheet" href="style.css">
     <style>
         /* Stile per il contenuto giustificato e larghezza personalizzabile */
         .content-text {
-            max-width: 800px; /* Imposta la larghezza massima desiderata */
-            width: 100%; /* Usa il 100% della larghezza disponibile fino al limite */
-            margin: 0 auto; /* Centra il testo orizzontalmente */
-            text-align: justify; /* Giustifica il testo */
-            word-wrap: break-word; /* Forza il testo ad andare a capo quando necessario */
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: justify;
+            word-wrap: break-word;
         }
-       
-         .color-text {
-        color: black;
-    }
 
-    /* Styles for the definition boxes */
-    .definition-box {
-        background-color: #8abad2;
-        color: white;
-        border-radius: 12px;
-        padding: 20px;
-        max-width: 600px; /* Narrower than the paragraph */
-        margin: 20px auto;
-        text-align: center;
-        opacity: 0.8;
-    }
+        .color-text {
+            color: black;
+        }
+
+        .definition-box {
+            background-color: #8abad2;
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        .image-right {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .image-right img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .image-right:hover img {
+            transform: scale(1.1);
+        }
+
+        .zoom-area {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            clip-path: circle(50%);
+            overflow: hidden;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 10;
+        }
+
+        .image-right:hover .zoom-area {
+            display: block;
+        }
+
+        .zoom-area img {
+            position: absolute;
+            transform: scale(2);
+            transform-origin: top left;
+        }
     </style>
+</head>
 <body>
 
     <h2>Home</h2>
@@ -35,23 +82,43 @@
         research and technologies that are shaping the future of biomaterials.
     </p>
     <br><br>
-    <p class="content-text"> 
-    <div class="image-right">
-            <img src="mappa.jpg" alt="MAPPA">
+
+    <div class="image-right" id="zoom-container">
+        <img src="mappa.jpg" alt="MAPPA" id="main-image">
+        <div class="zoom-area" id="zoom-area">
+            <img src="mappa.jpg" alt="Zoom MAPPA">
         </div>
-    <br><br>
-</p>
-    <div class="definition-box">
-        <p class="color-text">
-            <strong>Follow & share</strong>
-            <br><br>Smart surfaces. Stonger implants. Better outcomes.
-        <br>Big topics in small bites- listen to our podcast!
-        
-        <br><br> <strong>#BoneBuddies</strong> </p>
-            </p>
     </div>
 
-    </p>
+    <br><br>
+
+    <div class="definition-box">
+        <p class="color-text">
+            <strong>Follow & share</strong><br><br>
+            Smart surfaces. Stronger implants. Better outcomes.<br>
+            Big topics in small bites — listen to our podcast!<br><br>
+            <strong>#BoneBuddies</strong>
+        </p>
+    </div>
+
+    <script>
+        const zoomArea = document.getElementById('zoom-area');
+        const zoomContainer = document.getElementById('zoom-container');
+        const zoomImg = zoomArea.querySelector('img');
+
+        zoomContainer.addEventListener('mousemove', function (e) {
+            const rect = zoomContainer.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            zoomArea.style.left = `${x}px`;
+            zoomArea.style.top = `${y}px`;
+
+            zoomImg.style.left = `-${x}px`;
+            zoomImg.style.top = `-${y}px`;
+        });
+    </script>
 
     <script src="script.js"></script>
 </body>
+</html>
