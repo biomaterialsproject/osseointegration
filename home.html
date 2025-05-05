@@ -32,37 +32,20 @@
             opacity: 0.8;
         }
 
-        .image-right {
-            position: relative;
+        .zoom-container {
             width: 100%;
             max-width: 600px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .image-right img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .zoom-area {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            clip-path: circle(50%);
-            overflow: hidden;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            display: none;
-            z-index: 10;
+            height: 400px;
+            overflow: scroll;
             border: 2px solid #8abad2;
+            margin: 20px auto;
+            position: relative;
         }
 
-        .zoom-area img {
-            position: absolute;
+        .zoom-image {
             transform-origin: top left;
+            transition: transform 0.2s ease;
+            display: block;
         }
 
         .zoom-controls {
@@ -96,11 +79,8 @@
         research and technologies that are shaping the future of biomaterials.
     </p>
 
-    <div class="image-right" id="zoom-container">
-        <img src="mappa.jpg" alt="MAPPA" id="main-image">
-        <div class="zoom-area" id="zoom-area">
-            <img src="mappa.jpg" alt="Zoom MAPPA" id="zoomed-image">
-        </div>
+    <div class="zoom-container" id="zoom-container">
+        <img src="mappa.jpg" alt="MAPPA" id="main-image" class="zoom-image">
     </div>
 
     <div class="zoom-controls">
@@ -118,46 +98,20 @@
     </div>
 
     <script>
-        const zoomArea = document.getElementById('zoom-area');
-        const zoomContainer = document.getElementById('zoom-container');
-        const zoomImg = document.getElementById('zoomed-image');
-        const zoomInBtn = document.getElementById('zoom-in');
-        const zoomOutBtn = document.getElementById('zoom-out');
+        const zoomImg = document.getElementById('main-image');
+        let zoomLevel = 1;
 
-        let zoomLevel = 2;
-
-        function updateZoom(x, y) {
-            zoomArea.style.left = `${x}px`;
-            zoomArea.style.top = `${y}px`;
-
-            zoomImg.style.left = `-${x * zoomLevel - zoomArea.offsetWidth / 2}px`;
-            zoomImg.style.top = `-${y * zoomLevel - zoomArea.offsetHeight / 2}px`;
-
-            zoomImg.style.transform = `scale(${zoomLevel})`;
-        }
-
-        zoomContainer.addEventListener('mousemove', function (e) {
-            const rect = zoomContainer.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            zoomArea.style.display = 'block';
-            updateZoom(x, y);
-        });
-
-        zoomContainer.addEventListener('mouseleave', function () {
-            zoomArea.style.display = 'none';
-        });
-
-        zoomInBtn.addEventListener('click', function () {
+        document.getElementById('zoom-in').addEventListener('click', function () {
             if (zoomLevel < 5) {
-                zoomLevel += 0.5;
+                zoomLevel += 0.2;
+                zoomImg.style.transform = `scale(${zoomLevel})`;
             }
         });
 
-        zoomOutBtn.addEventListener('click', function () {
-            if (zoomLevel > 1) {
-                zoomLevel -= 0.5;
+        document.getElementById('zoom-out').addEventListener('click', function () {
+            if (zoomLevel > 0.4) {
+                zoomLevel -= 0.2;
+                zoomImg.style.transform = `scale(${zoomLevel})`;
             }
         });
     </script>
