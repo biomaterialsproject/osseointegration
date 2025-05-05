@@ -5,7 +5,10 @@
     <title>Osseointegration Project</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Stile per il contenuto giustificato e larghezza personalizzabile */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
         .content-text {
             max-width: 800px;
             width: 100%;
@@ -41,11 +44,6 @@
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .image-right:hover img {
-            transform: scale(1.1);
         }
 
         .zoom-area {
@@ -59,16 +57,32 @@
             transform: translate(-50%, -50%);
             display: none;
             z-index: 10;
-        }
-
-        .image-right:hover .zoom-area {
-            display: block;
+            border: 2px solid #8abad2;
         }
 
         .zoom-area img {
             position: absolute;
-            transform: scale(2);
             transform-origin: top left;
+        }
+
+        .zoom-controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .zoom-controls button {
+            font-size: 20px;
+            padding: 5px 15px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #8abad2;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .zoom-controls button:hover {
+            background-color: #6a9cb2;
         }
     </style>
 </head>
@@ -81,16 +95,18 @@
         about definition of osseointegration, evaluation techniques, challenges in this field, and the latest 
         research and technologies that are shaping the future of biomaterials.
     </p>
-    <br><br>
 
     <div class="image-right" id="zoom-container">
         <img src="mappa.jpg" alt="MAPPA" id="main-image">
         <div class="zoom-area" id="zoom-area">
-            <img src="mappa.jpg" alt="Zoom MAPPA">
+            <img src="mappa.jpg" alt="Zoom MAPPA" id="zoomed-image">
         </div>
     </div>
 
-    <br><br>
+    <div class="zoom-controls">
+        <button id="zoom-in">+</button>
+        <button id="zoom-out">−</button>
+    </div>
 
     <div class="definition-box">
         <p class="color-text">
@@ -104,21 +120,47 @@
     <script>
         const zoomArea = document.getElementById('zoom-area');
         const zoomContainer = document.getElementById('zoom-container');
-        const zoomImg = zoomArea.querySelector('img');
+        const zoomImg = document.getElementById('zoomed-image');
+        const zoomInBtn = document.getElementById('zoom-in');
+        const zoomOutBtn = document.getElementById('zoom-out');
+
+        let zoomLevel = 2;
+
+        function updateZoom(x, y) {
+            zoomArea.style.left = `${x}px`;
+            zoomArea.style.top = `${y}px`;
+
+            zoomImg.style.left = `-${x * zoomLevel - zoomArea.offsetWidth / 2}px`;
+            zoomImg.style.top = `-${y * zoomLevel - zoomArea.offsetHeight / 2}px`;
+
+            zoomImg.style.transform = `scale(${zoomLevel})`;
+        }
 
         zoomContainer.addEventListener('mousemove', function (e) {
             const rect = zoomContainer.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
 
-            zoomArea.style.left = `${x}px`;
-            zoomArea.style.top = `${y}px`;
+            zoomArea.style.display = 'block';
+            updateZoom(x, y);
+        });
 
-            zoomImg.style.left = `-${x}px`;
-            zoomImg.style.top = `-${y}px`;
+        zoomContainer.addEventListener('mouseleave', function () {
+            zoomArea.style.display = 'none';
+        });
+
+        zoomInBtn.addEventListener('click', function () {
+            if (zoomLevel < 5) {
+                zoomLevel += 0.5;
+            }
+        });
+
+        zoomOutBtn.addEventListener('click', function () {
+            if (zoomLevel > 1) {
+                zoomLevel -= 0.5;
+            }
         });
     </script>
 
-    <script src="script.js"></script>
 </body>
 </html>
